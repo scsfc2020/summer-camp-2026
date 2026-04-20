@@ -1,0 +1,4233 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0">
+<meta name="description" content="Soccer Star FC 2026 暑期夏令營 - 板橋、天母、北大三區開班，9 個梯次任選，08:00-18:00 超長托育時段">
+<title>Soccer Star FC | 2026 暑期夏令營</title>
+
+<link rel="icon" type="image/png" href="images/favicon.png">
+<link rel="apple-touch-icon" href="images/favicon.png">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Noto+Sans+TC:wght@400;500;700;900&family=Oswald:wght@500;700&display=swap" rel="stylesheet">
+
+<style>
+:root {
+  --black: #0A0A0A;
+  --black-2: #141418;
+  --black-3: #1C1C22;
+  --navy: #0F1729;
+  --grass: #2B6B1F;
+  --orange: #E8610A;
+  --orange-2: #F28B2C;
+  --gold: #D4AF37;
+  --white: #FFFFFF;
+  --cream: #F5F3EC;
+  --line: #2A2A33;
+  --muted: #8B8B93;
+  --alert: #D92D20;
+}
+
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+html { scroll-behavior: smooth; -webkit-text-size-adjust: 100%; }
+
+body {
+  font-family: 'Noto Sans TC', sans-serif;
+  background: var(--black);
+  color: var(--white);
+  line-height: 1.7;
+  overflow-x: hidden;
+  font-size: 15px;
+}
+
+img { max-width: 100%; display: block; }
+button { font-family: inherit; cursor: pointer; border: none; background: none; }
+a { color: inherit; text-decoration: none; }
+
+.display { font-family: 'Bebas Neue', 'Noto Sans TC', sans-serif; letter-spacing: 0.02em; }
+.mono { font-family: 'Oswald', sans-serif; font-weight: 500; letter-spacing: 0.05em; }
+
+/* ============ HEADER ============ */
+.header {
+  position: fixed; top: 0; left: 0; right: 0;
+  background: rgba(10, 10, 10, 0.92);
+  backdrop-filter: blur(12px);
+  z-index: 100;
+  padding: 10px 20px;
+  display: flex; justify-content: space-between; align-items: center;
+  border-bottom: 1px solid rgba(255,255,255,0.08);
+}
+
+.header-brand {
+  display: flex; align-items: center; gap: 10px;
+}
+.header-logo {
+  width: 40px; height: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.header-logo img {
+  width: 100%; height: 100%;
+  object-fit: contain;
+}
+
+.header-name {
+  color: white;
+  font-family: 'Bebas Neue', sans-serif;
+  font-size: 18px;
+  letter-spacing: 0.08em;
+  line-height: 1;
+}
+.header-name-dot { color: var(--orange); }
+.header-tag {
+  font-size: 10px;
+  color: var(--muted);
+  letter-spacing: 0.15em;
+  margin-top: 2px;
+  font-weight: 500;
+}
+
+.header-cta {
+  background: var(--orange);
+  color: white;
+  padding: 8px 16px;
+  font-size: 13px;
+  font-weight: 700;
+  border-radius: 4px;
+  transition: transform 0.15s;
+  white-space: nowrap;
+}
+.header-cta:active { transform: scale(0.95); }
+
+/* ============ HERO ============ */
+.hero {
+  min-height: 100vh;
+  position: relative;
+  padding: 100px 24px 80px;
+  overflow: hidden;
+  background: var(--black);
+  display: flex; flex-direction: column; justify-content: center;
+}
+
+.hero-bg {
+  position: absolute; inset: 0;
+  background-image: url('images/hero.jpg');
+  background-size: cover;
+  background-position: center;
+  opacity: 0.9;
+}
+
+.hero-overlay {
+  position: absolute; inset: 0;
+  background:
+    linear-gradient(180deg, rgba(10,10,10,0.3) 0%, rgba(10,10,10,0.6) 60%, rgba(10,10,10,0.9) 100%),
+    linear-gradient(90deg, rgba(10,10,10,0.5) 0%, transparent 50%, rgba(10,10,10,0.5) 100%);
+}
+
+.hero-pattern {
+  position: absolute; inset: 0;
+  background-image:
+    linear-gradient(45deg, transparent 48%, rgba(255,255,255,0.03) 50%, transparent 52%),
+    linear-gradient(-45deg, transparent 48%, rgba(255,255,255,0.03) 50%, transparent 52%);
+  background-size: 40px 40px;
+}
+
+.hero-content {
+  position: relative;
+  z-index: 2;
+  max-width: 1100px;
+  margin: 0 auto;
+  width: 100%;
+}
+
+.hero-logo-badge {
+  width: 160px;
+  height: 160px;
+  margin: 0 auto 36px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+}
+.hero-logo-badge::before {
+  content: '';
+  position: absolute;
+  inset: -24px;
+  border-radius: 50%;
+  border: 1px dashed rgba(255,255,255,0.25);
+  animation: rotate 40s linear infinite;
+}
+.hero-logo-badge::after {
+  content: '';
+  position: absolute;
+  inset: -48px;
+  border-radius: 50%;
+  border: 1px solid rgba(232,97,10,0.15);
+}
+@keyframes rotate {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
+}
+.hero-logo-badge img {
+  width: 100%; height: 100%;
+  object-fit: contain;
+  filter: drop-shadow(0 8px 30px rgba(232,97,10,0.5)) drop-shadow(0 0 20px rgba(255,255,255,0.2));
+  position: relative;
+  z-index: 1;
+}
+
+.hero-year {
+  text-align: center;
+  font-family: 'Bebas Neue', sans-serif;
+  font-size: 16px;
+  letter-spacing: 0.4em;
+  color: var(--orange);
+  margin-bottom: 12px;
+}
+
+.hero-title-wrap {
+  text-align: center;
+  margin-bottom: 28px;
+}
+
+.hero-title {
+  font-family: 'Bebas Neue', sans-serif;
+  font-size: clamp(48px, 13vw, 120px);
+  line-height: 0.9;
+  letter-spacing: 0.01em;
+  color: white;
+  text-shadow: 0 4px 30px rgba(0,0,0,0.6);
+}
+.hero-title-stroke {
+  -webkit-text-stroke: 2px rgba(255,255,255,0.5);
+  color: transparent;
+  display: block;
+}
+
+.hero-divider {
+  width: 60px; height: 3px;
+  background: var(--orange);
+  margin: 24px auto;
+}
+
+.hero-sub {
+  text-align: center;
+  font-size: clamp(16px, 4vw, 22px);
+  font-weight: 700;
+  margin-bottom: 20px;
+  color: var(--orange-2);
+  letter-spacing: 0.05em;
+}
+
+.hero-desc {
+  text-align: center;
+  font-size: 15px;
+  line-height: 1.7;
+  color: rgba(255,255,255,0.8);
+  max-width: 500px;
+  margin: 0 auto 28px;
+}
+
+.hero-feature {
+  max-width: 580px;
+  margin: 0 auto 32px;
+  padding: 16px 20px;
+  background: rgba(232, 97, 10, 0.12);
+  border-left: 3px solid var(--orange);
+  border-radius: 4px;
+  font-size: 14px;
+  line-height: 1.6;
+  color: rgba(255,255,255,0.95);
+  text-align: center;
+}
+.hero-feature strong { color: var(--orange-2); }
+
+.hero-stats {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 16px;
+  max-width: 600px;
+  margin: 0 auto 32px;
+  padding: 24px 0;
+  border-top: 1px solid rgba(255,255,255,0.15);
+  border-bottom: 1px solid rgba(255,255,255,0.15);
+}
+.hero-stat { text-align: center; }
+.hero-stat-num {
+  font-family: 'Bebas Neue', sans-serif;
+  font-size: clamp(32px, 8vw, 48px);
+  color: var(--white);
+  line-height: 1;
+}
+.hero-stat-unit {
+  font-size: 14px;
+  color: var(--orange);
+  font-weight: 700;
+}
+.hero-stat-label {
+  font-size: 10px;
+  color: rgba(255,255,255,0.6);
+  letter-spacing: 0.15em;
+  margin-top: 4px;
+  font-weight: 500;
+}
+
+.hero-buttons {
+  display: flex; flex-direction: column; gap: 12px;
+  max-width: 400px; margin: 0 auto;
+}
+.btn-primary {
+  background: var(--orange);
+  color: white;
+  padding: 18px 32px;
+  font-size: 16px;
+  font-weight: 900;
+  border-radius: 4px;
+  text-align: center;
+  transition: all 0.2s;
+  box-shadow: 0 4px 30px rgba(232,97,10,0.4);
+  letter-spacing: 0.05em;
+}
+.btn-primary:active { transform: scale(0.98); }
+
+.btn-secondary {
+  border: 2px solid rgba(255,255,255,0.8);
+  color: white;
+  padding: 16px 32px;
+  font-size: 15px;
+  font-weight: 700;
+  border-radius: 4px;
+  text-align: center;
+  letter-spacing: 0.05em;
+  background: rgba(255,255,255,0.05);
+  backdrop-filter: blur(4px);
+}
+
+.hero-scroll {
+  position: absolute;
+  bottom: 20px;
+  left: 50%;
+  transform: translateX(-50%);
+  font-size: 10px;
+  color: rgba(255,255,255,0.5);
+  letter-spacing: 0.3em;
+  animation: bounce 2s infinite;
+  z-index: 2;
+}
+@keyframes bounce {
+  0%, 100% { transform: translateX(-50%) translateY(0); }
+  50% { transform: translateX(-50%) translateY(-8px); }
+}
+
+/* ============ SECTIONS ============ */
+.section {
+  padding: 80px 24px;
+  max-width: 1200px;
+  margin: 0 auto;
+  position: relative;
+}
+
+.section-header {
+  margin-bottom: 48px;
+  text-align: center;
+}
+.section-num {
+  font-family: 'Oswald', sans-serif;
+  font-size: 12px;
+  color: var(--orange);
+  letter-spacing: 0.3em;
+  font-weight: 700;
+  margin-bottom: 16px;
+  display: inline-block;
+  padding: 4px 12px;
+  border: 1px solid rgba(232,97,10,0.4);
+  border-radius: 2px;
+}
+.section-title {
+  font-family: 'Bebas Neue', 'Noto Sans TC', sans-serif;
+  font-size: clamp(36px, 8vw, 56px);
+  line-height: 0.95;
+  color: var(--white);
+  letter-spacing: 0.02em;
+  margin-bottom: 16px;
+}
+.section-title-accent { color: var(--orange); }
+.section-desc {
+  font-size: 15px;
+  color: var(--muted);
+  max-width: 520px;
+  margin: 0 auto;
+  line-height: 1.7;
+}
+
+/* ============ VALUES ============ */
+.values {
+  background: var(--black-2);
+  padding: 80px 0;
+  border-top: 1px solid var(--line);
+  border-bottom: 1px solid var(--line);
+}
+.values-inner { max-width: 1200px; margin: 0 auto; padding: 0 24px; }
+.values-grid {
+  display: grid;
+  gap: 16px;
+  margin-top: 40px;
+}
+.value-card {
+  background: var(--black-3);
+  padding: 32px 24px;
+  border: 1px solid var(--line);
+  position: relative;
+  transition: all 0.2s;
+  overflow: hidden;
+}
+.value-card::before {
+  content: '';
+  position: absolute;
+  top: 0; left: 0;
+  width: 40px; height: 4px;
+  background: var(--orange);
+  transition: width 0.3s;
+}
+.value-card:hover::before { width: 100%; }
+.value-card:hover { background: #1F1F25; }
+
+.value-num {
+  font-family: 'Bebas Neue', sans-serif;
+  font-size: 48px;
+  color: var(--orange);
+  line-height: 1;
+  margin-bottom: 16px;
+  opacity: 0.4;
+}
+.value-title {
+  font-size: 19px;
+  font-weight: 700;
+  color: white;
+  margin-bottom: 12px;
+}
+.value-text {
+  font-size: 14px;
+  color: var(--muted);
+  line-height: 1.8;
+}
+
+/* ============ CLASSES ============ */
+.classes { padding: 80px 24px; }
+
+.class-filter {
+  display: flex;
+  gap: 8px;
+  overflow-x: auto;
+  padding-bottom: 8px;
+  margin-bottom: 24px;
+  scrollbar-width: none;
+  -webkit-overflow-scrolling: touch;
+}
+.class-filter::-webkit-scrollbar { display: none; }
+.filter-btn {
+  flex-shrink: 0;
+  padding: 10px 18px;
+  border: 1.5px solid var(--line);
+  border-radius: 2px;
+  background: var(--black-3);
+  color: var(--muted);
+  font-size: 13px;
+  font-weight: 700;
+  transition: all 0.15s;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+}
+.filter-btn.active {
+  background: var(--orange);
+  color: white;
+  border-color: var(--orange);
+}
+
+.class-card {
+  background: var(--black-3);
+  border: 1px solid var(--line);
+  padding: 24px 20px;
+  margin-bottom: 12px;
+  position: relative;
+  overflow: hidden;
+  transition: border-color 0.15s;
+}
+.class-card:active { border-color: var(--orange); }
+
+.class-card::before {
+  content: '';
+  position: absolute;
+  top: 0; bottom: 0; left: 0;
+  width: 4px;
+}
+.class-card[data-type="club"]::before { background: var(--grass); }
+.class-card[data-type="promo"]::before { background: var(--orange); }
+.class-card[data-type="u8"]::before { background: #9A4C93; }
+.class-card[data-type="combo"]::before { background: #5B4AAE; }
+
+.class-head {
+  display: flex; justify-content: space-between; align-items: flex-start;
+  margin-bottom: 14px;
+  gap: 12px;
+}
+.class-batch {
+  font-family: 'Bebas Neue', sans-serif;
+  font-size: 14px;
+  color: var(--orange);
+  letter-spacing: 0.1em;
+  margin-bottom: 4px;
+}
+.class-title {
+  font-size: 18px;
+  font-weight: 700;
+  color: white;
+  line-height: 1.3;
+}
+.class-tag {
+  flex-shrink: 0;
+  font-size: 10px;
+  padding: 3px 10px;
+  border-radius: 2px;
+  font-weight: 700;
+  white-space: nowrap;
+  letter-spacing: 0.05em;
+}
+.class-tag.club { background: rgba(43,107,31,0.2); color: #5DCAA5; border: 1px solid rgba(43,107,31,0.5); }
+.class-tag.promo { background: rgba(232,97,10,0.2); color: var(--orange-2); border: 1px solid rgba(232,97,10,0.5); }
+.class-tag.u8 { background: rgba(154,76,147,0.2); color: #D4A5D0; border: 1px solid rgba(154,76,147,0.5); }
+.class-tag.combo { background: rgba(91,74,174,0.2); color: #A89EE5; border: 1px solid rgba(91,74,174,0.5); }
+
+.class-meta {
+  display: flex; gap: 14px;
+  font-size: 12px;
+  color: var(--muted);
+  margin-bottom: 16px;
+  flex-wrap: wrap;
+}
+
+.class-price-row {
+  display: flex; justify-content: space-between; align-items: center;
+  padding-top: 16px;
+  border-top: 1px solid var(--line);
+}
+.class-price-wrap { display: flex; flex-direction: column; }
+.class-price-currency {
+  font-size: 11px;
+  color: var(--muted);
+  letter-spacing: 0.1em;
+}
+.class-price {
+  font-family: 'Bebas Neue', sans-serif;
+  font-size: 30px;
+  color: white;
+  line-height: 1;
+}
+.class-calc-btn {
+  background: var(--orange);
+  color: white;
+  padding: 10px 18px;
+  font-size: 12px;
+  font-weight: 700;
+  border-radius: 2px;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  transition: all 0.15s;
+}
+
+.class-schedule-btn {
+  background: transparent;
+  color: white;
+  padding: 10px 14px;
+  font-size: 12px;
+  font-weight: 700;
+  border-radius: 2px;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  transition: all 0.15s;
+  border: 1.5px solid var(--line);
+  margin-right: 6px;
+}
+.class-schedule-btn:hover { border-color: var(--orange); color: var(--orange); }
+
+.class-buttons {
+  display: flex;
+  gap: 6px;
+  flex-shrink: 0;
+}
+
+/* ============ SCHEDULE MODAL ============ */
+.modal-overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.85);
+  backdrop-filter: blur(8px);
+  z-index: 1000;
+  display: none;
+  align-items: flex-start;
+  justify-content: center;
+  overflow-y: auto;
+  padding: 20px;
+  animation: fadeIn 0.2s ease;
+}
+.modal-overlay.active { display: flex; }
+
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+@keyframes slideUp {
+  from { opacity: 0; transform: translateY(30px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.modal {
+  background: var(--black-2);
+  border: 1px solid var(--line);
+  max-width: 900px;
+  width: 100%;
+  position: relative;
+  animation: slideUp 0.3s ease;
+  margin: auto 0;
+}
+
+.modal-close {
+  position: sticky;
+  top: 0;
+  right: 0;
+  float: right;
+  width: 44px;
+  height: 44px;
+  background: var(--black-3);
+  color: white;
+  font-size: 20px;
+  font-weight: 300;
+  border: 1px solid var(--line);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  margin: 16px;
+  z-index: 10;
+  transition: all 0.15s;
+}
+.modal-close:hover {
+  background: var(--orange);
+  border-color: var(--orange);
+  transform: rotate(90deg);
+}
+
+.modal-header {
+  padding: 40px 24px 28px;
+  border-bottom: 1px solid var(--line);
+  background: linear-gradient(180deg, rgba(232,97,10,0.1) 0%, transparent 100%);
+  position: relative;
+}
+.modal-batch {
+  font-family: 'Bebas Neue', sans-serif;
+  font-size: 14px;
+  color: var(--orange);
+  letter-spacing: 0.15em;
+  margin-bottom: 8px;
+}
+.modal-title {
+  font-size: clamp(24px, 5vw, 32px);
+  font-weight: 900;
+  color: white;
+  line-height: 1.2;
+  margin-bottom: 12px;
+}
+.modal-subtitle {
+  font-size: 14px;
+  color: var(--muted);
+  margin-bottom: 16px;
+}
+.modal-meta {
+  display: flex;
+  gap: 12px;
+  flex-wrap: wrap;
+  font-size: 12px;
+}
+.modal-meta-item {
+  background: var(--black-3);
+  border: 1px solid var(--line);
+  padding: 6px 12px;
+  border-radius: 100px;
+  color: white;
+  font-weight: 500;
+}
+.modal-meta-item.highlight {
+  background: rgba(232,97,10,0.15);
+  border-color: var(--orange);
+  color: var(--orange-2);
+}
+
+.modal-body { padding: 28px 24px; }
+
+.schedule-day {
+  margin-bottom: 28px;
+}
+.schedule-day:last-child { margin-bottom: 0; }
+
+.day-header {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 14px;
+  padding-bottom: 10px;
+  border-bottom: 2px solid var(--orange);
+}
+.day-badge {
+  background: var(--orange);
+  color: white;
+  padding: 4px 12px;
+  font-family: 'Bebas Neue', sans-serif;
+  font-size: 16px;
+  letter-spacing: 0.1em;
+}
+.day-title {
+  font-size: 16px;
+  font-weight: 700;
+  color: white;
+}
+
+.schedule-slot {
+  display: flex;
+  gap: 16px;
+  padding: 12px 0;
+  border-bottom: 1px solid rgba(255,255,255,0.05);
+}
+.schedule-slot:last-child { border-bottom: none; }
+.schedule-slot.highlight {
+  background: linear-gradient(90deg, rgba(212,175,55,0.06) 0%, transparent 100%);
+  padding-left: 12px;
+  border-left: 3px solid var(--gold);
+}
+.slot-time {
+  flex-shrink: 0;
+  width: 110px;
+  font-family: 'Oswald', sans-serif;
+  font-size: 13px;
+  color: var(--orange);
+  font-weight: 700;
+  letter-spacing: 0.05em;
+  padding-top: 2px;
+}
+.slot-content { flex: 1; }
+.slot-title {
+  font-size: 14px;
+  font-weight: 700;
+  color: white;
+  margin-bottom: 2px;
+}
+.slot-desc {
+  font-size: 12px;
+  color: var(--muted);
+  line-height: 1.6;
+}
+.slot-free {
+  display: inline-block;
+  font-size: 10px;
+  background: rgba(212,175,55,0.2);
+  color: var(--gold);
+  padding: 2px 8px;
+  border-radius: 2px;
+  margin-left: 6px;
+  font-weight: 700;
+  letter-spacing: 0.05em;
+}
+.slot-optional {
+  display: inline-block;
+  font-size: 10px;
+  background: rgba(232,97,10,0.2);
+  color: var(--orange-2);
+  padding: 2px 8px;
+  border-radius: 2px;
+  margin-left: 6px;
+  font-weight: 700;
+  letter-spacing: 0.05em;
+}
+
+.schedule-note {
+  background: var(--black-3);
+  border-left: 3px solid var(--orange);
+  padding: 16px 18px;
+  margin: 20px 0;
+  font-size: 13px;
+  color: rgba(255,255,255,0.8);
+  line-height: 1.7;
+}
+.schedule-note strong { color: var(--orange-2); }
+
+.modal-footer {
+  padding: 24px;
+  border-top: 1px solid var(--line);
+  background: var(--black-3);
+  display: flex;
+  gap: 12px;
+  flex-direction: column;
+}
+.modal-btn-primary {
+  background: var(--orange);
+  color: white;
+  padding: 16px 24px;
+  font-size: 15px;
+  font-weight: 700;
+  text-align: center;
+  letter-spacing: 0.05em;
+}
+.modal-btn-secondary {
+  background: #06C755;
+  color: white;
+  padding: 14px 24px;
+  font-size: 14px;
+  font-weight: 700;
+  text-align: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+}
+
+@media (min-width: 768px) {
+  .modal-header { padding: 56px 48px 36px; }
+  .modal-body { padding: 40px 48px; }
+  .modal-footer { flex-direction: row; padding: 24px 48px; }
+  .modal-btn-primary, .modal-btn-secondary { flex: 1; }
+  .slot-time { width: 130px; font-size: 14px; }
+  .slot-title { font-size: 15px; }
+}
+
+/* ============ REGISTRATION FORM MODAL ============ */
+.form-section {
+  margin-bottom: 32px;
+}
+.form-section:last-child { margin-bottom: 0; }
+
+.form-section-title {
+  font-family: 'Oswald', sans-serif;
+  font-size: 13px;
+  color: var(--orange);
+  letter-spacing: 0.2em;
+  font-weight: 700;
+  margin-bottom: 16px;
+  padding-bottom: 8px;
+  border-bottom: 1px solid var(--line);
+}
+
+.form-row {
+  display: grid;
+  gap: 14px;
+  margin-bottom: 14px;
+}
+.form-row:last-child { margin-bottom: 0; }
+
+.form-field {
+  display: flex;
+  flex-direction: column;
+}
+.form-label {
+  font-size: 13px;
+  font-weight: 700;
+  color: white;
+  margin-bottom: 6px;
+  display: flex;
+  align-items: center;
+  gap: 4px;
+}
+.form-label-required { color: var(--orange); }
+.form-label-hint {
+  font-size: 11px;
+  color: var(--muted);
+  font-weight: 400;
+  margin-left: 6px;
+}
+
+.form-input,
+.form-select,
+.form-textarea {
+  width: 100%;
+  background: var(--black-2);
+  color: white;
+  border: 1.5px solid var(--line);
+  border-radius: 2px;
+  padding: 12px 14px;
+  font-size: 14px;
+  font-family: inherit;
+  transition: border-color 0.15s;
+}
+.form-input:focus,
+.form-select:focus,
+.form-textarea:focus {
+  outline: none;
+  border-color: var(--orange);
+}
+.form-textarea {
+  resize: vertical;
+  min-height: 80px;
+}
+.form-select {
+  appearance: none;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' viewBox='0 0 12 12'%3E%3Cpath d='M3 5L6 8L9 5' stroke='%23E8610A' stroke-width='1.5' fill='none'/%3E%3C/svg%3E");
+  background-repeat: no-repeat;
+  background-position: right 14px center;
+  padding-right: 36px;
+}
+
+.form-error {
+  font-size: 11px;
+  color: var(--alert);
+  margin-top: 4px;
+  display: none;
+}
+.form-field.error .form-input,
+.form-field.error .form-select,
+.form-field.error .form-textarea {
+  border-color: var(--alert);
+}
+.form-field.error .form-error {
+  display: block;
+}
+
+/* 梯次複選 */
+.class-checkboxes {
+  display: grid;
+  gap: 8px;
+  max-height: 300px;
+  overflow-y: auto;
+  padding: 4px;
+}
+.class-checkbox {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 12px 14px;
+  background: var(--black-2);
+  border: 1.5px solid var(--line);
+  border-radius: 2px;
+  cursor: pointer;
+  transition: all 0.15s;
+  font-size: 13px;
+}
+.class-checkbox:hover { border-color: rgba(232,97,10,0.5); }
+.class-checkbox.selected {
+  background: rgba(232,97,10,0.08);
+  border-color: var(--orange);
+}
+.class-checkbox input {
+  width: 18px;
+  height: 18px;
+  accent-color: var(--orange);
+  flex-shrink: 0;
+}
+.class-checkbox-label { flex: 1; color: white; }
+.class-checkbox-price {
+  color: var(--orange-2);
+  font-weight: 700;
+  font-family: 'Oswald', sans-serif;
+}
+
+.class-group-label {
+  font-family: 'Oswald', sans-serif;
+  font-size: 11px;
+  color: var(--muted);
+  letter-spacing: 0.15em;
+  font-weight: 700;
+  padding: 10px 4px 4px;
+  text-transform: uppercase;
+  grid-column: 1 / -1;
+}
+.class-group-label.package-label {
+  color: var(--gold);
+  border-top: 1px dashed var(--line);
+  margin-top: 10px;
+}
+
+.class-checkbox.is-package {
+  background: linear-gradient(135deg, rgba(212,175,55,0.05), transparent);
+  border-color: rgba(212,175,55,0.3);
+}
+.class-checkbox.is-package:hover {
+  border-color: rgba(212,175,55,0.6);
+}
+.class-checkbox.is-package.selected {
+  background: rgba(212,175,55,0.08);
+  border-color: var(--gold);
+}
+
+.class-checkbox-price-group {
+  text-align: right;
+  min-width: 80px;
+}
+.class-checkbox-orig {
+  font-size: 11px;
+  color: var(--muted);
+  text-decoration: line-through;
+  margin-top: 2px;
+}
+.class-checkbox-save {
+  font-size: 11px;
+  color: var(--gold);
+  font-weight: 700;
+  font-family: 'Oswald', sans-serif;
+  margin-top: 2px;
+  letter-spacing: 0.05em;
+}
+
+/* 團報人數按鈕（與計算器樣式一致，沿用 .calc-options / .calc-option） */
+.form-group-options {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 6px;
+}
+.form-group-option {
+  background: var(--black-2);
+  border: 1.5px solid var(--line);
+  border-radius: 2px;
+  padding: 10px 6px;
+  color: rgba(255,255,255,0.7);
+  font-size: 12px;
+  font-weight: 700;
+  text-align: center;
+  transition: all 0.15s;
+  cursor: pointer;
+}
+.form-group-option.active {
+  background: var(--orange);
+  border-color: var(--orange);
+  color: white;
+}
+.form-group-option-hint {
+  font-size: 10px;
+  opacity: 0.75;
+  margin-top: 2px;
+  font-weight: 400;
+}
+
+/* 團報代號區塊 */
+.team-code-section {
+  display: none;
+  margin-top: 14px;
+  padding: 16px;
+  background: var(--black-2);
+  border: 1px solid var(--line);
+  border-left: 3px solid var(--orange);
+}
+.team-code-section.show { display: block; }
+
+.team-mode-options {
+  display: grid;
+  gap: 8px;
+  margin-bottom: 14px;
+}
+.team-mode-option {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 12px 14px;
+  background: var(--black-3);
+  border: 1.5px solid var(--line);
+  border-radius: 2px;
+  cursor: pointer;
+  transition: all 0.15s;
+  font-size: 13px;
+}
+.team-mode-option:hover { border-color: rgba(232,97,10,0.5); }
+.team-mode-option.active {
+  background: rgba(232,97,10,0.1);
+  border-color: var(--orange);
+}
+.team-mode-radio {
+  width: 18px;
+  height: 18px;
+  border-radius: 50%;
+  border: 2px solid var(--muted);
+  flex-shrink: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.15s;
+}
+.team-mode-option.active .team-mode-radio {
+  border-color: var(--orange);
+}
+.team-mode-option.active .team-mode-radio::after {
+  content: '';
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: var(--orange);
+}
+.team-mode-title {
+  font-weight: 700;
+  color: white;
+}
+.team-mode-desc {
+  font-size: 11px;
+  color: var(--muted);
+  font-weight: 400;
+}
+
+/* 團長：顯示代號 */
+.team-code-display {
+  display: none;
+  padding: 20px;
+  background: linear-gradient(135deg, rgba(232,97,10,0.15), rgba(212,175,55,0.05));
+  border: 2px solid var(--orange);
+  border-radius: 4px;
+  text-align: center;
+  margin-top: 12px;
+}
+.team-code-display.show { display: block; }
+.team-code-label {
+  font-size: 11px;
+  color: var(--orange);
+  letter-spacing: 0.2em;
+  font-weight: 700;
+  margin-bottom: 8px;
+  font-family: 'Oswald', sans-serif;
+}
+.team-code-value {
+  font-family: 'Bebas Neue', sans-serif;
+  font-size: 44px;
+  color: white;
+  letter-spacing: 0.1em;
+  line-height: 1;
+  margin-bottom: 12px;
+}
+.team-code-actions {
+  display: flex;
+  gap: 8px;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+.team-code-btn {
+  padding: 8px 14px;
+  font-size: 12px;
+  font-weight: 700;
+  border-radius: 2px;
+  border: 1px solid var(--orange);
+  background: transparent;
+  color: var(--orange);
+  cursor: pointer;
+  transition: all 0.15s;
+  letter-spacing: 0.05em;
+}
+.team-code-btn:hover {
+  background: var(--orange);
+  color: white;
+}
+.team-code-note {
+  font-size: 11px;
+  color: var(--muted);
+  line-height: 1.7;
+  margin-top: 12px;
+  padding-top: 12px;
+  border-top: 1px dashed var(--line);
+}
+
+/* 團員：輸入代號 */
+.team-code-input-wrap {
+  display: none;
+  margin-top: 12px;
+}
+.team-code-input-wrap.show { display: block; }
+
+.team-code-input {
+  width: 100%;
+  background: var(--black-3);
+  color: white;
+  border: 1.5px solid var(--line);
+  border-radius: 2px;
+  padding: 14px 16px;
+  font-size: 20px;
+  font-family: 'Oswald', sans-serif;
+  letter-spacing: 0.15em;
+  text-align: center;
+  text-transform: uppercase;
+}
+.team-code-input:focus {
+  outline: none;
+  border-color: var(--orange);
+}
+.team-code-status {
+  font-size: 12px;
+  margin-top: 8px;
+  line-height: 1.6;
+}
+.team-code-status.valid { color: #5DCAA5; }
+.team-code-status.invalid { color: var(--alert); }
+
+/* Checkbox 優惠 */
+.form-checkboxes {
+  display: grid;
+  gap: 8px;
+}
+.form-checkbox {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 12px 14px;
+  background: var(--black-2);
+  border: 1.5px solid var(--line);
+  border-radius: 2px;
+  cursor: pointer;
+  transition: all 0.15s;
+  font-size: 13px;
+}
+.form-checkbox:hover { border-color: rgba(232,97,10,0.5); }
+.form-checkbox.checked {
+  background: rgba(232,97,10,0.08);
+  border-color: var(--orange);
+}
+.form-checkbox input {
+  width: 18px;
+  height: 18px;
+  accent-color: var(--orange);
+  flex-shrink: 0;
+}
+.form-checkbox-label { flex: 1; color: white; }
+.form-checkbox-amount {
+  color: var(--orange-2);
+  font-weight: 700;
+  font-family: 'Oswald', sans-serif;
+}
+
+/* 金額試算 */
+.price-summary {
+  background: linear-gradient(135deg, rgba(232,97,10,0.1), transparent);
+  border: 1px solid var(--orange);
+  border-left: 4px solid var(--orange);
+  padding: 18px 20px;
+  margin-bottom: 20px;
+}
+.price-summary-title {
+  font-family: 'Oswald', sans-serif;
+  font-size: 12px;
+  color: var(--orange);
+  letter-spacing: 0.2em;
+  font-weight: 700;
+  margin-bottom: 10px;
+}
+.price-line {
+  display: flex;
+  justify-content: space-between;
+  font-size: 13px;
+  color: rgba(255,255,255,0.8);
+  padding: 4px 0;
+}
+.price-line-total {
+  font-size: 16px;
+  font-weight: 900;
+  color: white;
+  padding-top: 10px;
+  margin-top: 6px;
+  border-top: 1px solid rgba(255,255,255,0.15);
+}
+.price-line-total .price-value {
+  font-family: 'Bebas Neue', sans-serif;
+  font-size: 32px;
+  color: var(--orange);
+}
+
+/* 提交按鈕 */
+.form-submit-area {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+.form-submit-btn {
+  background: var(--orange);
+  color: white;
+  padding: 18px 24px;
+  font-size: 15px;
+  font-weight: 900;
+  border: none;
+  border-radius: 2px;
+  cursor: pointer;
+  letter-spacing: 0.05em;
+  transition: all 0.2s;
+  box-shadow: 0 4px 20px rgba(232,97,10,0.4);
+}
+.form-submit-btn:hover:not(:disabled) {
+  background: #d45500;
+  transform: translateY(-2px);
+}
+.form-submit-btn:disabled {
+  background: var(--black-3);
+  cursor: not-allowed;
+  box-shadow: none;
+}
+
+.form-submit-hint {
+  font-size: 11px;
+  color: var(--muted);
+  text-align: center;
+  line-height: 1.7;
+}
+
+/* 成功頁面 */
+.success-screen {
+  display: none;
+  padding: 48px 24px;
+  text-align: center;
+}
+.success-screen.show { display: block; }
+
+.success-icon {
+  width: 80px;
+  height: 80px;
+  margin: 0 auto 20px;
+  background: rgba(93,202,165,0.15);
+  border: 2px solid #5DCAA5;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 36px;
+  color: #5DCAA5;
+  animation: popIn 0.4s ease;
+}
+@keyframes popIn {
+  0% { transform: scale(0); }
+  60% { transform: scale(1.15); }
+  100% { transform: scale(1); }
+}
+.success-title {
+  font-size: 24px;
+  font-weight: 900;
+  color: white;
+  margin-bottom: 10px;
+}
+.success-desc {
+  font-size: 14px;
+  color: var(--muted);
+  line-height: 1.7;
+  max-width: 480px;
+  margin: 0 auto 24px;
+}
+.success-code-display {
+  max-width: 400px;
+  margin: 0 auto 24px;
+  padding: 20px;
+  background: linear-gradient(135deg, rgba(232,97,10,0.15), rgba(212,175,55,0.05));
+  border: 2px solid var(--orange);
+}
+.success-info-box {
+  max-width: 500px;
+  margin: 0 auto;
+  padding: 20px;
+  background: var(--black-3);
+  border-left: 3px solid var(--gold);
+  text-align: left;
+  font-size: 13px;
+  color: rgba(255,255,255,0.85);
+  line-height: 1.8;
+}
+.success-info-box strong { color: var(--gold); }
+
+.success-actions {
+  display: flex;
+  gap: 12px;
+  justify-content: center;
+  margin-top: 28px;
+  flex-wrap: wrap;
+}
+
+/* loading 狀態 */
+.form-loading {
+  display: inline-block;
+  width: 14px;
+  height: 14px;
+  border: 2px solid rgba(255,255,255,0.3);
+  border-top-color: white;
+  border-radius: 50%;
+  animation: spin 0.6s linear infinite;
+  margin-right: 8px;
+  vertical-align: middle;
+}
+@keyframes spin {
+  to { transform: rotate(360deg); }
+}
+
+@media (min-width: 768px) {
+  .form-row.two-col { grid-template-columns: 1fr 1fr; }
+}
+
+/* ============ DAILY SCHEDULE ============ */
+.schedule-detail {
+  background: var(--black-2);
+  padding: 80px 24px;
+  border-top: 1px solid var(--line);
+  border-bottom: 1px solid var(--line);
+}
+.schedule-inner { max-width: 1200px; margin: 0 auto; }
+
+.time-blocks {
+  display: grid;
+  gap: 12px;
+  margin-bottom: 40px;
+}
+.time-block {
+  display: flex;
+  background: var(--black-3);
+  border: 1px solid var(--line);
+  padding: 18px 20px;
+  align-items: flex-start;
+  gap: 16px;
+}
+.time-block.highlight {
+  border-left: 4px solid var(--gold);
+  background: linear-gradient(90deg, rgba(212,175,55,0.08) 0%, var(--black-3) 40%);
+}
+.time-block-time {
+  flex-shrink: 0;
+  font-family: 'Oswald', sans-serif;
+  font-size: 14px;
+  color: var(--orange);
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  min-width: 110px;
+  padding-top: 2px;
+}
+.time-block.highlight .time-block-time { color: var(--gold); }
+.time-block-content { flex: 1; }
+.time-block-title {
+  font-size: 15px;
+  font-weight: 700;
+  color: white;
+  margin-bottom: 4px;
+}
+.time-block-desc {
+  font-size: 13px;
+  color: var(--muted);
+  line-height: 1.6;
+}
+
+.care-card {
+  background: linear-gradient(135deg, rgba(212,175,55,0.1), rgba(232,97,10,0.05));
+  border: 1px solid rgba(212,175,55,0.3);
+  padding: 28px 24px;
+  margin-top: 24px;
+}
+.care-title {
+  font-size: 18px;
+  font-weight: 900;
+  color: var(--gold);
+  margin-bottom: 16px;
+  display: flex; align-items: center; gap: 8px;
+}
+.care-pricing {
+  display: grid; gap: 12px; margin-top: 16px;
+}
+.care-price-item {
+  display: flex; justify-content: space-between; align-items: center;
+  padding: 12px 16px;
+  background: rgba(0,0,0,0.3);
+  border-radius: 4px;
+  font-size: 13px;
+}
+.care-price-item.featured {
+  background: rgba(212,175,55,0.15);
+  border: 1px solid rgba(212,175,55,0.4);
+}
+.care-price-name { color: white; font-weight: 700; }
+.care-price-value {
+  font-family: 'Oswald', sans-serif;
+  color: var(--gold);
+  font-weight: 700;
+}
+
+/* ============ CALCULATOR ============ */
+.calculator {
+  background: var(--black);
+  padding: 80px 24px;
+  position: relative;
+  overflow: hidden;
+}
+.calc-bg {
+  position: absolute; inset: 0;
+  background-image:
+    linear-gradient(135deg, rgba(232,97,10,0.08) 0%, transparent 50%),
+    linear-gradient(-135deg, rgba(43,107,31,0.08) 0%, transparent 50%);
+  pointer-events: none;
+}
+.calc-inner {
+  max-width: 600px;
+  margin: 0 auto;
+  position: relative;
+  z-index: 1;
+}
+
+.calc-panel {
+  background: var(--black-2);
+  border: 1px solid var(--line);
+  padding: 28px 24px;
+  margin-bottom: 16px;
+}
+
+.calc-step { margin-bottom: 24px; }
+.calc-step:last-child { margin-bottom: 0; }
+.calc-step-label {
+  font-family: 'Oswald', sans-serif;
+  font-size: 11px;
+  color: var(--orange);
+  letter-spacing: 0.2em;
+  margin-bottom: 12px;
+  font-weight: 700;
+}
+
+.calc-select {
+  width: 100%;
+  background: var(--black-3);
+  color: white;
+  border: 1.5px solid var(--line);
+  border-radius: 2px;
+  padding: 14px 16px;
+  font-size: 14px;
+  font-family: inherit;
+  appearance: none;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' viewBox='0 0 12 12'%3E%3Cpath d='M3 5L6 8L9 5' stroke='%23E8610A' stroke-width='1.5' fill='none'/%3E%3C/svg%3E");
+  background-repeat: no-repeat;
+  background-position: right 16px center;
+  padding-right: 40px;
+}
+.calc-select option { background: var(--black-2); color: white; }
+.calc-select optgroup { color: var(--orange); font-weight: 700; }
+
+.calc-options {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 8px;
+}
+.calc-option {
+  background: var(--black-3);
+  border: 1.5px solid var(--line);
+  border-radius: 2px;
+  padding: 12px 10px;
+  color: rgba(255,255,255,0.7);
+  font-size: 13px;
+  font-weight: 700;
+  text-align: center;
+  transition: all 0.15s;
+}
+.calc-option.active {
+  background: var(--orange);
+  border-color: var(--orange);
+  color: white;
+}
+.calc-option-hint {
+  font-size: 10px;
+  opacity: 0.7;
+  margin-top: 2px;
+  font-weight: 400;
+}
+
+.calc-checkbox {
+  display: flex; align-items: center; gap: 12px;
+  padding: 14px 16px;
+  background: var(--black-3);
+  border: 1.5px solid var(--line);
+  border-radius: 2px;
+  font-size: 13px;
+  cursor: pointer;
+  transition: all 0.15s;
+  margin-bottom: 8px;
+}
+.calc-checkbox.active {
+  background: rgba(232,97,10,0.15);
+  border-color: var(--orange);
+}
+.calc-checkbox input {
+  width: 18px; height: 18px; accent-color: var(--orange);
+}
+.calc-checkbox-label { flex: 1; }
+.calc-checkbox-amount {
+  font-family: 'Oswald', sans-serif;
+  color: var(--orange);
+  font-weight: 700;
+}
+
+.calc-result {
+  background: linear-gradient(135deg, var(--orange) 0%, #C44A00 100%);
+  padding: 28px 24px;
+  color: white;
+  position: relative;
+  overflow: hidden;
+  border: 1px solid var(--orange);
+}
+.calc-result::before {
+  content: '';
+  position: absolute;
+  top: -50%; right: -50%;
+  width: 200%; height: 200%;
+  background: radial-gradient(circle, rgba(255,255,255,0.15) 0%, transparent 50%);
+}
+.calc-result-label {
+  font-family: 'Oswald', sans-serif;
+  font-size: 11px;
+  letter-spacing: 0.25em;
+  margin-bottom: 8px;
+  opacity: 0.9;
+  position: relative;
+}
+.calc-breakdown {
+  font-size: 12px;
+  margin-bottom: 12px;
+  opacity: 0.9;
+  position: relative;
+}
+.calc-breakdown-line {
+  display: flex; justify-content: space-between;
+  margin-bottom: 2px;
+}
+.calc-final-row {
+  display: flex; align-items: baseline; justify-content: space-between;
+  padding-top: 16px;
+  border-top: 1px solid rgba(255,255,255,0.3);
+  margin-bottom: 4px;
+  position: relative;
+}
+.calc-final-label { font-size: 14px; font-weight: 700; }
+.calc-final-price {
+  font-family: 'Bebas Neue', sans-serif;
+  font-size: 48px;
+  line-height: 1;
+}
+.calc-total-note {
+  font-size: 12px;
+  opacity: 0.9;
+  margin-top: 8px;
+  position: relative;
+}
+.calc-saved {
+  display: inline-block;
+  background: rgba(255,255,255,0.25);
+  padding: 4px 12px;
+  border-radius: 100px;
+  font-size: 13px;
+  font-weight: 700;
+  margin-top: 12px;
+  position: relative;
+}
+
+.calc-info {
+  margin-top: 16px;
+  padding: 14px 16px;
+  background: var(--black-3);
+  border-left: 3px solid var(--orange-2);
+  font-size: 12px;
+  color: rgba(255,255,255,0.75);
+  line-height: 1.7;
+}
+.calc-info strong { color: var(--orange-2); }
+
+/* ============ PACKAGES ============ */
+.packages {
+  background: var(--black-2);
+  padding: 80px 0;
+  border-top: 1px solid var(--line);
+  border-bottom: 1px solid var(--line);
+}
+.packages-inner { max-width: 1200px; margin: 0 auto; padding: 0 24px; }
+.pkg-scroll {
+  display: flex;
+  overflow-x: auto;
+  gap: 16px;
+  padding-bottom: 16px;
+  margin: 40px -24px 0;
+  padding-left: 24px;
+  padding-right: 24px;
+  scroll-snap-type: x mandatory;
+  scrollbar-width: none;
+}
+.pkg-scroll::-webkit-scrollbar { display: none; }
+
+.pkg-card {
+  flex: 0 0 280px;
+  background: var(--black-3);
+  border: 1px solid var(--line);
+  overflow: hidden;
+  scroll-snap-align: start;
+  position: relative;
+}
+.pkg-card.featured {
+  background: linear-gradient(180deg, var(--orange) 0%, #C44A00 100%);
+  color: white;
+  border-color: var(--orange);
+}
+.pkg-header {
+  padding: 20px 20px 16px;
+  border-bottom: 1px dashed rgba(255,255,255,0.15);
+}
+.pkg-card.featured .pkg-header {
+  border-bottom-color: rgba(255,255,255,0.25);
+}
+.pkg-tag {
+  display: inline-block;
+  background: rgba(0,0,0,0.4);
+  color: white;
+  padding: 3px 10px;
+  font-size: 10px;
+  font-weight: 700;
+  border-radius: 2px;
+  margin-bottom: 10px;
+  letter-spacing: 0.1em;
+}
+.pkg-card.featured .pkg-tag { background: rgba(255,255,255,0.25); }
+.pkg-name {
+  font-size: 18px;
+  font-weight: 900;
+  color: white;
+  margin-bottom: 6px;
+}
+.pkg-includes {
+  font-size: 12px;
+  color: var(--muted);
+}
+.pkg-card.featured .pkg-includes { color: rgba(255,255,255,0.75); }
+
+.pkg-body { padding: 20px; }
+.pkg-price {
+  font-family: 'Bebas Neue', sans-serif;
+  font-size: 40px;
+  color: white;
+  line-height: 1;
+  margin-bottom: 4px;
+}
+.pkg-orig {
+  font-size: 12px;
+  color: var(--muted);
+  text-decoration: line-through;
+  margin-bottom: 8px;
+}
+.pkg-card.featured .pkg-orig { color: rgba(255,255,255,0.6); }
+.pkg-save {
+  display: inline-block;
+  background: rgba(212,175,55,0.2);
+  color: var(--gold);
+  padding: 3px 10px;
+  font-size: 12px;
+  font-weight: 700;
+  border-radius: 2px;
+  letter-spacing: 0.05em;
+}
+.pkg-card.featured .pkg-save {
+  background: rgba(255,255,255,0.25);
+  color: white;
+}
+
+.packages-note {
+  margin-top: 24px;
+  text-align: center;
+  font-size: 13px;
+  color: var(--muted);
+  line-height: 1.7;
+}
+.packages-note strong { color: var(--orange-2); }
+
+/* ============ KOREA ============ */
+.korea {
+  padding: 80px 24px;
+  background: var(--black);
+}
+.korea-inner { max-width: 900px; margin: 0 auto; }
+
+.korea-hero {
+  background:
+    linear-gradient(135deg, rgba(205,46,58,0.95) 0%, rgba(0,71,160,0.95) 100%),
+    url('images/game.jpg') center/cover;
+  padding: 48px 32px;
+  position: relative;
+  overflow: hidden;
+  margin-bottom: 32px;
+  border: 1px solid var(--line);
+}
+.korea-hero::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='100' height='100' viewBox='0 0 100 100'%3E%3Ccircle cx='50' cy='50' r='30' fill='none' stroke='%23ffffff' stroke-width='0.5' opacity='0.1'/%3E%3C/svg%3E");
+}
+.korea-hero-content { position: relative; }
+
+.korea-flag {
+  font-size: 56px;
+  margin-bottom: 16px;
+  display: inline-block;
+}
+.korea-title {
+  font-family: 'Bebas Neue', sans-serif;
+  font-size: 44px;
+  line-height: 1;
+  color: white;
+  margin-bottom: 8px;
+  letter-spacing: 0.02em;
+}
+.korea-subtitle {
+  font-size: 15px;
+  color: rgba(255,255,255,0.9);
+  margin-bottom: 20px;
+}
+.korea-date {
+  display: inline-block;
+  background: rgba(0,0,0,0.4);
+  padding: 8px 18px;
+  font-size: 14px;
+  font-weight: 700;
+  backdrop-filter: blur(10px);
+  color: white;
+  letter-spacing: 0.05em;
+}
+
+.korea-status {
+  background: var(--black-2);
+  border: 2px dashed var(--orange);
+  padding: 24px;
+  margin-bottom: 32px;
+}
+.korea-status-label {
+  font-size: 11px;
+  color: var(--orange);
+  font-weight: 700;
+  letter-spacing: 0.2em;
+  margin-bottom: 10px;
+}
+.korea-status-text {
+  font-size: 14px;
+  color: rgba(255,255,255,0.85);
+  line-height: 1.8;
+}
+.korea-status-text strong { color: white; }
+
+.timeline {
+  position: relative;
+  padding-left: 32px;
+  margin-bottom: 32px;
+}
+.timeline::before {
+  content: '';
+  position: absolute;
+  left: 10px; top: 10px; bottom: 10px;
+  width: 2px;
+  background: linear-gradient(180deg, var(--orange), var(--grass));
+}
+.timeline-item {
+  position: relative;
+  margin-bottom: 24px;
+  padding-bottom: 16px;
+  border-bottom: 1px solid var(--line);
+}
+.timeline-item:last-child { border-bottom: none; }
+.timeline-item::before {
+  content: '';
+  position: absolute;
+  left: -28px; top: 4px;
+  width: 14px; height: 14px;
+  background: var(--orange);
+  border-radius: 50%;
+  border: 3px solid var(--black);
+  box-shadow: 0 0 0 2px var(--orange);
+}
+.timeline-date {
+  font-family: 'Oswald', sans-serif;
+  font-size: 12px;
+  color: var(--orange);
+  font-weight: 700;
+  letter-spacing: 0.15em;
+  margin-bottom: 4px;
+}
+.timeline-title {
+  font-size: 16px;
+  font-weight: 700;
+  color: white;
+  margin-bottom: 4px;
+}
+.timeline-text {
+  font-size: 13px;
+  color: var(--muted);
+}
+
+.korea-survey {
+  background: linear-gradient(135deg, var(--black-3) 0%, var(--black-2) 100%);
+  border: 1px solid var(--orange);
+  padding: 32px 24px;
+  text-align: center;
+  position: relative;
+  overflow: hidden;
+}
+.korea-survey::before {
+  content: '';
+  position: absolute;
+  top: 0; left: 0;
+  width: 100%; height: 4px;
+  background: var(--orange);
+}
+.korea-survey-title {
+  font-size: 19px;
+  font-weight: 900;
+  color: white;
+  margin-bottom: 10px;
+}
+.korea-survey-text {
+  font-size: 13px;
+  color: var(--muted);
+  margin-bottom: 20px;
+}
+.korea-survey-btn {
+  display: inline-block;
+  background: var(--orange);
+  color: white;
+  padding: 14px 36px;
+  font-size: 14px;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+/* ============ DISCOUNT ============ */
+.discount { padding: 80px 24px; }
+.discount-grid {
+  display: grid;
+  gap: 12px;
+  margin-top: 40px;
+}
+.discount-item {
+  background: var(--black-3);
+  border: 1px solid var(--line);
+  padding: 22px;
+  position: relative;
+  transition: all 0.2s;
+}
+.discount-item.hot {
+  border-color: var(--orange);
+  background: linear-gradient(135deg, rgba(232,97,10,0.08) 0%, var(--black-3) 60%);
+}
+.discount-head {
+  display: flex; justify-content: space-between; align-items: center;
+  margin-bottom: 10px;
+}
+.discount-name {
+  font-size: 15px;
+  font-weight: 700;
+  color: white;
+}
+.discount-amount {
+  font-family: 'Bebas Neue', sans-serif;
+  font-size: 28px;
+  color: var(--orange);
+}
+.discount-desc {
+  font-size: 13px;
+  color: var(--muted);
+  line-height: 1.6;
+}
+.discount-tag {
+  display: inline-block;
+  background: var(--orange);
+  color: white;
+  padding: 2px 8px;
+  font-size: 10px;
+  font-weight: 700;
+  margin-left: 6px;
+  vertical-align: middle;
+  letter-spacing: 0.08em;
+}
+
+/* ============ TIMELINE ============ */
+.timeline-section {
+  background: var(--black-2);
+  padding: 80px 24px;
+  border-top: 1px solid var(--line);
+  border-bottom: 1px solid var(--line);
+}
+.timeline-inner { max-width: 1200px; margin: 0 auto; }
+
+.schedule-milestone {
+  display: flex;
+  gap: 20px;
+  padding: 22px 0;
+  border-bottom: 1px solid var(--line);
+  align-items: center;
+}
+.schedule-milestone:last-child { border-bottom: none; }
+.schedule-date {
+  flex-shrink: 0;
+  width: 90px;
+  font-family: 'Oswald', sans-serif;
+  font-size: 15px;
+  font-weight: 700;
+  color: var(--orange);
+  letter-spacing: 0.1em;
+}
+.schedule-content { flex: 1; }
+.schedule-event {
+  font-size: 16px;
+  font-weight: 700;
+  color: white;
+  margin-bottom: 3px;
+}
+.schedule-event-desc {
+  font-size: 12px;
+  color: var(--muted);
+}
+
+/* ============ FAQ ============ */
+.faq { padding: 80px 24px; }
+.faq-list { margin-top: 40px; }
+.faq-item {
+  background: var(--black-3);
+  border: 1px solid var(--line);
+  margin-bottom: 8px;
+  overflow: hidden;
+}
+.faq-q {
+  padding: 20px 22px;
+  display: flex; justify-content: space-between; align-items: center;
+  font-size: 15px;
+  font-weight: 700;
+  color: white;
+  cursor: pointer;
+  gap: 12px;
+  line-height: 1.4;
+}
+.faq-q::after {
+  content: '+';
+  font-size: 24px;
+  color: var(--orange);
+  font-weight: 300;
+  transition: transform 0.2s;
+  flex-shrink: 0;
+}
+.faq-item.open .faq-q::after { content: '−'; }
+.faq-a {
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.3s ease;
+}
+.faq-item.open .faq-a { max-height: 500px; }
+.faq-a-inner {
+  padding: 0 22px 22px;
+  font-size: 14px;
+  color: var(--muted);
+  line-height: 1.8;
+}
+
+/* ============ CTA ============ */
+.cta {
+  padding: 80px 24px;
+  background:
+    linear-gradient(135deg, rgba(232,97,10,0.95) 0%, rgba(196,74,0,0.95) 100%),
+    url('images/hero.jpg') center/cover;
+  color: white;
+  text-align: center;
+  position: relative;
+  overflow: hidden;
+}
+.cta::before {
+  content: '';
+  position: absolute; inset: 0;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='60' height='60' viewBox='0 0 60 60'%3E%3Cpath d='M30 0 L35 20 L55 20 L39 32 L45 52 L30 40 L15 52 L21 32 L5 20 L25 20 Z' fill='%23ffffff' opacity='0.04'/%3E%3C/svg%3E");
+}
+.cta-inner { position: relative; }
+
+.cta-logo {
+  width: 90px; height: 90px;
+  margin: 0 auto 24px;
+  display: flex; align-items: center; justify-content: center;
+  position: relative;
+}
+.cta-logo::before {
+  content: '';
+  position: absolute;
+  inset: -8px;
+  border-radius: 50%;
+  border: 2px solid rgba(255,255,255,0.4);
+}
+.cta-logo img {
+  width: 100%; height: 100%;
+  object-fit: contain;
+  filter: drop-shadow(0 4px 12px rgba(0,0,0,0.3));
+}
+
+.cta-title {
+  font-family: 'Bebas Neue', sans-serif;
+  font-size: clamp(44px, 10vw, 72px);
+  line-height: 0.95;
+  margin-bottom: 16px;
+  letter-spacing: 0.02em;
+}
+.cta-sub {
+  font-size: 15px;
+  margin-bottom: 32px;
+  opacity: 0.95;
+  line-height: 1.7;
+  max-width: 500px;
+  margin-left: auto;
+  margin-right: auto;
+}
+.cta-buttons {
+  display: flex; flex-direction: column; gap: 12px;
+  max-width: 400px; margin: 0 auto;
+}
+.cta-btn-primary {
+  background: white;
+  color: var(--orange);
+  padding: 18px 32px;
+  font-size: 16px;
+  font-weight: 900;
+  letter-spacing: 0.05em;
+  box-shadow: 0 4px 30px rgba(0,0,0,0.3);
+}
+.cta-btn-line {
+  background: #06C755;
+  color: white;
+  padding: 16px 32px;
+  font-size: 15px;
+  font-weight: 700;
+  display: flex; align-items: center; justify-content: center; gap: 8px;
+}
+
+/* ============ FOOTER ============ */
+.footer {
+  background: var(--black);
+  color: var(--muted);
+  padding: 48px 24px 100px;
+  font-size: 13px;
+  text-align: center;
+  border-top: 1px solid var(--line);
+}
+.footer-logo {
+  width: 60px; height: 60px;
+  margin: 0 auto 16px;
+  display: flex; align-items: center; justify-content: center;
+}
+.footer-logo img {
+  width: 100%; height: 100%;
+  object-fit: contain;
+}
+.footer-brand {
+  color: white;
+  font-family: 'Bebas Neue', sans-serif;
+  font-size: 22px;
+  letter-spacing: 0.1em;
+  margin-bottom: 8px;
+}
+.footer p { margin-bottom: 6px; }
+.footer-line {
+  height: 1px;
+  background: var(--line);
+  margin: 24px auto;
+  max-width: 300px;
+}
+.footer small { font-size: 11px; opacity: 0.5; }
+
+/* ============ FLOATING BUTTONS ============ */
+.floating {
+  position: fixed; bottom: 16px; left: 16px; right: 16px;
+  display: flex; gap: 8px;
+  z-index: 90;
+  pointer-events: none;
+}
+.floating-btn {
+  flex: 1;
+  padding: 15px 12px;
+  border-radius: 100px;
+  font-size: 14px;
+  font-weight: 700;
+  text-align: center;
+  box-shadow: 0 6px 24px rgba(0,0,0,0.5);
+  pointer-events: auto;
+  transition: transform 0.15s;
+  letter-spacing: 0.03em;
+}
+.floating-btn:active { transform: scale(0.95); }
+.floating-btn.register {
+  background: var(--orange);
+  color: white;
+}
+.floating-btn.line {
+  background: #06C755;
+  color: white;
+  display: flex; align-items: center; justify-content: center; gap: 6px;
+}
+
+/* ============ TABLET+ ============ */
+@media (min-width: 768px) {
+  body { font-size: 16px; }
+  .hero { padding: 140px 60px 120px; min-height: 100vh; }
+  .hero-logo-badge { width: 140px; height: 140px; margin-bottom: 40px; }
+  .hero-buttons { flex-direction: row; max-width: 500px; }
+  .btn-primary, .btn-secondary { flex: 1; }
+  .section { padding: 100px 60px; }
+  .values-grid { grid-template-columns: repeat(3, 1fr); }
+  .values-inner { padding: 0 60px; }
+  .classes { padding: 100px 60px; }
+  .class-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 16px; }
+  .class-card { margin-bottom: 0; }
+  .calculator { padding: 100px 60px; }
+  .packages-inner { padding: 0 60px; }
+  .pkg-scroll { margin-left: -60px; margin-right: -60px; padding-left: 60px; padding-right: 60px; }
+  .korea { padding: 100px 60px; }
+  .korea-hero { padding: 72px 60px; }
+  .discount { padding: 100px 60px; }
+  .discount-grid { grid-template-columns: repeat(2, 1fr); }
+  .timeline-section { padding: 100px 60px; }
+  .faq { padding: 100px 60px; }
+  .cta { padding: 100px 60px; }
+  .cta-buttons { flex-direction: row; max-width: 600px; }
+  .cta-btn-primary, .cta-btn-line { flex: 1; }
+  .floating { bottom: 20px; max-width: 500px; left: 50%; transform: translateX(-50%); right: auto; }
+  .schedule-detail { padding: 100px 60px; }
+  .time-blocks { grid-template-columns: repeat(2, 1fr); }
+}
+
+/* ============ DESKTOP ============ */
+@media (min-width: 1024px) {
+  .hero-logo-badge { width: 160px; height: 160px; }
+  .class-grid { grid-template-columns: repeat(3, 1fr); }
+  .discount-grid { grid-template-columns: repeat(3, 1fr); }
+  .time-blocks { grid-template-columns: repeat(3, 1fr); }
+  .floating { display: none; }
+}
+
+/* ============ ANIMATIONS ============ */
+.fade-up {
+  opacity: 0;
+  transform: translateY(24px);
+  transition: opacity 0.6s ease, transform 0.6s ease;
+}
+.fade-up.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+</style>
+</head>
+<body>
+
+<!-- HEADER -->
+<header class="header">
+  <a href="#top" class="header-brand">
+    <div class="header-logo"><img src="images/logo.svg" alt="SCS"></div>
+    <div>
+      <div class="header-name">SOCCER STAR<span class="header-name-dot">.</span>FC</div>
+      <div class="header-tag">EST. 2020</div>
+    </div>
+  </a>
+  <a href="#register" class="header-cta">立即報名</a>
+</header>
+
+<!-- HERO -->
+<section class="hero" id="top">
+  <div class="hero-bg"></div>
+  <div class="hero-overlay"></div>
+  <div class="hero-pattern"></div>
+
+  <div class="hero-content">
+    <div class="hero-logo-badge">
+      <img src="images/logo.svg" alt="Soccer Star FC">
+    </div>
+
+    <div class="hero-year">2026 SUMMER CAMP</div>
+
+    <div class="hero-title-wrap">
+      <div class="hero-title">
+        足球
+        <span class="hero-title-stroke">不只是</span>
+        夏天的回憶
+      </div>
+    </div>
+
+    <div class="hero-divider"></div>
+
+    <div class="hero-sub">9 個梯次 · 3 個據點 · 一個暑假改變</div>
+    <p class="hero-desc">
+      從板橋到天母到北大，從菁英訓練到推廣體驗，
+      我們為每個年齡、每個階段的孩子，
+      準備了最適合他們的那一個梯次。
+    </p>
+
+    <div class="hero-feature">
+      <strong>💼 雙薪家庭友善</strong><br>
+      08:00-18:00 超長托育時段 · 國家 B 級教練 · 師生比 1:8 · 全日營含餐
+    </div>
+
+    <div class="hero-stats">
+      <div class="hero-stat">
+        <div class="hero-stat-num">9</div>
+        <div class="hero-stat-unit">CLASSES</div>
+        <div class="hero-stat-label">梯次</div>
+      </div>
+      <div class="hero-stat">
+        <div class="hero-stat-num">3</div>
+        <div class="hero-stat-unit">LOCATIONS</div>
+        <div class="hero-stat-label">據點</div>
+      </div>
+      <div class="hero-stat">
+        <div class="hero-stat-num">59</div>
+        <div class="hero-stat-unit">DAYS</div>
+        <div class="hero-stat-label">天數</div>
+      </div>
+    </div>
+
+    <div class="hero-buttons">
+      <a href="#classes" class="btn-primary">查看所有梯次 →</a>
+      <a href="#calculator" class="btn-secondary">💰 試算報名費用</a>
+    </div>
+  </div>
+
+  <div class="hero-scroll">SCROLL ↓</div>
+</section>
+
+<!-- VALUES -->
+<section class="values">
+  <div class="values-inner">
+    <div class="section-header">
+      <div class="section-num">01 / WHY US</div>
+      <h2 class="section-title">為什麼選<span class="section-title-accent">我們</span></h2>
+      <p class="section-desc">專業、用心、可信賴 — 三件看似簡單，卻很少人做好的事。</p>
+    </div>
+    <div class="values-grid">
+      <div class="value-card fade-up">
+        <div class="value-num">01</div>
+        <div class="value-title">國家 B 級教練領軍</div>
+        <div class="value-text">
+          所有梯次皆由國家 B 級以上教練主教，師生比統一 1:8，確保每個孩子都被看見、被指導。
+        </div>
+      </div>
+      <div class="value-card fade-up">
+        <div class="value-num">02</div>
+        <div class="value-title">雙薪家庭超友善</div>
+        <div class="value-text">
+          08:00-18:00 超長托育時段、全日營含營養午餐、課後足球訓練選配，一站式解決暑假照顧。
+        </div>
+      </div>
+      <div class="value-card fade-up">
+        <div class="value-num">03</div>
+        <div class="value-title">最低 5 人開班保證</div>
+        <div class="value-text">
+          嚴格開班制度確保教學品質。若因招生不足取消梯次，我們承諾全額退費，絕不將就。
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CLASSES -->
+<section class="classes" id="classes">
+  <div class="section-header">
+    <div class="section-num">02 / CLASSES</div>
+    <h2 class="section-title">9 個梯次<br>總有一個<span class="section-title-accent">適合</span></h2>
+    <p class="section-desc">橫跨 7 月到 8 月底的完整暑期規劃，涵蓋各年齡與需求。</p>
+  </div>
+
+  <div class="class-filter">
+    <button class="filter-btn active" data-filter="all">全部 9 梯</button>
+    <button class="filter-btn" data-filter="club">俱樂部菁英</button>
+    <button class="filter-btn" data-filter="promo">推廣營</button>
+    <button class="filter-btn" data-filter="u8">U8 板橋盃</button>
+    <button class="filter-btn" data-filter="combo">全日託管</button>
+  </div>
+
+  <div class="class-grid">
+    <div class="class-card fade-up" data-type="promo">
+      <div class="class-head">
+        <div>
+          <div class="class-batch">BATCH 01A</div>
+          <div class="class-title">板橋推廣營 3 天</div>
+        </div>
+        <span class="class-tag promo">推廣營</span>
+      </div>
+      <div class="class-meta">
+        <span>📅 7/1 - 7/3</span>
+        <span>📍 板橋</span>
+        <span>🍱 含餐</span>
+      </div>
+      <div class="class-price-row">
+        <div class="class-price-wrap">
+          <span class="class-price-currency">NT$</span>
+          <span class="class-price">3,800</span>
+        </div>
+        <div class="class-buttons">
+          <button class="class-schedule-btn" onclick="openSchedule('promo3')">📋 課表</button>
+          <button class="class-calc-btn" onclick="openCalc(3800)">試算</button>
+        </div>
+      </div>
+    </div>
+
+    <div class="class-card fade-up" data-type="promo">
+      <div class="class-head">
+        <div>
+          <div class="class-batch">BATCH 01B</div>
+          <div class="class-title">天母推廣營 3 天</div>
+        </div>
+        <span class="class-tag promo">推廣營</span>
+      </div>
+      <div class="class-meta">
+        <span>📅 7/1 - 7/3</span>
+        <span>📍 天母</span>
+        <span>🍱 含餐</span>
+      </div>
+      <div class="class-price-row">
+        <div class="class-price-wrap">
+          <span class="class-price-currency">NT$</span>
+          <span class="class-price">3,800</span>
+        </div>
+        <div class="class-buttons">
+          <button class="class-schedule-btn" onclick="openSchedule('promo3b')">📋 課表</button>
+          <button class="class-calc-btn" onclick="openCalc(3800)">試算</button>
+        </div>
+      </div>
+    </div>
+
+    <div class="class-card fade-up" data-type="club">
+      <div class="class-head">
+        <div>
+          <div class="class-batch">BATCH 02</div>
+          <div class="class-title">1-3 年級菁英訓練</div>
+        </div>
+        <span class="class-tag club">俱樂部</span>
+      </div>
+      <div class="class-meta">
+        <span>📅 7/6 - 7/10</span>
+        <span>📍 北大</span>
+        <span>⭐ 國家 B 級</span>
+      </div>
+      <div class="class-price-row">
+        <div class="class-price-wrap">
+          <span class="class-price-currency">NT$</span>
+          <span class="class-price">9,800</span>
+        </div>
+        <div class="class-buttons">
+          <button class="class-schedule-btn" onclick="openSchedule('elite13')">📋 課表</button>
+          <button class="class-calc-btn" onclick="openCalc(9800)">試算</button>
+        </div>
+      </div>
+    </div>
+
+    <div class="class-card fade-up" data-type="club">
+      <div class="class-head">
+        <div>
+          <div class="class-batch">BATCH 03</div>
+          <div class="class-title">4-6 年級菁英集訓</div>
+        </div>
+        <span class="class-tag club">俱樂部</span>
+      </div>
+      <div class="class-meta">
+        <span>📅 7/13 - 7/17</span>
+        <span>📍 北大</span>
+        <span>⭐ 國家 B 級</span>
+      </div>
+      <div class="class-price-row">
+        <div class="class-price-wrap">
+          <span class="class-price-currency">NT$</span>
+          <span class="class-price">10,800</span>
+        </div>
+        <div class="class-buttons">
+          <button class="class-schedule-btn" onclick="openSchedule('elite46')">📋 課表</button>
+          <button class="class-calc-btn" onclick="openCalc(10800)">試算</button>
+        </div>
+      </div>
+    </div>
+
+    <div class="class-card fade-up" data-type="promo">
+      <div class="class-head">
+        <div>
+          <div class="class-batch">BATCH 04A</div>
+          <div class="class-title">板橋推廣營 5 天</div>
+        </div>
+        <span class="class-tag promo">推廣營</span>
+      </div>
+      <div class="class-meta">
+        <span>📅 7/20 - 7/24</span>
+        <span>📍 板橋</span>
+        <span>🍱 含餐</span>
+      </div>
+      <div class="class-price-row">
+        <div class="class-price-wrap">
+          <span class="class-price-currency">NT$</span>
+          <span class="class-price">6,500</span>
+        </div>
+        <div class="class-buttons">
+          <button class="class-schedule-btn" onclick="openSchedule('promo5')">📋 課表</button>
+          <button class="class-calc-btn" onclick="openCalc(6500)">試算</button>
+        </div>
+      </div>
+    </div>
+
+    <div class="class-card fade-up" data-type="promo">
+      <div class="class-head">
+        <div>
+          <div class="class-batch">BATCH 04B</div>
+          <div class="class-title">天母推廣營 5 天</div>
+        </div>
+        <span class="class-tag promo">推廣營</span>
+      </div>
+      <div class="class-meta">
+        <span>📅 7/20 - 7/24</span>
+        <span>📍 天母</span>
+        <span>🍱 含餐</span>
+      </div>
+      <div class="class-price-row">
+        <div class="class-price-wrap">
+          <span class="class-price-currency">NT$</span>
+          <span class="class-price">6,500</span>
+        </div>
+        <div class="class-buttons">
+          <button class="class-schedule-btn" onclick="openSchedule('promo5b')">📋 課表</button>
+          <button class="class-calc-btn" onclick="openCalc(6500)">試算</button>
+        </div>
+      </div>
+    </div>
+
+    <div class="class-card fade-up" data-type="combo">
+      <div class="class-head">
+        <div>
+          <div class="class-batch">BATCH 06</div>
+          <div class="class-title">上下午 U8 雙班</div>
+        </div>
+        <span class="class-tag combo">全日託管</span>
+      </div>
+      <div class="class-meta">
+        <span>📅 8/10 - 8/14</span>
+        <span>📍 天母</span>
+        <span>🍱 全日含餐</span>
+      </div>
+      <div class="class-price-row">
+        <div class="class-price-wrap">
+          <span class="class-price-currency">半日 NT$ 5,800 / 全日</span>
+          <span class="class-price">9,800</span>
+        </div>
+        <div class="class-buttons">
+          <button class="class-schedule-btn" onclick="openSchedule('combo')">📋 課表</button>
+          <button class="class-calc-btn" onclick="openCalc(9800)">試算</button>
+        </div>
+      </div>
+    </div>
+
+    <div class="class-card fade-up" data-type="u8">
+      <div class="class-head">
+        <div>
+          <div class="class-batch">BATCH 07</div>
+          <div class="class-title">U8 板橋盃全日</div>
+        </div>
+        <span class="class-tag u8">板橋盃</span>
+      </div>
+      <div class="class-meta">
+        <span>📅 8/17 - 8/21</span>
+        <span>📍 天母</span>
+        <span>🏆 賽前訓</span>
+      </div>
+      <div class="class-price-row">
+        <div class="class-price-wrap">
+          <span class="class-price-currency">NT$</span>
+          <span class="class-price">8,800</span>
+        </div>
+        <div class="class-buttons">
+          <button class="class-schedule-btn" onclick="openSchedule('u8cup')">📋 課表</button>
+          <button class="class-calc-btn" onclick="openCalc(8800)">試算</button>
+        </div>
+      </div>
+    </div>
+
+    <div class="class-card fade-up" data-type="club">
+      <div class="class-head">
+        <div>
+          <div class="class-batch">BATCH 08</div>
+          <div class="class-title">全年齡大集訓</div>
+        </div>
+        <span class="class-tag club">俱樂部</span>
+      </div>
+      <div class="class-meta">
+        <span>📅 8/24 - 8/28</span>
+        <span>📍 北大</span>
+        <span>⭐ 國家 B 級</span>
+      </div>
+      <div class="class-price-row">
+        <div class="class-price-wrap">
+          <span class="class-price-currency">NT$</span>
+          <span class="class-price">9,800</span>
+        </div>
+        <div class="class-buttons">
+          <button class="class-schedule-btn" onclick="openSchedule('allage')">📋 課表</button>
+          <button class="class-calc-btn" onclick="openCalc(9800)">試算</button>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- DAILY SCHEDULE (雙薪家庭時段) -->
+<section class="schedule-detail" id="daily">
+  <div class="schedule-inner">
+    <div class="section-header">
+      <div class="section-num">03 / DAILY TIME</div>
+      <h2 class="section-title">每日時間<br><span class="section-title-accent">雙薪家庭</span>最強後盾</h2>
+      <p class="section-desc">08:00 到 18:00，完整 10 小時解決暑假照顧問題。</p>
+    </div>
+
+    <div class="time-blocks">
+      <div class="time-block highlight">
+        <div class="time-block-time">08:00-08:30</div>
+        <div class="time-block-content">
+          <div class="time-block-title">🌅 晨間托育<span style="color:var(--gold);font-size:11px;margin-left:8px;">FREE</span></div>
+          <div class="time-block-desc">免費，自由活動、靜態遊戲，1 名助教值班</div>
+        </div>
+      </div>
+      <div class="time-block">
+        <div class="time-block-time">08:30-16:00</div>
+        <div class="time-block-content">
+          <div class="time-block-title">🎯 正式訓練</div>
+          <div class="time-block-desc">主課程（國家 B 級教練、師生比 1:8、含餐午休）</div>
+        </div>
+      </div>
+      <div class="time-block highlight">
+        <div class="time-block-time">16:00-18:00</div>
+        <div class="time-block-content">
+          <div class="time-block-title">🌆 課後托育<span style="color:var(--gold);font-size:11px;margin-left:8px;">OPTIONAL</span></div>
+          <div class="time-block-desc">足球基本動作訓練（傳球、停球、盤帶），強度較低、自主性高</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="care-card">
+      <div class="care-title">💰 課後托育收費方案</div>
+      <div style="font-size: 13px; color: var(--muted); margin-bottom: 12px;">
+        彈性選配，按照實際需求計費
+      </div>
+      <div class="care-pricing">
+        <div class="care-price-item">
+          <div class="care-price-name">單次按時計費</div>
+          <div class="care-price-value">$150 / 小時</div>
+        </div>
+        <div class="care-price-item">
+          <div class="care-price-name">當日整段 2 小時</div>
+          <div class="care-price-value">$600 / 日</div>
+        </div>
+        <div class="care-price-item featured">
+          <div class="care-price-name">⭐ 5 天套票（省 $500）</div>
+          <div class="care-price-value">$2,500 / 5 天</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CALCULATOR -->
+<section class="calculator" id="calculator">
+  <div class="calc-bg"></div>
+  <div class="calc-inner">
+    <div class="section-num" style="margin-bottom: 16px;">04 / CALCULATOR</div>
+    <h2 class="section-title" style="margin-bottom: 16px;">算算看<br>你能省<span class="section-title-accent">多少</span></h2>
+    <p class="section-desc" style="margin-bottom: 40px; text-align: left;">
+      選擇班別或套票、團報人數，立即看到你應付的金額。<br>
+      <strong style="color:var(--orange-2);">套票也可疊加早鳥與團報！</strong>
+    </p>
+
+    <div class="calc-panel">
+      <div class="calc-step">
+        <div class="calc-step-label">STEP 01 / 選擇班別</div>
+        <select class="calc-select" id="classSelect" onchange="updateCalc()">
+          <optgroup label="── 單梯課程 ──">
+            <option value="3800">🔥 推廣營 3 天 - NT$ 3,800</option>
+            <option value="6500">🔥 推廣營 5 天 - NT$ 6,500</option>
+            <option value="5800">⚡ U8 上/下午半日 - NT$ 5,800</option>
+            <option value="9800" selected>⭐ 1-3 年級菁英 - NT$ 9,800</option>
+            <option value="10800">⭐ 4-6 年級菁英 - NT$ 10,800</option>
+            <option value="9800b">🎯 全日託管包 - NT$ 9,800</option>
+            <option value="8800">🏆 U8 板橋盃 - NT$ 8,800</option>
+            <option value="9800c">🎪 全年齡大集訓 - NT$ 9,800</option>
+          </optgroup>
+          <optgroup label="── 套票方案（可疊加優惠）──">
+            <option value="18400">📦 1-3 年級全套 - NT$ 18,400</option>
+            <option value="19300">📦 4-6 年級全套 - NT$ 19,300</option>
+            <option value="13700">📦 板橋盃衝刺 - NT$ 13,700</option>
+            <option value="9700">📦 板橋推廣連報 - NT$ 9,700</option>
+            <option value="9700b">📦 天母推廣連報 - NT$ 9,700</option>
+          </optgroup>
+        </select>
+      </div>
+
+      <div class="calc-step">
+        <div class="calc-step-label">STEP 02 / 團報人數</div>
+        <div class="calc-options">
+          <button class="calc-option active" data-group="1" onclick="selectGroup(this, 1, 0)">
+            1 人
+            <div class="calc-option-hint">無折扣</div>
+          </button>
+          <button class="calc-option" data-group="2" onclick="selectGroup(this, 2, 300)">
+            2 人團報
+            <div class="calc-option-hint">折 $300/人</div>
+          </button>
+          <button class="calc-option" data-group="3" onclick="selectGroup(this, 3, 500)">
+            3 人團報 ⭐
+            <div class="calc-option-hint">折 $500/人</div>
+          </button>
+          <button class="calc-option" data-group="4" onclick="selectGroup(this, 4, 800)">
+            4 人團報 🔥
+            <div class="calc-option-hint">折 $800/人</div>
+          </button>
+        </div>
+      </div>
+
+      <div class="calc-step">
+        <div class="calc-step-label">STEP 03 / 早鳥與推薦</div>
+        <label class="calc-checkbox active" id="earlybird-box" onclick="toggleEarlybird(event)">
+          <input type="checkbox" id="earlybird" checked>
+          <div class="calc-checkbox-label">5/15 前報名（早鳥）</div>
+          <div class="calc-checkbox-amount">-$500</div>
+        </label>
+        <label class="calc-checkbox" id="referral-box" onclick="toggleReferral(event)">
+          <input type="checkbox" id="referral">
+          <div class="calc-checkbox-label">舊生推薦（新生・推廣營）</div>
+          <div class="calc-checkbox-amount">-$300</div>
+        </label>
+      </div>
+    </div>
+
+    <div class="calc-result">
+      <div class="calc-result-label">YOU PAY</div>
+      <div class="calc-breakdown" id="calcBreakdown"></div>
+      <div class="calc-final-row">
+        <div class="calc-final-label">每人支付</div>
+        <div class="calc-final-price" id="finalPrice">$9,300</div>
+      </div>
+      <div class="calc-total-note" id="totalNote">1 人報名</div>
+      <div class="calc-saved" id="saved">🎉 您將省下 $500</div>
+    </div>
+
+    <div class="calc-info">
+      💡 <strong>優惠疊加規則：</strong>單梯與套票皆可疊加早鳥 + 團報。推廣營的單梯或套票可額外疊加舊生推薦 $300。
+    </div>
+  </div>
+</section>
+
+<!-- PACKAGES -->
+<section class="packages">
+  <div class="packages-inner">
+    <div class="section-header">
+      <div class="section-num">05 / PACKAGES</div>
+      <h2 class="section-title">5 個<span class="section-title-accent">套票</span>方案</h2>
+      <p class="section-desc">一次預訂兩個梯次享套票折扣，仍可再疊加早鳥與團報優惠。</p>
+    </div>
+
+    <div class="pkg-scroll">
+      <div class="pkg-card featured fade-up">
+        <div class="pkg-header">
+          <span class="pkg-tag">主打 ⭐</span>
+          <div class="pkg-name">1-3 年級全套</div>
+          <div class="pkg-includes">梯 2 + 梯 8</div>
+        </div>
+        <div class="pkg-body">
+          <div class="pkg-price">$18,400</div>
+          <div class="pkg-orig">原價 $19,600</div>
+          <div class="pkg-save">省 $1,200</div>
+        </div>
+      </div>
+
+      <div class="pkg-card featured fade-up">
+        <div class="pkg-header">
+          <span class="pkg-tag">主打 ⭐</span>
+          <div class="pkg-name">4-6 年級全套</div>
+          <div class="pkg-includes">梯 3 + 梯 8</div>
+        </div>
+        <div class="pkg-body">
+          <div class="pkg-price">$19,300</div>
+          <div class="pkg-orig">原價 $20,600</div>
+          <div class="pkg-save">省 $1,300</div>
+        </div>
+      </div>
+
+      <div class="pkg-card fade-up">
+        <div class="pkg-header">
+          <span class="pkg-tag">U8 家長</span>
+          <div class="pkg-name">板橋盃衝刺</div>
+          <div class="pkg-includes">梯 6b + 梯 7</div>
+        </div>
+        <div class="pkg-body">
+          <div class="pkg-price">$13,700</div>
+          <div class="pkg-orig">原價 $14,600</div>
+          <div class="pkg-save">省 $900</div>
+        </div>
+      </div>
+
+      <div class="pkg-card fade-up">
+        <div class="pkg-header">
+          <span class="pkg-tag">板橋</span>
+          <div class="pkg-name">板橋推廣連報</div>
+          <div class="pkg-includes">梯 1a + 梯 4a</div>
+        </div>
+        <div class="pkg-body">
+          <div class="pkg-price">$9,700</div>
+          <div class="pkg-orig">原價 $10,300</div>
+          <div class="pkg-save">省 $600</div>
+        </div>
+      </div>
+
+      <div class="pkg-card fade-up">
+        <div class="pkg-header">
+          <span class="pkg-tag">天母</span>
+          <div class="pkg-name">天母推廣連報</div>
+          <div class="pkg-includes">梯 1b + 梯 4b</div>
+        </div>
+        <div class="pkg-body">
+          <div class="pkg-price">$9,700</div>
+          <div class="pkg-orig">原價 $10,300</div>
+          <div class="pkg-save">省 $600</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="packages-note">
+      <strong>💡 套票優惠規則</strong><br>
+      套票原本已含折扣 $600-$1,300，仍可疊加早鳥（$500）與團報（$300-$800）！
+    </div>
+  </div>
+</section>
+
+<!-- KOREA -->
+<section class="korea" id="korea">
+  <div class="korea-inner">
+    <div class="section-header">
+      <div class="section-num">06 / KOREA TRIP</div>
+      <h2 class="section-title">韓國比賽<br><span class="section-title-accent">意願調查中</span></h2>
+      <p class="section-desc">8 月 1 日至 7 日的海外比賽，我們想聽聽您的想法。</p>
+    </div>
+
+    <div class="korea-hero">
+      <div class="korea-hero-content">
+        <div class="korea-flag">🇰🇷</div>
+        <div class="korea-title">KOREA 2026</div>
+        <div class="korea-subtitle">海外移地訓練 × 國際交流賽</div>
+        <div class="korea-date">📅 2026/8/1 — 8/7</div>
+      </div>
+    </div>
+
+    <div class="korea-status">
+      <div class="korea-status-label">⚠️ 現階段狀態</div>
+      <div class="korea-status-text">
+        本梯次仍在<strong>意願調查階段</strong>，尚未確定開團。日期暫定 8/1-8/7，
+        具體行程（包含比賽場次、移地訓練內容、住宿地點、費用）將依參加意願最終確定。
+        如果您對海外比賽感興趣，歡迎填寫意願調查。
+      </div>
+    </div>
+
+    <div class="timeline">
+      <div class="timeline-item">
+        <div class="timeline-date">DAY 1-2 · 8/1-8/2</div>
+        <div class="timeline-title">抵達韓國 + 熟悉場地</div>
+        <div class="timeline-text">抵達後安排簡易訓練、場地熟悉、當地文化介紹。</div>
+      </div>
+      <div class="timeline-item">
+        <div class="timeline-date">DAY 3-5 · 8/3-8/5</div>
+        <div class="timeline-title">國際交流賽事</div>
+        <div class="timeline-text">與當地俱樂部友誼賽、移地訓練、技術交流。</div>
+      </div>
+      <div class="timeline-item">
+        <div class="timeline-date">DAY 6-7 · 8/6-8/7</div>
+        <div class="timeline-title">回顧與回程</div>
+        <div class="timeline-text">最後一場交流賽、觀光文化體驗、返台。</div>
+      </div>
+    </div>
+
+    <div class="korea-survey">
+      <div class="korea-survey-title">您是否有興趣讓孩子參加?</div>
+      <div class="korea-survey-text">點擊下方按鈕填寫 1 分鐘意願調查</div>
+      <a href="YOUR_KOREA_SURVEY_URL" class="korea-survey-btn">填寫意願調查 →</a>
+    </div>
+  </div>
+</section>
+
+<!-- DISCOUNT -->
+<section class="discount">
+  <div class="section-header">
+    <div class="section-num">07 / DISCOUNTS</div>
+    <h2 class="section-title">優惠機制<br><span class="section-title-accent">階梯團報</span>最划算</h2>
+    <p class="section-desc">越多朋友一起來，省越多。</p>
+  </div>
+
+  <div class="discount-grid">
+    <div class="discount-item">
+      <div class="discount-head">
+        <div class="discount-name">早鳥優惠</div>
+        <div class="discount-amount">-$500</div>
+      </div>
+      <div class="discount-desc">4/25 - 5/15（21 天）全期相同，每人可折。</div>
+    </div>
+
+    <div class="discount-item">
+      <div class="discount-head">
+        <div class="discount-name">2 人團報</div>
+        <div class="discount-amount">-$300</div>
+      </div>
+      <div class="discount-desc">2 人同時報名同梯次，每人折 $300。</div>
+    </div>
+
+    <div class="discount-item hot">
+      <div class="discount-head">
+        <div class="discount-name">3 人團報<span class="discount-tag">主打</span></div>
+        <div class="discount-amount">-$500</div>
+      </div>
+      <div class="discount-desc">3 人同時報名同梯次，每人折 $500。</div>
+    </div>
+
+    <div class="discount-item hot">
+      <div class="discount-head">
+        <div class="discount-name">4 人團報<span class="discount-tag">最划算</span></div>
+        <div class="discount-amount">-$800</div>
+      </div>
+      <div class="discount-desc">4 人同時報名同梯次，每人折 $800。</div>
+    </div>
+
+    <div class="discount-item">
+      <div class="discount-head">
+        <div class="discount-name">舊生推薦</div>
+        <div class="discount-amount">$300</div>
+      </div>
+      <div class="discount-desc">推廣營限定：新生折 $300，舊生獲球衣抵用券 $300。</div>
+    </div>
+
+    <div class="discount-item">
+      <div class="discount-head">
+        <div class="discount-name">套票可疊加</div>
+        <div class="discount-amount">-$600~</div>
+      </div>
+      <div class="discount-desc">5 個套票方案，綁定兩梯省 $600-$1,300，且可再疊加早鳥與團報。</div>
+    </div>
+  </div>
+</section>
+
+<!-- TIMELINE -->
+<section class="timeline-section">
+  <div class="timeline-inner">
+    <div class="section-header">
+      <div class="section-num">08 / TIMELINE</div>
+      <h2 class="section-title"><span class="section-title-accent">報名時程</span></h2>
+      <p class="section-desc">關鍵日期一次看清。</p>
+    </div>
+
+    <div>
+      <div class="schedule-milestone">
+        <div class="schedule-date">4/25</div>
+        <div class="schedule-content">
+          <div class="schedule-event">招生開跑 🚀</div>
+          <div class="schedule-event-desc">早鳥優惠開始（21 天）</div>
+        </div>
+      </div>
+      <div class="schedule-milestone">
+        <div class="schedule-date">5/15</div>
+        <div class="schedule-content">
+          <div class="schedule-event">早鳥截止</div>
+          <div class="schedule-event-desc">$500 早鳥優惠最後一天</div>
+        </div>
+      </div>
+      <div class="schedule-milestone">
+        <div class="schedule-date">5/20</div>
+        <div class="schedule-content">
+          <div class="schedule-event">開班公告</div>
+          <div class="schedule-event-desc">公佈確定開班的梯次名單</div>
+        </div>
+      </div>
+      <div class="schedule-milestone">
+        <div class="schedule-date">6/30</div>
+        <div class="schedule-content">
+          <div class="schedule-event">報名截止</div>
+          <div class="schedule-event-desc">所有梯次最終報名截止</div>
+        </div>
+      </div>
+      <div class="schedule-milestone">
+        <div class="schedule-date">7/1</div>
+        <div class="schedule-content">
+          <div class="schedule-event">開營 ⚽</div>
+          <div class="schedule-event-desc">第一梯推廣營正式開營</div>
+        </div>
+      </div>
+      <div class="schedule-milestone">
+        <div class="schedule-date">8/28</div>
+        <div class="schedule-content">
+          <div class="schedule-event">結營</div>
+          <div class="schedule-event-desc">最後一梯全年齡大集訓結束</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FAQ -->
+<section class="faq">
+  <div class="section-header">
+    <div class="section-num">09 / FAQ</div>
+    <h2 class="section-title"><span class="section-title-accent">常見</span>問題</h2>
+  </div>
+
+  <div class="faq-list">
+    <div class="faq-item" onclick="toggleFaq(this)">
+      <div class="faq-q">上下課時間是什麼時候？</div>
+      <div class="faq-a"><div class="faq-a-inner">
+        所有全日營採 08:00-18:00 彈性時間：<br>
+        • <strong>08:00-08:30 晨間托育</strong>（免費）— 家長可提早送達<br>
+        • <strong>08:30-16:00 正式訓練</strong>（全日含餐）<br>
+        • <strong>16:00-18:00 課後托育</strong>（選配付費）— 足球基本動作練習
+      </div></div>
+    </div>
+    <div class="faq-item" onclick="toggleFaq(this)">
+      <div class="faq-q">最低開班人數是多少？</div>
+      <div class="faq-a"><div class="faq-a-inner">每梯最低 5 人開班。俱樂部梯次未達 5 人將取消並全額退費；推廣營可能併地/併梯辦理。開班結果於 5/20 公告。</div></div>
+    </div>
+    <div class="faq-item" onclick="toggleFaq(this)">
+      <div class="faq-q">可以混合優惠嗎？</div>
+      <div class="faq-a"><div class="faq-a-inner">可以！早鳥（-$500）與團報（-$300/-$500/-$800）可疊加，最多折 $1,300。推廣營可額外享舊生推薦折 $300。<strong style="color:var(--orange-2);">套票也可疊加早鳥與團報優惠</strong>，例如買 1-3 年級全套 $18,400 + 早鳥 + 4 人團報 = $17,100。</div></div>
+    </div>
+    <div class="faq-item" onclick="toggleFaq(this)">
+      <div class="faq-q">退費怎麼算？</div>
+      <div class="faq-a"><div class="faq-a-inner">
+        • 營前 14 天以上：退 70%<br>
+        • 7-14 天：退 50%<br>
+        • 3-7 天：退 30%<br>
+        • 3 天內：不予退費<br>
+        • 俱樂部主動取消梯次：全額退 100%
+      </div></div>
+    </div>
+    <div class="faq-item" onclick="toggleFaq(this)">
+      <div class="faq-q">韓國行需要另外報名嗎？</div>
+      <div class="faq-a"><div class="faq-a-inner">目前韓國行仍在意願調查階段，尚未確定是否開團。如有興趣請先填寫意願調查，我們會根據回饋決定具體方案。</div></div>
+    </div>
+    <div class="faq-item" onclick="toggleFaq(this)">
+      <div class="faq-q">師生比多少？教練資格？</div>
+      <div class="faq-a"><div class="faq-a-inner">所有梯次統一採 <strong>師生比 1:8</strong>，主教練皆為 <strong>國家 B 級以上</strong>教練資格。</div></div>
+    </div>
+    <div class="faq-item" onclick="toggleFaq(this)">
+      <div class="faq-q">下雨怎麼辦？</div>
+      <div class="faq-a"><div class="faq-a-inner">所有梯次均安排室內雨備場地，前一天 22:00 前若有異動會 LINE 通知家長。颱風單日取消採補課或退費。</div></div>
+    </div>
+    <div class="faq-item" onclick="toggleFaq(this)">
+      <div class="faq-q">含午餐嗎？</div>
+      <div class="faq-a"><div class="faq-a-inner"><strong>所有全日班</strong>（菁英、推廣 3/5 天、板橋盃、全年齡集訓、全日託管包）皆含營養午餐。半日班（U8 上午 / U8 下午）不含餐。</div></div>
+    </div>
+  </div>
+</section>
+
+<!-- CTA -->
+<section class="cta" id="register">
+  <div class="cta-inner">
+    <div class="cta-logo">
+      <img src="images/logo.svg" alt="SCS">
+    </div>
+    <h2 class="cta-title">2026 夏天<br>我們球場見</h2>
+    <p class="cta-sub">
+      點擊下方按鈕前往報名表單<br>
+      或加入 LINE 諮詢詳情
+    </p>
+    <div class="cta-buttons">
+      <a href="javascript:void(0)" onclick="openRegisterForm()" class="cta-btn-primary">立即線上報名 →</a>
+      <a href="https://line.me/ti/p/EikA5dF7GE" class="cta-btn-line">
+        📱 加入 LINE 諮詢
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- SCHEDULE MODAL -->
+<div class="modal-overlay" id="scheduleModal" onclick="closeSchedule(event)">
+  <div class="modal" onclick="event.stopPropagation()">
+    <button class="modal-close" onclick="closeSchedule()">✕</button>
+    <div id="modalContent"></div>
+  </div>
+</div>
+
+<!-- REGISTRATION FORM MODAL -->
+<div class="modal-overlay" id="registerModal" onclick="closeRegister(event)">
+  <div class="modal" onclick="event.stopPropagation()">
+    <button class="modal-close" onclick="closeRegister()">✕</button>
+    
+    <!-- 表單內容 -->
+    <div id="registerFormContent">
+      <div class="modal-header">
+        <div class="modal-batch">2026 SUMMER CAMP</div>
+        <h2 class="modal-title">線上報名</h2>
+        <div class="modal-subtitle">填寫以下資料，我們將於 24 小時內透過 LINE 聯繫確認</div>
+      </div>
+      
+      <form id="registerForm" class="modal-body" onsubmit="submitRegister(event)">
+        
+        <!-- 家長資料 -->
+        <div class="form-section">
+          <div class="form-section-title">👤 家長資料</div>
+          <div class="form-row two-col">
+            <div class="form-field">
+              <label class="form-label">家長姓名 <span class="form-label-required">*</span></label>
+              <input type="text" class="form-input" name="parentName" required>
+              <div class="form-error">請填寫家長姓名</div>
+            </div>
+            <div class="form-field">
+              <label class="form-label">聯絡電話 <span class="form-label-required">*</span></label>
+              <input type="tel" class="form-input" name="parentPhone" placeholder="0912345678" pattern="^09\d{8}$" required>
+              <div class="form-error">請填寫 10 碼手機號碼</div>
+            </div>
+          </div>
+          <div class="form-row">
+            <div class="form-field">
+              <label class="form-label">LINE ID <span class="form-label-required">*</span><span class="form-label-hint">我們會主動加您為好友</span></label>
+              <input type="text" class="form-input" name="lineId" required>
+              <div class="form-error">請填寫 LINE ID</div>
+            </div>
+          </div>
+        </div>
+        
+        <!-- 孩子資料 -->
+        <div class="form-section">
+          <div class="form-section-title">👶 孩子資料</div>
+          <div class="form-row two-col">
+            <div class="form-field">
+              <label class="form-label">孩子姓名 <span class="form-label-required">*</span></label>
+              <input type="text" class="form-input" name="childName" required>
+              <div class="form-error">請填寫孩子姓名</div>
+            </div>
+            <div class="form-field">
+              <label class="form-label">升讀年級 <span class="form-label-required">*</span></label>
+              <select class="form-select" name="grade" required>
+                <option value="">請選擇</option>
+                <option value="升幼兒園中班">升幼兒園中班</option>
+                <option value="升幼兒園大班">升幼兒園大班</option>
+                <option value="升小一">升小一</option>
+                <option value="升小二">升小二</option>
+                <option value="升小三">升小三</option>
+                <option value="升小四">升小四</option>
+                <option value="升小五">升小五</option>
+                <option value="升小六">升小六</option>
+                <option value="升國一以上">升國一以上</option>
+              </select>
+              <div class="form-error">請選擇年級</div>
+            </div>
+          </div>
+        </div>
+        
+        <!-- 選擇梯次 -->
+        <div class="form-section">
+          <div class="form-section-title">📅 選擇梯次（可複選）<span class="form-label-required">*</span></div>
+          <div class="class-checkboxes" id="classCheckboxes">
+            <!-- JS 動態生成 -->
+          </div>
+          <div class="form-error" id="classesError" style="margin-top:10px;">請至少選擇 1 個梯次</div>
+        </div>
+        
+        <!-- 團報人數 -->
+        <div class="form-section">
+          <div class="form-section-title">👥 團報人數 <span class="form-label-required">*</span></div>
+          <div class="form-group-options">
+            <button type="button" class="form-group-option active" data-size="1" data-discount="0" onclick="selectTeamSize(this, 1, 0)">
+              1 人
+              <div class="form-group-option-hint">無折扣</div>
+            </button>
+            <button type="button" class="form-group-option" data-size="2" data-discount="300" onclick="selectTeamSize(this, 2, 300)">
+              2 人
+              <div class="form-group-option-hint">-$300/人</div>
+            </button>
+            <button type="button" class="form-group-option" data-size="3" data-discount="500" onclick="selectTeamSize(this, 3, 500)">
+              3 人 ⭐
+              <div class="form-group-option-hint">-$500/人</div>
+            </button>
+            <button type="button" class="form-group-option" data-size="4" data-discount="800" onclick="selectTeamSize(this, 4, 800)">
+              4+ 人 🔥
+              <div class="form-group-option-hint">-$800/人</div>
+            </button>
+          </div>
+          
+          <!-- 團報代號區塊 -->
+          <div class="team-code-section" id="teamCodeSection">
+            <div class="form-section-title" style="margin-top:0;margin-bottom:10px;">🎯 團報代號</div>
+            <div class="team-mode-options">
+              <div class="team-mode-option" onclick="selectTeamMode('leader')">
+                <div class="team-mode-radio"></div>
+                <div>
+                  <div class="team-mode-title">我是團長</div>
+                  <div class="team-mode-desc">系統自動生成新代號</div>
+                </div>
+              </div>
+              <div class="team-mode-option" onclick="selectTeamMode('member')">
+                <div class="team-mode-radio"></div>
+                <div>
+                  <div class="team-mode-title">我是團員</div>
+                  <div class="team-mode-desc">輸入朋友給的代號</div>
+                </div>
+              </div>
+            </div>
+            
+            <!-- 團長顯示代號 -->
+            <div class="team-code-display" id="teamCodeDisplay">
+              <div class="team-code-label">YOUR TEAM CODE</div>
+              <div class="team-code-value" id="generatedCode">SCS000</div>
+              <div class="team-code-actions">
+                <button type="button" class="team-code-btn" onclick="copyCode()">📋 複製代號</button>
+                <button type="button" class="team-code-btn" onclick="shareToLine()">💬 LINE 分享</button>
+                <button type="button" class="team-code-btn" onclick="regenerateCode()">🎲 重新生成</button>
+              </div>
+              <div class="team-code-note">
+                請將此代號傳給同團的朋友，讓他們在報名時選擇「我是團員」並輸入此代號。
+              </div>
+            </div>
+            
+            <!-- 團員輸入代號 -->
+            <div class="team-code-input-wrap" id="teamCodeInputWrap">
+              <label class="form-label">輸入團長給的代號</label>
+              <input type="text" class="team-code-input" id="teamCodeInput" placeholder="SCS000" maxlength="6" oninput="validateTeamCode()">
+              <div class="team-code-status" id="teamCodeStatus"></div>
+            </div>
+          </div>
+        </div>
+        
+        <!-- 優惠勾選 -->
+        <div class="form-section">
+          <div class="form-section-title">💎 優惠選項</div>
+          <div class="form-checkboxes">
+            <label class="form-checkbox checked" id="earlybirdCheckbox">
+              <input type="checkbox" name="earlybird" checked onchange="toggleCheckbox(this, 'earlybirdCheckbox'); calculateFormPrice();">
+              <div class="form-checkbox-label">5/15 前報名（早鳥）</div>
+              <div class="form-checkbox-amount">-$500</div>
+            </label>
+            <label class="form-checkbox" id="referralCheckbox">
+              <input type="checkbox" name="referral" onchange="toggleCheckbox(this, 'referralCheckbox'); calculateFormPrice();">
+              <div class="form-checkbox-label">舊生推薦（推廣營限定）</div>
+              <div class="form-checkbox-amount">-$300</div>
+            </label>
+          </div>
+          <div class="form-field" style="margin-top:10px;">
+            <label class="form-label">推薦人姓名 <span class="form-label-hint">（若有舊生推薦請填）</span></label>
+            <input type="text" class="form-input" name="referrerName">
+          </div>
+        </div>
+        
+        <!-- 健康狀況 -->
+        <div class="form-section">
+          <div class="form-section-title">⚠️ 其他資訊</div>
+          <div class="form-row">
+            <div class="form-field">
+              <label class="form-label">孩子特殊健康狀況 <span class="form-label-hint">（若無請填「無」）</span></label>
+              <textarea class="form-textarea" name="special" placeholder="例：花生過敏、氣喘、近期扭傷等" required></textarea>
+              <div class="form-error">請填寫（若無請填「無」）</div>
+            </div>
+          </div>
+          <div class="form-row">
+            <div class="form-field">
+              <label class="form-label">備註 <span class="form-label-hint">（選填）</span></label>
+              <textarea class="form-textarea" name="notes" placeholder="有任何想告訴我們的事..."></textarea>
+            </div>
+          </div>
+        </div>
+        
+        <!-- 金額試算 -->
+        <div class="price-summary">
+          <div class="price-summary-title">💰 應付金額</div>
+          <div id="priceBreakdown">
+            <div class="price-line"><span>原價</span><span>$0</span></div>
+          </div>
+          <div class="price-line price-line-total">
+            <span>小計</span>
+            <span class="price-value" id="formFinalPrice">$0</span>
+          </div>
+        </div>
+        
+        <!-- 同意條款 -->
+        <div class="form-section">
+          <label class="form-checkbox checked" id="agreeCheckbox">
+            <input type="checkbox" name="agree" id="agreeInput" checked onchange="toggleCheckbox(this, 'agreeCheckbox')">
+            <div class="form-checkbox-label">我已閱讀並同意報名條款（含退費辦法、肖像權等）</div>
+          </label>
+        </div>
+        
+        <!-- 送出 -->
+        <div class="form-submit-area">
+          <button type="submit" class="form-submit-btn" id="submitBtn">🚀 確認送出報名</button>
+          <div class="form-submit-hint">
+            送出後我們將於 24 小時內透過 LINE 聯繫確認。<br>
+            付款方式與細節將在聯繫時告知。
+          </div>
+        </div>
+      </form>
+    </div>
+    
+    <!-- 成功頁面 -->
+    <div class="success-screen" id="successScreen">
+      <div class="success-icon">✓</div>
+      <h2 class="success-title">報名成功！</h2>
+      <p class="success-desc">
+        我們已收到您的報名資料，<br>
+        將於 24 小時內透過 LINE 聯繫確認細節。
+      </p>
+      
+      <div class="success-code-display" id="successCodeBox" style="display:none;">
+        <div class="team-code-label">YOUR TEAM CODE</div>
+        <div class="team-code-value" id="successCode">SCS000</div>
+        <div class="team-code-actions">
+          <button type="button" class="team-code-btn" onclick="copyCodeFromSuccess()">📋 複製</button>
+          <button type="button" class="team-code-btn" onclick="shareToLineFromSuccess()">💬 LINE 分享</button>
+        </div>
+        <div class="team-code-note" id="successCodeNote">
+          請將此代號傳給同團的朋友使用。
+        </div>
+      </div>
+      
+      <div class="success-info-box">
+        <strong>📋 接下來的步驟：</strong><br>
+        1. 我們將透過 LINE 加您為好友並確認細節<br>
+        2. 通知您付款方式（匯款/轉帳）<br>
+        3. 收款後正式完成報名<br><br>
+        <strong>📅 關鍵時程：</strong><br>
+        • 5/15 前 — 早鳥優惠截止<br>
+        • 5/20 — 開班公告<br>
+        • 6/30 — 最終報名截止
+      </div>
+      
+      <div class="success-actions">
+        <button type="button" class="team-code-btn" onclick="closeRegister()">關閉</button>
+        <button type="button" class="team-code-btn" onclick="resetRegisterForm()">報名下一位孩子</button>
+      </div>
+    </div>
+    
+  </div>
+</div>
+
+<!-- FOOTER -->
+<footer class="footer">
+  <div class="footer-logo">
+    <img src="images/logo.svg" alt="SCS">
+  </div>
+  <div class="footer-brand">SOCCER STAR.FC</div>
+  <p style="color: var(--muted); font-size: 11px; letter-spacing: 0.15em; margin-bottom: 16px;">EST. 2020</p>
+  <p>台北天母 · 新北板橋 · 新北北大特區</p>
+  <p>LINE 官方：scsfc2020</p>
+  <div class="footer-line"></div>
+  <small>© 2026 Soccer Star FC. All rights reserved.</small>
+</footer>
+
+<!-- FLOATING BUTTONS -->
+<div class="floating">
+  <a href="javascript:void(0)" onclick="openRegisterForm()" class="floating-btn register">📝 立即報名</a>
+  <a href="https://line.me/ti/p/EikA5dF7GE" class="floating-btn line">💬 LINE 諮詢</a>
+</div>
+
+<script>
+// ========================================
+// 課表資料
+// ========================================
+const scheduleData = {
+  'promo3': {
+    batch: 'BATCH 01A',
+    title: '板橋推廣營 3 天',
+    subtitle: '推廣營 · 陌生客體驗、輕鬆有趣、建立信任',
+    meta: ['📅 7/1 - 7/3', '📍 板橋', '⏰ 08:00-18:00', '⭐ 國家 B 級教練', '👥 師生比 1:8', '🍱 含餐'],
+    days: [
+      { name: 'Day 1 - 認識足球', slots: [
+        { time: '08:00-08:30', title: '🌅 晨間托育', desc: '自由活動、靜態遊戲（免費）', type: 'free' },
+        { time: '08:30-09:00', title: '📝 報到 + 破冰遊戲', desc: '分組介紹、暖身跑跳' },
+        { time: '09:00-10:30', title: '⚽ 球感建立', desc: '認識足球、走球、停球' },
+        { time: '10:30-12:00', title: '🎪 足球遊戲', desc: '紅綠燈、鬼抓人（寓教於樂）' },
+        { time: '12:00-13:00', title: '🍱 午餐 + 午休', desc: '營養午餐、休息時間' },
+        { time: '13:00-14:30', title: '🤼 3v3 迷你賽', desc: '快樂比賽、體驗對抗' },
+        { time: '14:30-15:30', title: '👥 教練示範', desc: '動作修正、技術回顧' },
+        { time: '15:30-16:00', title: '🧘 收操', desc: '伸展放鬆、當日重點' },
+        { time: '16:00-18:00', title: '🌆 課後托育', desc: '足球基本動作訓練（選配付費）', type: 'optional' },
+      ]},
+      { name: 'Day 2 - 愛上足球', slots: [
+        { time: '08:00-08:30', title: '🌅 晨間托育', desc: '（免費）', type: 'free' },
+        { time: '08:30-09:00', title: '🏃 動態熱身', desc: '音樂跑跳、協調性訓練' },
+        { time: '09:00-10:30', title: '🎯 傳接球基礎', desc: '短傳、胸部停球' },
+        { time: '10:30-12:00', title: '🚧 盤帶闖關', desc: '三角錐障礙' },
+        { time: '12:00-13:00', title: '🍱 午餐 + 午休', desc: '' },
+        { time: '13:00-14:30', title: '📋 認識位置', desc: '戶外跑位教學' },
+        { time: '14:30-15:30', title: '⚔️ 2v2 對抗', desc: '實戰練習' },
+        { time: '15:30-16:00', title: '🧘 收操', desc: '' },
+        { time: '16:00-18:00', title: '🌆 課後托育', desc: '（選配）', type: 'optional' },
+      ]},
+      { name: 'Day 3 - 我會踢球', slots: [
+        { time: '08:00-08:30', title: '🌅 晨間托育', desc: '（免費）', type: 'free' },
+        { time: '08:30-09:00', title: '🏃 動態熱身 + 前日複習', desc: '' },
+        { time: '09:00-10:30', title: '⚽ 射門技巧', desc: '正面射、側面射' },
+        { time: '10:30-12:00', title: '🧤 小守門員', desc: '撲球基礎' },
+        { time: '12:00-13:00', title: '🍱 午餐 + 午休', desc: '' },
+        { time: '13:00-14:30', title: '🏆 綜合比賽', desc: '5v5 比賽' },
+        { time: '14:30-15:30', title: '👨‍👩‍👧 家長觀賽', desc: '成果展示' },
+        { time: '15:30-16:00', title: '🎉 頒獎 + 結業證書', desc: '' },
+        { time: '16:00-18:00', title: '🌆 課後托育', desc: '（選配）', type: 'optional' },
+      ]},
+    ],
+    note: '本梯次適合初次接觸足球的孩子，強調「玩中學」。每日課表均為戶外執行，教練會依現場狀況讓孩子喝水休息。',
+  },
+  'promo3b': {
+    batch: 'BATCH 01B',
+    title: '天母推廣營 3 天',
+    subtitle: '推廣營 · 陌生客體驗、輕鬆有趣、建立信任',
+    meta: ['📅 7/1 - 7/3', '📍 天母', '⏰ 08:00-18:00', '⭐ 國家 B 級教練', '👥 師生比 1:8', '🍱 含餐'],
+    days: null,  // 與 promo3 相同
+    copyFrom: 'promo3',
+  },
+  'elite13': {
+    batch: 'BATCH 02',
+    title: '1-3 年級菁英訓練',
+    subtitle: '俱樂部菁英 · 技術精修、個人能力培養',
+    meta: ['📅 7/6 - 7/10', '📍 北大', '⏰ 08:00-18:00', '⭐ 國家 B 級教練', '👥 師生比 1:8', '🍱 含餐'],
+    days: [
+      { name: 'Day 1 - 個人評估', slots: [
+        { time: '08:00-08:30', title: '🌅 晨間托育', desc: '（免費）', type: 'free' },
+        { time: '08:30-09:00', title: '🏃 動態熱身 + 體能測試', desc: '建立個人檔案' },
+        { time: '09:00-10:30', title: '🎯 技術關卡測試', desc: '戶外實作評估' },
+        { time: '10:30-12:00', title: '🏃 協調性訓練', desc: 'SAQ 訓練' },
+        { time: '12:00-13:00', title: '🍱 午餐 + 午休', desc: '' },
+        { time: '13:00-14:30', title: '📋 場地跑位', desc: '認識各位置' },
+        { time: '14:30-15:30', title: '👥 教練示範', desc: '戰術動作示範' },
+        { time: '15:30-16:00', title: '🧘 收操', desc: '' },
+        { time: '16:00-18:00', title: '🌆 課後托育', desc: '（選配）', type: 'optional' },
+      ]},
+      { name: 'Day 2 - 控球技術', slots: [
+        { time: '09:00-10:30', title: '🎯 控球技巧', desc: '內腳背、外腳背' },
+        { time: '10:30-12:00', title: '🎯 射門特訓', desc: '各種角度射門' },
+        { time: '13:00-14:30', title: '⚔️ 4v4 戰術', desc: '小組配合' },
+        { time: '14:30-15:30', title: '💬 個別口頭回饋', desc: '教練一對一' },
+      ]},
+      { name: 'Day 3 - 戰術配合', slots: [
+        { time: '09:00-10:30', title: '🤝 傳球戰術', desc: '三角傳導' },
+        { time: '10:30-12:00', title: '🥅 定位球', desc: '角球、任意球' },
+        { time: '13:00-14:30', title: '🏟️ 7v7 比賽', desc: '戰術執行' },
+        { time: '14:30-15:30', title: '⚔️ 情境對練', desc: '教練當對手' },
+      ]},
+      { name: 'Day 4 - 實戰對抗', slots: [
+        { time: '09:00-10:30', title: '⚔️ 1v1 精修', desc: '護球、過人' },
+        { time: '10:30-12:00', title: '🛡️ 防守戰術', desc: '補位、協防' },
+        { time: '13:00-14:30', title: '🏟️ 8v8 比賽', desc: '全場戰術' },
+        { time: '14:30-15:30', title: '🏃 爆發力', desc: '衝刺訓練' },
+      ]},
+      { name: 'Day 5 - 成果展示', slots: [
+        { time: '09:00-10:30', title: '🎪 技術綜合', desc: '串聯練習' },
+        { time: '10:30-12:00', title: '💪 體能強化', desc: '核心訓練' },
+        { time: '13:00-14:30', title: '🏆 畢業賽', desc: '綜合應用' },
+        { time: '14:30-15:30', title: '👨‍👩‍👧 家長觀賽', desc: '成果展示' },
+        { time: '15:30-16:00', title: '🎉 頒獎 + 結業證書', desc: '' },
+      ]},
+    ],
+    note: '菁英班注重個人技術與團隊戰術。每日結束後教練會給個別口頭回饋，成果展示日可邀請家長觀賽。',
+  },
+  'elite46': {
+    batch: 'BATCH 03',
+    title: '4-6 年級菁英集訓',
+    subtitle: '俱樂部菁英 · 戰術強化、體能爆發',
+    meta: ['📅 7/13 - 7/17', '📍 北大', '⏰ 08:00-18:00', '⭐ 國家 B 級教練', '👥 師生比 1:8', '🍱 含餐'],
+    days: [
+      { name: 'Day 1 - 技術評估', slots: [
+        { time: '09:00-10:30', title: '🎯 技術關卡測試', desc: '戶外綜合評估' },
+        { time: '10:30-12:00', title: '🏃 體能基礎', desc: '有氧+無氧' },
+        { time: '13:00-14:30', title: '📋 場地跑位', desc: '認識各位置' },
+        { time: '14:30-15:30', title: '👥 教練示範', desc: '戰術動作' },
+      ]},
+      { name: 'Day 2 - 控球精修', slots: [
+        { time: '09:00-10:30', title: '🎯 控球精修', desc: '高速控球' },
+        { time: '10:30-12:00', title: '🎯 射門進階', desc: '高速射門' },
+        { time: '13:00-14:30', title: '🏟️ 7v7 實戰', desc: '戰術演練' },
+        { time: '14:30-15:30', title: '💬 個別回饋', desc: '教練一對一' },
+      ]},
+      { name: 'Day 3 - 快攻戰術', slots: [
+        { time: '09:00-10:30', title: '⚡ 快攻戰術', desc: '反擊配合' },
+        { time: '10:30-12:00', title: '🥅 定位球戰術', desc: '' },
+        { time: '13:00-14:30', title: '🏟️ 8v8 實戰', desc: '全場戰術' },
+        { time: '14:30-15:30', title: '⚔️ 情境對練', desc: '教練當對手' },
+      ]},
+      { name: 'Day 4 - 整體防守', slots: [
+        { time: '09:00-10:30', title: '🛡️ 防守體系', desc: '整體防守' },
+        { time: '10:30-12:00', title: '⚔️ 1v1 高強度', desc: '' },
+        { time: '13:00-14:30', title: '🏟️ 8v8 完整比賽', desc: '' },
+        { time: '14:30-15:30', title: '🏃 高強度間歇', desc: '' },
+      ]},
+      { name: 'Day 5 - 總決賽', slots: [
+        { time: '09:00-10:30', title: '🎪 綜合技戰術', desc: '全面複習' },
+        { time: '10:30-12:00', title: '💪 比賽體能', desc: '間歇訓練' },
+        { time: '13:00-14:30', title: '🏆 總決賽', desc: '分組對抗' },
+        { time: '14:30-15:30', title: '👨‍👩‍👧 家長觀賽', desc: '成果展示' },
+        { time: '15:30-16:00', title: '🎉 頒獎 + 結業證書', desc: '' },
+      ]},
+    ],
+    note: '高年級菁英班，注重戰術深化與體能強化。Day 4 的 8v8 完整比賽是本梯高峰。',
+  },
+  'promo5': {
+    batch: 'BATCH 04A',
+    title: '板橋推廣營 5 天',
+    subtitle: '推廣營 · 建立較完整能力、循序漸進',
+    meta: ['📅 7/20 - 7/24', '📍 板橋', '⏰ 08:00-18:00', '⭐ 國家 B 級教練', '👥 師生比 1:8', '🍱 含餐'],
+    days: [
+      { name: 'Day 1 - 能力評估', slots: [
+        { time: '09:00-10:30', title: '⚽ 球感評估', desc: '能力分級' },
+        { time: '10:30-12:00', title: '🚧 帶球穿梭', desc: '障礙訓練' },
+        { time: '13:00-14:30', title: '🤼 3v3 比賽', desc: '簡易規則' },
+        { time: '14:30-15:30', title: '👥 動作修正', desc: '個別指導' },
+      ]},
+      { name: 'Day 2 - 控球進階', slots: [
+        { time: '09:00-10:30', title: '🎯 控球進階', desc: '內外腳背' },
+        { time: '10:30-12:00', title: '🎯 射門訓練', desc: '不同角度' },
+        { time: '13:00-14:30', title: '🎮 闖關遊戲', desc: '技術綜合' },
+        { time: '14:30-15:30', title: '🎪 創意比賽', desc: '特殊規則' },
+      ]},
+      { name: 'Day 3 - 團隊合作', slots: [
+        { time: '09:00-10:30', title: '🤝 團隊合作', desc: '傳接配合' },
+        { time: '10:30-12:00', title: '🥅 守門專題', desc: '撲救技巧' },
+        { time: '13:00-14:30', title: '🤼 4v4 比賽', desc: '戰術入門' },
+        { time: '14:30-15:30', title: '⚔️ 位置輪替', desc: '多位置嘗試' },
+      ]},
+      { name: 'Day 4 - 對抗進階', slots: [
+        { time: '09:00-10:30', title: '⚔️ 對抗進階', desc: '1v1 攻防' },
+        { time: '10:30-12:00', title: '📋 陣型跑位', desc: '場地實走' },
+        { time: '13:00-14:30', title: '⚔️ 教練示範', desc: '情境比賽' },
+        { time: '14:30-15:30', title: '🏃 進階體能', desc: '爆發力' },
+      ]},
+      { name: 'Day 5 - 期末比賽', slots: [
+        { time: '09:00-10:30', title: '🎪 技術總結', desc: '全部複習' },
+        { time: '10:30-12:00', title: '💪 體能遊戲', desc: '趣味競技' },
+        { time: '13:00-14:30', title: '🏆 期末比賽', desc: '分組對抗' },
+        { time: '14:30-15:30', title: '👨‍👩‍👧 家長觀賽', desc: '成果展示' },
+        { time: '15:30-16:00', title: '🎉 頒獎結業', desc: '' },
+      ]},
+    ],
+    note: '5 天推廣營比 3 天版更完整，第 5 天的期末比賽能看到孩子明顯進步。',
+  },
+  'promo5b': {
+    batch: 'BATCH 04B',
+    title: '天母推廣營 5 天',
+    subtitle: '推廣營 · 建立較完整能力、循序漸進',
+    meta: ['📅 7/20 - 7/24', '📍 天母', '⏰ 08:00-18:00', '⭐ 國家 B 級教練', '👥 師生比 1:8', '🍱 含餐'],
+    copyFrom: 'promo5',
+  },
+  'combo': {
+    batch: 'BATCH 06',
+    title: '上下午 U8 雙班（全日託管）',
+    subtitle: '全日託管包 · 主打雙薪家庭',
+    meta: ['📅 8/10 - 8/14', '📍 天母', '⏰ 08:00-18:00', '⭐ 國家 B 級教練', '👥 師生比 1:8', '🍱 含餐'],
+    days: [
+      { name: '全日課表（每日同結構）', slots: [
+        { time: '08:00-08:30', title: '🌅 晨間托育', desc: '（免費）', type: 'free' },
+        { time: '08:30-09:00', title: '📝 報到 + 動態熱身', desc: '律動音樂' },
+        { time: '09:00-10:15', title: '⚽ 球感練習', desc: '每日主題不同' },
+        { time: '10:15-11:15', title: '🎯 技術訓練', desc: '當日重點' },
+        { time: '11:15-11:45', title: '🎪 足球遊戲', desc: '小型比賽' },
+        { time: '11:45-12:00', title: '🧘 上午收操', desc: '短暫結束儀式' },
+        { time: '12:00-13:30', title: '🍱 午餐 + 午休 + 自由遊戲', desc: '營養午餐、午睡' },
+        { time: '13:30-14:00', title: '📝 下午報到 + 熱身', desc: '' },
+        { time: '14:00-15:00', title: '⚽ 技術訓練', desc: '傳射運' },
+        { time: '15:00-16:00', title: '📋 戰術跑位', desc: '場上實際位置教學' },
+        { time: '16:00-16:45', title: '🏟️ 實戰比賽', desc: '逐日升級強度' },
+        { time: '16:45-17:00', title: '🧘 收操', desc: '當日重點提醒' },
+        { time: '17:00-18:00', title: '🌆 課後托育', desc: '（選配）', type: 'optional' },
+      ]},
+    ],
+    note: '本梯次為「全日託管包」，結合上午 6a 班 + 下午 6b 班，中間安排充足午餐午休。最適合需要整天照顧孩子的雙薪家庭。',
+  },
+  'u8cup': {
+    batch: 'BATCH 07',
+    title: 'U8 板橋盃全日',
+    subtitle: '板橋盃賽前訓練 · 比賽模擬',
+    meta: ['📅 8/17 - 8/21', '📍 天母', '⏰ 08:00-18:00', '⭐ 國家 B 級教練', '👥 師生比 1:8', '🍱 含餐', '🏆 賽前訓'],
+    days: [
+      { name: 'Day 1 - 基礎建立', slots: [
+        { time: '09:00-10:30', title: '🎯 技術關卡測試', desc: '戶外個人測試' },
+        { time: '10:30-12:00', title: '🎯 基礎射門', desc: '準確性訓練' },
+        { time: '13:00-14:30', title: '🏟️ 5v5 訓練賽', desc: '基礎比賽' },
+        { time: '14:30-15:30', title: '👥 教練示範情境', desc: '過往賽事' },
+      ]},
+      { name: 'Day 2 - 技術精修', slots: [
+        { time: '09:00-10:30', title: '⚽ 控球進階', desc: '高速控球' },
+        { time: '10:30-12:00', title: '🚧 盤帶突破', desc: '1v1 過人' },
+        { time: '13:00-14:30', title: '🏟️ 7v7 戰術', desc: '位置訓練' },
+        { time: '14:30-15:30', title: '📋 場地實地跑位', desc: '板橋盃場型' },
+      ]},
+      { name: 'Day 3 - 戰術執行', slots: [
+        { time: '09:00-10:30', title: '🤝 傳球配合', desc: '三角傳導' },
+        { time: '10:30-12:00', title: '🥅 守門專題', desc: '板橋盃規則' },
+        { time: '13:00-14:30', title: '🏟️ 7v7 實戰', desc: '板橋盃規則' },
+        { time: '14:30-15:30', title: '⚔️ 情境對練', desc: '教練扮演對手' },
+      ]},
+      { name: 'Day 4 - 模擬實戰', slots: [
+        { time: '09:00-10:30', title: '🏟️ 攻守演練', desc: '戰術執行' },
+        { time: '10:30-12:00', title: '⚔️ 對抗強度', desc: '模擬比賽' },
+        { time: '13:00-14:30', title: '🏆 模擬比賽', desc: '完整流程' },
+        { time: '14:30-15:30', title: '📋 戰術熱身', desc: '賽前跑位' },
+      ]},
+      { name: 'Day 5 - 畢業盃', slots: [
+        { time: '09:00-10:30', title: '🎪 賽前調整', desc: '技術複習' },
+        { time: '10:30-12:00', title: '🏃 賽前熱身', desc: '動態準備' },
+        { time: '13:00-14:30', title: '🏆 畢業盃', desc: '榮譽之戰' },
+        { time: '14:30-15:30', title: '👨‍👩‍👧 家長觀賽', desc: '成果展示' },
+        { time: '15:30-16:00', title: '🎉 頒獎 + 賽事手冊', desc: '' },
+      ]},
+    ],
+    note: '專為 8/20-8/23 板橋盃實際賽事設計的衝刺訓練營。每日課表緊扣賽事規則，Day 5 畢業盃是賽前最後磨合。',
+  },
+  'allage': {
+    batch: 'BATCH 08',
+    title: '全年齡大集訓',
+    subtitle: '俱樂部 · 開學前集訓、混齡對抗',
+    meta: ['📅 8/24 - 8/28', '📍 北大', '⏰ 08:00-18:00', '⭐ 國家 B 級教練', '👥 師生比 1:8', '🍱 含餐'],
+    days: [
+      { name: 'Day 1 - 分級測試', slots: [
+        { time: '09:00-10:30', title: '🎯 分級測試', desc: '戶外關卡評估' },
+        { time: '10:30-12:00', title: '🎯 技術精修', desc: '依程度分組' },
+        { time: '13:00-14:30', title: '🏟️ 混齡分隊', desc: '3 隊對抗' },
+        { time: '14:30-15:30', title: '⚽ 足球聊天圓圈', desc: '秋季課程分享' },
+      ]},
+      { name: 'Day 2 - 技術複習', slots: [
+        { time: '09:00-10:30', title: '⚽ 技術複習', desc: '暑假成果' },
+        { time: '10:30-12:00', title: '⚔️ 對抗賽', desc: '同齡對決' },
+        { time: '13:00-14:30', title: '🏟️ 循環賽 R1', desc: '小組賽第 1 輪' },
+        { time: '14:30-15:30', title: '👥 教練示範', desc: '精彩動作' },
+      ]},
+      { name: 'Day 3 - 團隊建立', slots: [
+        { time: '09:00-10:30', title: '🤝 團隊建立', desc: '跨齡合作' },
+        { time: '10:30-12:00', title: '🎯 進階技術', desc: '高難度動作' },
+        { time: '13:00-14:30', title: '🏟️ 循環賽 R2', desc: '小組賽第 2 輪' },
+        { time: '14:30-15:30', title: '💬 個別口頭回饋', desc: '暑期總評' },
+      ]},
+      { name: 'Day 4 - 準決賽', slots: [
+        { time: '09:00-10:30', title: '🏟️ 戰術整合', desc: '全隊配合' },
+        { time: '10:30-12:00', title: '🛡️ 攻守轉換', desc: '實戰演練' },
+        { time: '13:00-14:30', title: '🏆 準決賽', desc: '' },
+        { time: '14:30-15:30', title: '🏆 團體比賽', desc: '' },
+      ]},
+      { name: 'Day 5 - 決賽', slots: [
+        { time: '09:00-10:30', title: '🎪 秋季預告', desc: '新學年銜接' },
+        { time: '10:30-12:00', title: '💪 體能大考驗', desc: '綜合測試' },
+        { time: '13:00-14:30', title: '🏆 決賽 + 頒獎', desc: '' },
+        { time: '14:30-15:30', title: '👨‍👩‍👧 結業典禮', desc: '' },
+        { time: '15:30-16:00', title: '🎉 頒獎 + 紀念品', desc: '' },
+      ]},
+    ],
+    note: '暑假最後一梯，承先啟後連接秋季課程。混齡分隊讓低年級向高年級學習，高年級發揮領導力。',
+  },
+};
+
+// 處理「copyFrom」的梯次，複製原梯次的課表
+Object.keys(scheduleData).forEach(key => {
+  const item = scheduleData[key];
+  if (item.copyFrom && scheduleData[item.copyFrom]) {
+    item.days = scheduleData[item.copyFrom].days;
+    item.note = scheduleData[item.copyFrom].note;
+  }
+});
+
+// ========================================
+// Modal 功能
+// ========================================
+function openSchedule(scheduleId) {
+  const data = scheduleData[scheduleId];
+  if (!data) return;
+
+  const modalContent = document.getElementById('modalContent');
+  let html = `
+    <div class="modal-header">
+      <div class="modal-batch">${data.batch}</div>
+      <h2 class="modal-title">${data.title}</h2>
+      <div class="modal-subtitle">${data.subtitle}</div>
+      <div class="modal-meta">
+        ${data.meta.map(m => `<span class="modal-meta-item">${m}</span>`).join('')}
+      </div>
+    </div>
+    <div class="modal-body">
+  `;
+
+  data.days.forEach((day, idx) => {
+    html += `
+      <div class="schedule-day">
+        <div class="day-header">
+          <div class="day-badge">DAY ${idx + 1}</div>
+          <div class="day-title">${day.name.replace(/^Day \d+ - /, '')}</div>
+        </div>
+    `;
+    day.slots.forEach(slot => {
+      const cls = slot.type === 'free' || slot.type === 'optional' ? ' highlight' : '';
+      let extra = '';
+      if (slot.type === 'free') extra = '<span class="slot-free">FREE</span>';
+      if (slot.type === 'optional') extra = '<span class="slot-optional">OPTIONAL</span>';
+      html += `
+        <div class="schedule-slot${cls}">
+          <div class="slot-time">${slot.time}</div>
+          <div class="slot-content">
+            <div class="slot-title">${slot.title}${extra}</div>
+            ${slot.desc ? `<div class="slot-desc">${slot.desc}</div>` : ''}
+          </div>
+        </div>
+      `;
+    });
+    html += `</div>`;
+  });
+
+  if (data.note) {
+    html += `
+      <div class="schedule-note">
+        <strong>💡 備註：</strong>${data.note}
+      </div>
+    `;
+  }
+
+  html += `
+    </div>
+    <div class="modal-footer">
+      <a href="#register" class="modal-btn-primary" onclick="closeSchedule()">立即報名 →</a>
+      <a href="https://line.me/ti/p/EikA5dF7GE" class="modal-btn-secondary">📱 LINE 諮詢</a>
+    </div>
+  `;
+
+  modalContent.innerHTML = html;
+  document.getElementById('scheduleModal').classList.add('active');
+  document.body.style.overflow = 'hidden';
+  // 滾動到頂部
+  document.querySelector('.modal').scrollTop = 0;
+}
+
+function closeSchedule(event) {
+  if (event && event.target !== event.currentTarget) return;
+  document.getElementById('scheduleModal').classList.remove('active');
+  document.body.style.overflow = '';
+}
+
+// ESC 鍵關閉
+document.addEventListener('keydown', (e) => {
+  if (e.key === 'Escape') closeSchedule();
+});
+
+// ========================================
+// Registration Form - 線上報名表單
+// ========================================
+
+// ⚠️ 重要：請將此處替換為您的 Google Apps Script 網頁應用程式 URL
+const APPS_SCRIPT_URL = 'https://script.google.com/macros/s/AKfycbx4XVlK-5KlxedyZzbux9rFrP5lPGvh6NGXmbdmcTv8aNqRESiRP0AaLzMizyfs-tHaJQ/exec';
+
+// 梯次資料（用於表單選項與價格計算）
+const classesData = [
+  // 單梯方案
+  { id: '1a', name: '[梯 1a] 板橋推廣營 3 天', date: '7/1-7/3', location: '板橋', price: 3800, type: 'single' },
+  { id: '1b', name: '[梯 1b] 天母推廣營 3 天', date: '7/1-7/3', location: '天母', price: 3800, type: 'single' },
+  { id: '2',  name: '[梯 2] 1-3 年級菁英訓練',  date: '7/6-7/10', location: '北大', price: 9800, type: 'single' },
+  { id: '3',  name: '[梯 3] 4-6 年級菁英集訓',  date: '7/13-7/17', location: '北大', price: 10800, type: 'single' },
+  { id: '4a', name: '[梯 4a] 板橋推廣營 5 天', date: '7/20-7/24', location: '板橋', price: 6500, type: 'single' },
+  { id: '4b', name: '[梯 4b] 天母推廣營 5 天', date: '7/20-7/24', location: '天母', price: 6500, type: 'single' },
+  { id: '6a', name: '[梯 6a] 上午國小半日',    date: '8/10-8/14', location: '天母', price: 5800, type: 'single' },
+  { id: '6b', name: '[梯 6b] 下午 U8 半日',     date: '8/10-8/14', location: '天母', price: 5800, type: 'single' },
+  { id: '6c', name: '[梯 6c] 全日託管包',      date: '8/10-8/14', location: '天母', price: 9800, type: 'single' },
+  { id: '7',  name: '[梯 7] U8 板橋盃全日',    date: '8/17-8/21', location: '天母', price: 8800, type: 'single' },
+  { id: '8',  name: '[梯 8] 全年齡大集訓',     date: '8/24-8/28', location: '北大', price: 9800, type: 'single' },
+  
+  // 套票方案（原價合計折扣後價格）
+  { id: 'pkg1', name: '[套票] 1-3 年級全套（梯 2 + 梯 8）', date: '7/6-7/10 + 8/24-8/28', location: '北大', price: 18400, origPrice: 19600, save: 1200, type: 'package' },
+  { id: 'pkg2', name: '[套票] 4-6 年級全套（梯 3 + 梯 8）', date: '7/13-7/17 + 8/24-8/28', location: '北大', price: 19300, origPrice: 20600, save: 1300, type: 'package' },
+  { id: 'pkg3', name: '[套票] 板橋盃衝刺（梯 6b + 梯 7）',   date: '8/10-8/14 + 8/17-8/21', location: '天母', price: 13700, origPrice: 14600, save: 900, type: 'package' },
+  { id: 'pkg4', name: '[套票] 板橋推廣連報（梯 1a + 梯 4a）', date: '7/1-7/3 + 7/20-7/24', location: '板橋', price: 9700, origPrice: 10300, save: 600, type: 'package' },
+  { id: 'pkg5', name: '[套票] 天母推廣連報（梯 1b + 梯 4b）', date: '7/1-7/3 + 7/20-7/24', location: '天母', price: 9700, origPrice: 10300, save: 600, type: 'package' },
+];
+
+// 表單狀態
+let formState = {
+  teamSize: 1,
+  teamDiscount: 0,
+  teamMode: null,  // 'leader' | 'member'
+  teamCode: null,  // 最終要送出的團報代號
+  selectedClasses: [],  // 選的梯次 id 列表
+};
+
+// 生成梯次選項
+function renderClassOptions() {
+  const container = document.getElementById('classCheckboxes');
+  if (!container) return;
+  
+  const singles = classesData.filter(c => c.type === 'single');
+  const packages = classesData.filter(c => c.type === 'package');
+  
+  const renderItem = (c) => {
+    const priceDisplay = c.type === 'package' 
+      ? `<div class="class-checkbox-price-group">
+           <div class="class-checkbox-price">$${c.price.toLocaleString()}</div>
+           <div class="class-checkbox-orig">原價 $${c.origPrice.toLocaleString()}</div>
+           <div class="class-checkbox-save">省 $${c.save.toLocaleString()}</div>
+         </div>`
+      : `<div class="class-checkbox-price">$${c.price.toLocaleString()}</div>`;
+    
+    return `
+      <label class="class-checkbox ${c.type === 'package' ? 'is-package' : ''}" data-id="${c.id}">
+        <input type="checkbox" value="${c.id}" data-price="${c.price}" data-name="${c.name}" onchange="onClassChange(this)">
+        <div class="class-checkbox-label">
+          ${c.name}<br>
+          <span style="font-size:11px;color:var(--muted);">📅 ${c.date}  📍 ${c.location}</span>
+        </div>
+        ${priceDisplay}
+      </label>
+    `;
+  };
+  
+  container.innerHTML = `
+    <div class="class-group-label">🎯 單梯方案</div>
+    ${singles.map(renderItem).join('')}
+    <div class="class-group-label package-label">📦 套票方案（含折扣，可再疊加早鳥與團報）</div>
+    ${packages.map(renderItem).join('')}
+  `;
+}
+
+function onClassChange(input) {
+  const label = input.closest('.class-checkbox');
+  label.classList.toggle('selected', input.checked);
+  
+  // 更新選擇列表
+  formState.selectedClasses = Array.from(document.querySelectorAll('.class-checkbox input:checked'))
+    .map(i => i.value);
+  
+  // 清除錯誤
+  document.getElementById('classesError').style.display = 'none';
+  
+  calculateFormPrice();
+}
+
+// 選擇團報人數
+function selectTeamSize(btn, size, discount) {
+  document.querySelectorAll('.form-group-option').forEach(b => b.classList.remove('active'));
+  btn.classList.add('active');
+  formState.teamSize = size;
+  formState.teamDiscount = discount;
+  
+  // 顯示/隱藏團報代號區塊
+  const section = document.getElementById('teamCodeSection');
+  if (size >= 2) {
+    section.classList.add('show');
+  } else {
+    section.classList.remove('show');
+    // 重置團報狀態
+    formState.teamMode = null;
+    formState.teamCode = null;
+    document.querySelectorAll('.team-mode-option').forEach(o => o.classList.remove('active'));
+    document.getElementById('teamCodeDisplay').classList.remove('show');
+    document.getElementById('teamCodeInputWrap').classList.remove('show');
+  }
+  
+  calculateFormPrice();
+}
+
+// 選擇團報模式
+function selectTeamMode(mode) {
+  document.querySelectorAll('.team-mode-option').forEach(o => o.classList.remove('active'));
+  event.currentTarget.classList.add('active');
+  formState.teamMode = mode;
+  
+  if (mode === 'leader') {
+    document.getElementById('teamCodeInputWrap').classList.remove('show');
+    document.getElementById('teamCodeDisplay').classList.add('show');
+    // 生成代號
+    regenerateCode();
+  } else {
+    document.getElementById('teamCodeDisplay').classList.remove('show');
+    document.getElementById('teamCodeInputWrap').classList.add('show');
+    formState.teamCode = null;
+  }
+}
+
+// 生成團報代號 SCS + 三碼數字
+function generateTeamCode() {
+  const num = Math.floor(Math.random() * 1000).toString().padStart(3, '0');
+  return 'SCS' + num;
+}
+
+function regenerateCode() {
+  const code = generateTeamCode();
+  formState.teamCode = code;
+  document.getElementById('generatedCode').textContent = code;
+}
+
+// 複製代號
+function copyCode() {
+  const code = formState.teamCode;
+  if (!code) return;
+  navigator.clipboard.writeText(code).then(() => {
+    alert('✅ 已複製代號：' + code);
+  }).catch(() => {
+    // Fallback: 手動選取
+    const temp = document.createElement('input');
+    temp.value = code;
+    document.body.appendChild(temp);
+    temp.select();
+    document.execCommand('copy');
+    document.body.removeChild(temp);
+    alert('✅ 已複製代號：' + code);
+  });
+}
+
+// LINE 分享
+function shareToLine() {
+  const code = formState.teamCode;
+  if (!code) return;
+  const text = `嗨！我報名了 Soccer Star FC 2026 夏令營 ⚽\n\n🎯 我們的團報代號：${code}\n\n請在報名時選擇「我是團員」並輸入這個代號，\n我們 ${formState.teamSize} 人團報每人可省 $${formState.teamDiscount}！\n\n報名網址：${window.location.href}`;
+  const url = 'https://line.me/R/msg/text/?' + encodeURIComponent(text);
+  window.open(url, '_blank');
+}
+
+// 驗證團員輸入的代號
+function validateTeamCode() {
+  const input = document.getElementById('teamCodeInput');
+  const status = document.getElementById('teamCodeStatus');
+  let value = input.value.toUpperCase().trim();
+  input.value = value;
+  
+  // SCS + 三碼數字
+  const pattern = /^SCS\d{3}$/;
+  
+  if (!value) {
+    status.textContent = '';
+    status.className = 'team-code-status';
+    formState.teamCode = null;
+    return;
+  }
+  
+  if (pattern.test(value)) {
+    status.textContent = '✅ 代號格式正確，送出時會由系統確認此團是否存在';
+    status.className = 'team-code-status valid';
+    formState.teamCode = value;
+  } else {
+    status.textContent = '❌ 格式錯誤，正確格式為 SCS + 3 位數字（例：SCS042）';
+    status.className = 'team-code-status invalid';
+    formState.teamCode = null;
+  }
+}
+
+// 優惠勾選切換
+function toggleCheckbox(input, labelId) {
+  document.getElementById(labelId).classList.toggle('checked', input.checked);
+}
+
+// 計算金額
+function calculateFormPrice() {
+  // 計算基本價格
+  let basePrice = 0;
+  document.querySelectorAll('.class-checkbox input:checked').forEach(i => {
+    basePrice += parseInt(i.dataset.price);
+  });
+  
+  if (basePrice === 0) {
+    document.getElementById('priceBreakdown').innerHTML = '<div class="price-line" style="color:var(--muted);">請先選擇梯次</div>';
+    document.getElementById('formFinalPrice').textContent = '$0';
+    return;
+  }
+  
+  let breakdown = [];
+  let total = basePrice;
+  breakdown.push(`<div class="price-line"><span>原價（${formState.selectedClasses.length} 梯）</span><span>$${basePrice.toLocaleString()}</span></div>`);
+  
+  // 早鳥
+  const earlybird = document.querySelector('input[name="earlybird"]').checked;
+  if (earlybird) {
+    total -= 500;
+    breakdown.push(`<div class="price-line"><span>早鳥優惠</span><span>-$500</span></div>`);
+  }
+  
+  // 團報
+  if (formState.teamDiscount > 0) {
+    total -= formState.teamDiscount;
+    breakdown.push(`<div class="price-line"><span>${formState.teamSize} 人團報</span><span>-$${formState.teamDiscount}</span></div>`);
+  }
+  
+  // 舊生推薦
+  const referral = document.querySelector('input[name="referral"]').checked;
+  if (referral) {
+    total -= 300;
+    breakdown.push(`<div class="price-line"><span>舊生推薦</span><span>-$300</span></div>`);
+  }
+  
+  document.getElementById('priceBreakdown').innerHTML = breakdown.join('');
+  document.getElementById('formFinalPrice').textContent = '$' + total.toLocaleString();
+}
+
+// 開啟報名 Modal
+function openRegisterForm() {
+  renderClassOptions();
+  calculateFormPrice();
+  document.getElementById('registerModal').classList.add('active');
+  document.body.style.overflow = 'hidden';
+  // 確保看到表單而不是成功畫面
+  document.getElementById('registerFormContent').style.display = 'block';
+  document.getElementById('successScreen').classList.remove('show');
+  document.querySelector('#registerModal .modal').scrollTop = 0;
+}
+
+function closeRegister(event) {
+  if (event && event.target !== event.currentTarget) return;
+  document.getElementById('registerModal').classList.remove('active');
+  document.body.style.overflow = '';
+}
+
+// 重置表單（報名下一位）
+function resetRegisterForm() {
+  document.getElementById('registerForm').reset();
+  formState = {
+    teamSize: 1,
+    teamDiscount: 0,
+    teamMode: null,
+    teamCode: null,
+    selectedClasses: [],
+  };
+  // 重置 UI 狀態
+  document.querySelectorAll('.form-group-option').forEach(b => b.classList.remove('active'));
+  document.querySelector('.form-group-option[data-size="1"]').classList.add('active');
+  document.getElementById('teamCodeSection').classList.remove('show');
+  document.getElementById('teamCodeDisplay').classList.remove('show');
+  document.getElementById('teamCodeInputWrap').classList.remove('show');
+  document.querySelectorAll('.team-mode-option').forEach(o => o.classList.remove('active'));
+  document.querySelectorAll('.class-checkbox').forEach(c => c.classList.remove('selected'));
+  document.getElementById('earlybirdCheckbox').classList.add('checked');
+  document.querySelector('input[name="earlybird"]').checked = true;
+  document.getElementById('referralCheckbox').classList.remove('checked');
+  document.getElementById('agreeCheckbox').classList.add('checked');
+  document.getElementById('agreeInput').checked = true;
+  
+  renderClassOptions();
+  calculateFormPrice();
+  
+  // 顯示表單、隱藏成功
+  document.getElementById('registerFormContent').style.display = 'block';
+  document.getElementById('successScreen').classList.remove('show');
+  document.querySelector('#registerModal .modal').scrollTop = 0;
+}
+
+// 成功畫面的複製/分享
+function copyCodeFromSuccess() {
+  const code = document.getElementById('successCode').textContent;
+  navigator.clipboard.writeText(code).then(() => alert('✅ 已複製代號：' + code));
+}
+
+function shareToLineFromSuccess() {
+  const code = document.getElementById('successCode').textContent;
+  const size = formState.teamSize;
+  const discount = formState.teamDiscount;
+  const text = `嗨！我報名了 Soccer Star FC 2026 夏令營 ⚽\n\n🎯 我們的團報代號：${code}\n\n請在報名時選擇「我是團員」並輸入這個代號，\n我們 ${size} 人團報每人可省 $${discount}！\n\n報名網址：${window.location.href}`;
+  const url = 'https://line.me/R/msg/text/?' + encodeURIComponent(text);
+  window.open(url, '_blank');
+}
+
+// 提交表單
+async function submitRegister(event) {
+  event.preventDefault();
+  
+  // 驗證
+  const form = event.target;
+  const formData = new FormData(form);
+  
+  // 1. 驗證基本欄位（HTML5 自動驗證）
+  if (!form.checkValidity()) {
+    form.reportValidity();
+    return;
+  }
+  
+  // 2. 驗證是否選擇梯次
+  if (formState.selectedClasses.length === 0) {
+    document.getElementById('classesError').style.display = 'block';
+    document.querySelector('#classCheckboxes').scrollIntoView({ behavior: 'smooth', block: 'center' });
+    return;
+  }
+  
+  // 3. 驗證團報
+  if (formState.teamSize >= 2) {
+    if (!formState.teamMode) {
+      alert('請選擇：我是團長 或 我是團員');
+      return;
+    }
+    if (formState.teamMode === 'member' && !formState.teamCode) {
+      alert('請輸入正確格式的團報代號（SCS + 3 位數字）');
+      return;
+    }
+  }
+  
+  // 4. 驗證同意條款
+  if (!document.getElementById('agreeInput').checked) {
+    alert('請勾選同意報名條款');
+    return;
+  }
+  
+  // 準備送出資料
+  const selectedClassNames = formState.selectedClasses.map(id => {
+    const c = classesData.find(cc => cc.id === id);
+    return c ? c.name : id;
+  }).join(' / ');
+  
+  let basePrice = 0;
+  formState.selectedClasses.forEach(id => {
+    const c = classesData.find(cc => cc.id === id);
+    if (c) basePrice += c.price;
+  });
+  
+  const data = {
+    parentName: formData.get('parentName'),
+    parentPhone: formData.get('parentPhone'),
+    lineId: formData.get('lineId'),
+    childName: formData.get('childName'),
+    grade: formData.get('grade'),
+    classes: selectedClassNames,
+    classIds: formState.selectedClasses.join(','),
+    basePrice: basePrice,
+    groupSize: formState.teamSize,
+    teamMode: formState.teamMode || '',
+    teamCode: formState.teamCode || '',
+    earlybird: document.querySelector('input[name="earlybird"]').checked ? '是' : '否',
+    referral: document.querySelector('input[name="referral"]').checked ? '是' : '否',
+    referrerName: formData.get('referrerName') || '',
+    special: formData.get('special'),
+    notes: formData.get('notes') || '',
+  };
+  
+  // 送出
+  const submitBtn = document.getElementById('submitBtn');
+  submitBtn.disabled = true;
+  submitBtn.innerHTML = '<span class="form-loading"></span>送出中...';
+  
+  try {
+    // 如果尚未設定 Apps Script URL，顯示提示
+    if (APPS_SCRIPT_URL === 'YOUR_APPS_SCRIPT_URL') {
+      console.log('📋 報名資料：', data);
+      alert('⚠️ 尚未設定 Apps Script URL！\n\n資料已印在 Console (F12)，請先完成後端設定。\n\n目前僅為前端測試模式。');
+      showSuccessScreen(data);
+      submitBtn.disabled = false;
+      submitBtn.innerHTML = '🚀 確認送出報名';
+      return;
+    }
+    
+    // 送到 Apps Script
+    const response = await fetch(APPS_SCRIPT_URL, {
+      method: 'POST',
+      mode: 'no-cors',  // Apps Script 需要這個設定
+      headers: { 'Content-Type': 'text/plain;charset=utf-8' },
+      body: JSON.stringify(data),
+    });
+    
+    // 因為 no-cors 無法讀取 response，直接顯示成功
+    showSuccessScreen(data);
+    
+  } catch (err) {
+    console.error(err);
+    alert('⚠️ 送出失敗：' + err.message + '\n\n請嘗試重新送出，或直接用 LINE 聯繫我們。');
+    submitBtn.disabled = false;
+    submitBtn.innerHTML = '🚀 確認送出報名';
+  }
+}
+
+function showSuccessScreen(data) {
+  // 顯示成功畫面
+  document.getElementById('registerFormContent').style.display = 'none';
+  document.getElementById('successScreen').classList.add('show');
+  
+  // 若為團長，顯示代號
+  if (data.teamMode === 'leader' && data.teamCode) {
+    document.getElementById('successCodeBox').style.display = 'block';
+    document.getElementById('successCode').textContent = data.teamCode;
+    document.getElementById('successCodeNote').innerHTML = 
+      `請將此代號傳給同團的 ${data.groupSize - 1} 位朋友，讓他們在報名時選擇「我是團員」並輸入此代號。`;
+  } else {
+    document.getElementById('successCodeBox').style.display = 'none';
+  }
+  
+  document.querySelector('#registerModal .modal').scrollTop = 0;
+}
+
+// 初始化
+document.addEventListener('DOMContentLoaded', () => {
+  renderClassOptions();
+});
+
+// Filter
+document.querySelectorAll('.filter-btn').forEach(btn => {
+  btn.addEventListener('click', () => {
+    document.querySelectorAll('.filter-btn').forEach(b => b.classList.remove('active'));
+    btn.classList.add('active');
+    const filter = btn.dataset.filter;
+    document.querySelectorAll('.class-card').forEach(card => {
+      card.style.display = (filter === 'all' || card.dataset.type === filter) ? '' : 'none';
+    });
+  });
+});
+
+// FAQ
+function toggleFaq(el) { el.classList.toggle('open'); }
+
+// Calculator
+let calcState = {
+  basePrice: 9800,
+  groupSize: 1,
+  groupDiscount: 0,
+  earlybird: true,
+  referral: false
+};
+
+function selectGroup(btn, size, discount) {
+  document.querySelectorAll('.calc-option').forEach(b => b.classList.remove('active'));
+  btn.classList.add('active');
+  calcState.groupSize = size;
+  calcState.groupDiscount = discount;
+  updateCalc();
+}
+
+function toggleEarlybird(e) {
+  if (e.target.tagName === 'INPUT') return;
+  e.preventDefault();
+  const cb = document.getElementById('earlybird');
+  cb.checked = !cb.checked;
+  document.getElementById('earlybird-box').classList.toggle('active', cb.checked);
+  calcState.earlybird = cb.checked;
+  updateCalc();
+}
+
+function toggleReferral(e) {
+  if (e.target.tagName === 'INPUT') return;
+  e.preventDefault();
+  const cb = document.getElementById('referral');
+  cb.checked = !cb.checked;
+  document.getElementById('referral-box').classList.toggle('active', cb.checked);
+  calcState.referral = cb.checked;
+  updateCalc();
+}
+
+function updateCalc() {
+  const sel = document.getElementById('classSelect');
+  calcState.basePrice = parseInt(sel.value);
+  let breakdown = [];
+  let total = calcState.basePrice;
+  breakdown.push(['原價', '$' + calcState.basePrice.toLocaleString()]);
+  if (calcState.earlybird) { total -= 500; breakdown.push(['早鳥', '-$500']); }
+  if (calcState.groupDiscount > 0) { total -= calcState.groupDiscount; breakdown.push([calcState.groupSize + ' 人團報', '-$' + calcState.groupDiscount]); }
+  if (calcState.referral) { total -= 300; breakdown.push(['舊生推薦', '-$300']); }
+  const saved = calcState.basePrice - total;
+  document.getElementById('finalPrice').textContent = '$' + total.toLocaleString();
+  document.getElementById('calcBreakdown').innerHTML = breakdown.map(([l, v]) =>
+    '<div class="calc-breakdown-line"><span>' + l + '</span><span>' + v + '</span></div>'
+  ).join('');
+  const totalGroup = total * calcState.groupSize;
+  document.getElementById('totalNote').textContent = calcState.groupSize + ' 人共 $' + totalGroup.toLocaleString();
+  if (saved > 0) {
+    document.getElementById('saved').style.display = 'inline-block';
+    document.getElementById('saved').innerHTML = '🎉 您將省下 $' + saved.toLocaleString();
+  } else {
+    document.getElementById('saved').style.display = 'none';
+  }
+}
+
+function openCalc(price) {
+  const sel = document.getElementById('classSelect');
+  for (let opt of sel.options) {
+    if (parseInt(opt.value) === price) { sel.value = opt.value; break; }
+  }
+  updateCalc();
+  document.getElementById('calculator').scrollIntoView({ behavior: 'smooth' });
+}
+
+updateCalc();
+
+// Fade up
+const observer = new IntersectionObserver((entries) => {
+  entries.forEach(entry => {
+    if (entry.isIntersecting) entry.target.classList.add('visible');
+  });
+}, { threshold: 0.1 });
+document.querySelectorAll('.fade-up').forEach(el => observer.observe(el));
+</script>
+
+</body>
+</html>
