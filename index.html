@@ -1359,6 +1359,150 @@ a { color: inherit; text-decoration: none; }
   .form-row.two-col { grid-template-columns: 1fr 1fr; }
 }
 
+/* ============ KOREA SURVEY MODAL ============ */
+.korea-modal .modal-header {
+  background: linear-gradient(135deg, rgba(205,46,58,0.2), rgba(0,71,160,0.2)) !important;
+}
+.korea-modal .modal-batch {
+  color: #CD2E3A !important;
+}
+
+/* 星級意願評分 */
+.star-rating {
+  display: flex;
+  gap: 8px;
+  justify-content: center;
+  padding: 12px 0;
+}
+.star-btn {
+  background: var(--black-2);
+  border: 1.5px solid var(--line);
+  border-radius: 4px;
+  padding: 14px 16px;
+  font-size: 24px;
+  cursor: pointer;
+  transition: all 0.15s;
+  color: var(--muted);
+  flex: 1;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 4px;
+}
+.star-btn:hover { border-color: var(--orange); }
+.star-btn.active {
+  background: linear-gradient(135deg, rgba(212,175,55,0.2), rgba(232,97,10,0.1));
+  border-color: var(--gold);
+  color: var(--gold);
+}
+.star-btn-num {
+  font-family: 'Bebas Neue', sans-serif;
+  font-size: 18px;
+  letter-spacing: 0.1em;
+  opacity: 0.5;
+}
+.star-btn.active .star-btn-num { opacity: 1; }
+
+.star-label {
+  text-align: center;
+  font-size: 12px;
+  color: var(--muted);
+  margin-top: 8px;
+  min-height: 18px;
+}
+.star-label strong { color: var(--gold); }
+
+/* 日期輸入 */
+.form-input[type="date"] {
+  color: white;
+  font-family: inherit;
+}
+.form-input[type="date"]::-webkit-calendar-picker-indicator {
+  filter: invert(0.7);
+  cursor: pointer;
+}
+
+/* Radio 按鈕組 (是/否) */
+.form-radio-group {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 8px;
+}
+.form-radio-btn {
+  background: var(--black-2);
+  border: 1.5px solid var(--line);
+  border-radius: 2px;
+  padding: 12px;
+  font-size: 13px;
+  font-weight: 700;
+  color: rgba(255,255,255,0.7);
+  cursor: pointer;
+  transition: all 0.15s;
+  text-align: center;
+}
+.form-radio-btn:hover { border-color: rgba(232,97,10,0.5); }
+.form-radio-btn.active {
+  background: var(--orange);
+  border-color: var(--orange);
+  color: white;
+}
+
+/* 費用範圍選擇 */
+.form-budget-options {
+  display: grid;
+  gap: 6px;
+}
+.form-budget-option {
+  background: var(--black-2);
+  border: 1.5px solid var(--line);
+  border-radius: 2px;
+  padding: 12px 14px;
+  font-size: 13px;
+  color: rgba(255,255,255,0.8);
+  cursor: pointer;
+  transition: all 0.15s;
+  text-align: left;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+.form-budget-option:hover { border-color: rgba(232,97,10,0.5); }
+.form-budget-option.active {
+  background: rgba(232,97,10,0.12);
+  border-color: var(--orange);
+  color: white;
+}
+.form-budget-option-radio {
+  width: 16px;
+  height: 16px;
+  border-radius: 50%;
+  border: 2px solid var(--muted);
+  flex-shrink: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.form-budget-option.active .form-budget-option-radio {
+  border-color: var(--orange);
+}
+.form-budget-option.active .form-budget-option-radio::after {
+  content: '';
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: var(--orange);
+}
+
+/* 球齡 + 程度 */
+.form-row.three-col {
+  display: grid;
+  gap: 14px;
+}
+@media (min-width: 768px) {
+  .form-row.three-col { grid-template-columns: 1fr 1fr 1fr; }
+}
+
 /* ============ DAILY SCHEDULE ============ */
 .schedule-detail {
   background: var(--black-2);
@@ -2838,7 +2982,7 @@ a { color: inherit; text-decoration: none; }
     <div class="korea-survey">
       <div class="korea-survey-title">您是否有興趣讓孩子參加?</div>
       <div class="korea-survey-text">點擊下方按鈕填寫 1 分鐘意願調查</div>
-      <a href="YOUR_KOREA_SURVEY_URL" class="korea-survey-btn">填寫意願調查 →</a>
+      <a href="javascript:void(0)" onclick="openKoreaForm()" class="korea-survey-btn">填寫意願調查 →</a>
     </div>
   </div>
 </section>
@@ -3292,6 +3436,239 @@ a { color: inherit; text-decoration: none; }
   </div>
 </div>
 
+<!-- KOREA SURVEY MODAL -->
+<div class="modal-overlay korea-modal" id="koreaModal" onclick="closeKorea(event)">
+  <div class="modal" onclick="event.stopPropagation()">
+    <button class="modal-close" onclick="closeKorea()">✕</button>
+    
+    <!-- 表單內容 -->
+    <div id="koreaFormContent">
+      <div class="modal-header">
+        <div class="modal-batch">🇰🇷 KOREA 2026</div>
+        <h2 class="modal-title">海外移地訓練 意願調查</h2>
+        <div class="modal-subtitle">2 分鐘填完！您的意願將決定本梯是否開團</div>
+      </div>
+      
+      <form id="koreaForm" class="modal-body" onsubmit="submitKorea(event)">
+        
+        <!-- 家長資料 -->
+        <div class="form-section">
+          <div class="form-section-title">👤 家長資料</div>
+          <div class="form-row two-col">
+            <div class="form-field">
+              <label class="form-label">家長姓名 <span class="form-label-required">*</span></label>
+              <input type="text" class="form-input" name="parentName" required>
+              <div class="form-error">請填寫家長姓名</div>
+            </div>
+            <div class="form-field">
+              <label class="form-label">聯絡電話 <span class="form-label-required">*</span></label>
+              <input type="tel" class="form-input" name="parentPhone" placeholder="0912345678" pattern="^09\d{8}$" required>
+              <div class="form-error">請填寫 10 碼手機號碼</div>
+            </div>
+          </div>
+          <div class="form-row">
+            <div class="form-field">
+              <label class="form-label">LINE ID <span class="form-label-required">*</span></label>
+              <input type="text" class="form-input" name="lineId" required>
+              <div class="form-error">請填寫 LINE ID</div>
+            </div>
+          </div>
+        </div>
+        
+        <!-- 孩子資料 -->
+        <div class="form-section">
+          <div class="form-section-title">👶 孩子資料</div>
+          <div class="form-row two-col">
+            <div class="form-field">
+              <label class="form-label">孩子姓名 <span class="form-label-required">*</span></label>
+              <input type="text" class="form-input" name="childName" required>
+              <div class="form-error">請填寫孩子姓名</div>
+            </div>
+            <div class="form-field">
+              <label class="form-label">出生年月日 <span class="form-label-required">*</span></label>
+              <input type="date" class="form-input" name="birthday" required>
+              <div class="form-error">請選擇出生年月日</div>
+            </div>
+          </div>
+          <div class="form-row two-col">
+            <div class="form-field">
+              <label class="form-label">升讀年級 <span class="form-label-required">*</span></label>
+              <select class="form-select" name="grade" required>
+                <option value="">請選擇</option>
+                <option value="升幼兒園中班">升幼兒園中班</option>
+                <option value="升幼兒園大班">升幼兒園大班</option>
+                <option value="升小一">升小一</option>
+                <option value="升小二">升小二</option>
+                <option value="升小三">升小三</option>
+                <option value="升小四">升小四</option>
+                <option value="升小五">升小五</option>
+                <option value="升小六">升小六</option>
+                <option value="升國一以上">升國一以上</option>
+              </select>
+              <div class="form-error">請選擇年級</div>
+            </div>
+            <div class="form-field">
+              <label class="form-label">球齡 <span class="form-label-required">*</span></label>
+              <select class="form-select" name="soccerYears" required>
+                <option value="">請選擇</option>
+                <option value="未滿 6 個月">未滿 6 個月</option>
+                <option value="6 個月 ~ 1 年">6 個月 ~ 1 年</option>
+                <option value="1 ~ 2 年">1 ~ 2 年</option>
+                <option value="2 ~ 3 年">2 ~ 3 年</option>
+                <option value="3 ~ 4 年">3 ~ 4 年</option>
+                <option value="4 ~ 5 年">4 ~ 5 年</option>
+                <option value="5 年以上">5 年以上</option>
+              </select>
+              <div class="form-error">請選擇球齡</div>
+            </div>
+          </div>
+          <div class="form-row">
+            <div class="form-field">
+              <label class="form-label">孩子是否能參加前一週賽前集訓？ <span class="form-label-required">*</span><span class="form-label-hint">（7/25-7/31）</span></label>
+              <div class="form-radio-group">
+                <button type="button" class="form-radio-btn" data-value="能" onclick="selectRadio(this, 'preCamp')">✅ 可以參加</button>
+                <button type="button" class="form-radio-btn" data-value="不能" onclick="selectRadio(this, 'preCamp')">❌ 無法參加</button>
+              </div>
+              <input type="hidden" name="preCamp" id="preCampInput">
+              <div class="form-error" id="preCampError" style="margin-top:4px;">請選擇一項</div>
+            </div>
+          </div>
+        </div>
+        
+        <!-- 意願評估 -->
+        <div class="form-section">
+          <div class="form-section-title">🎯 意願評估</div>
+          
+          <div class="form-row">
+            <div class="form-field">
+              <label class="form-label">您對讓孩子參加的意願程度？ <span class="form-label-required">*</span></label>
+              <div class="star-rating">
+                <button type="button" class="star-btn" data-value="1" onclick="selectStar(this, 1)">
+                  ⭐
+                  <div class="star-btn-num">1</div>
+                </button>
+                <button type="button" class="star-btn" data-value="2" onclick="selectStar(this, 2)">
+                  ⭐⭐
+                  <div class="star-btn-num">2</div>
+                </button>
+                <button type="button" class="star-btn" data-value="3" onclick="selectStar(this, 3)">
+                  ⭐⭐⭐
+                  <div class="star-btn-num">3</div>
+                </button>
+                <button type="button" class="star-btn" data-value="4" onclick="selectStar(this, 4)">
+                  ⭐⭐⭐⭐
+                  <div class="star-btn-num">4</div>
+                </button>
+                <button type="button" class="star-btn" data-value="5" onclick="selectStar(this, 5)">
+                  ⭐⭐⭐⭐⭐
+                  <div class="star-btn-num">5</div>
+                </button>
+              </div>
+              <div class="star-label" id="starLabel">請點選意願程度</div>
+              <input type="hidden" name="interest" id="interestInput">
+              <div class="form-error" id="interestError">請選擇意願程度</div>
+            </div>
+          </div>
+          
+          <div class="form-row">
+            <div class="form-field">
+              <label class="form-label">您可以接受的總費用上限？ <span class="form-label-required">*</span></label>
+              <div class="form-budget-options">
+                <button type="button" class="form-budget-option" data-value="30000 以下" onclick="selectBudget(this)">
+                  <div class="form-budget-option-radio"></div>
+                  <div><strong>$30,000 以下</strong> — 希望愈便宜愈好</div>
+                </button>
+                <button type="button" class="form-budget-option" data-value="30000-50000" onclick="selectBudget(this)">
+                  <div class="form-budget-option-radio"></div>
+                  <div><strong>$30,000 - $50,000</strong> — 合理範圍</div>
+                </button>
+                <button type="button" class="form-budget-option" data-value="50000-80000" onclick="selectBudget(this)">
+                  <div class="form-budget-option-radio"></div>
+                  <div><strong>$50,000 - $80,000</strong> — 可接受</div>
+                </button>
+                <button type="button" class="form-budget-option" data-value="80000 以上" onclick="selectBudget(this)">
+                  <div class="form-budget-option-radio"></div>
+                  <div><strong>$80,000 以上</strong> — 內容好就沒問題</div>
+                </button>
+                <button type="button" class="form-budget-option" data-value="看內容決定" onclick="selectBudget(this)">
+                  <div class="form-budget-option-radio"></div>
+                  <div><strong>看內容決定</strong> — 要知道具體行程再評估</div>
+                </button>
+              </div>
+              <input type="hidden" name="budget" id="budgetInput">
+              <div class="form-error" id="budgetError" style="margin-top:4px;">請選擇費用範圍</div>
+            </div>
+          </div>
+          
+          <div class="form-row">
+            <div class="form-field">
+              <label class="form-label">孩子目前是否有護照？</label>
+              <div class="form-radio-group">
+                <button type="button" class="form-radio-btn" data-value="有護照" onclick="selectRadio(this, 'passport')">✅ 有護照</button>
+                <button type="button" class="form-radio-btn" data-value="還要辦" onclick="selectRadio(this, 'passport')">🆕 還要辦理</button>
+              </div>
+              <input type="hidden" name="passport" id="passportInput">
+            </div>
+          </div>
+        </div>
+        
+        <!-- 備註 -->
+        <div class="form-section">
+          <div class="form-section-title">💬 其他想法（選填）</div>
+          <div class="form-row">
+            <div class="form-field">
+              <label class="form-label">您最期待的部分是？</label>
+              <textarea class="form-textarea" name="expect" placeholder="例：國際交流賽、移地訓練、韓國文化體驗..."></textarea>
+            </div>
+          </div>
+          <div class="form-row">
+            <div class="form-field">
+              <label class="form-label">有任何疑慮或建議嗎？</label>
+              <textarea class="form-textarea" name="concern" placeholder="例：擔心孩子獨立、希望有家長同行..."></textarea>
+            </div>
+          </div>
+        </div>
+        
+        <!-- 送出 -->
+        <div class="form-submit-area">
+          <button type="submit" class="form-submit-btn" id="koreaSubmitBtn">🇰🇷 送出意願調查</button>
+          <div class="form-submit-hint">
+            送出後我們會依意願總數決定是否開團。<br>
+            若開團，將優先聯繫意願較高的家長討論細節。
+          </div>
+        </div>
+      </form>
+    </div>
+    
+    <!-- 成功頁面 -->
+    <div class="success-screen" id="koreaSuccessScreen">
+      <div class="success-icon">✓</div>
+      <h2 class="success-title">感謝您的回覆！</h2>
+      <p class="success-desc">
+        您的意願調查已收到。<br>
+        我們會依整體意願決定是否開團。
+      </p>
+      
+      <div class="success-info-box">
+        <strong>📋 接下來：</strong><br>
+        1. 持續收集意願調查至 <strong>5/15</strong><br>
+        2. 若意願足夠（建議 10 人以上），將確定開團<br>
+        3. 擬定具體行程（比賽、訓練、住宿、費用）<br>
+        4. 透過 LINE 聯繫有興趣的家長討論<br><br>
+        <strong>🎯 您將被優先聯繫：</strong><br>
+        • 意願 4-5 星的家長<br>
+        • 可配合費用範圍的家長<br>
+        • 可參加前一週賽前集訓的家長
+      </div>
+      
+      <div class="success-actions">
+        <button type="button" class="team-code-btn" onclick="closeKorea()">關閉</button>
+      </div>
+    </div>
+    
+  </div>
+</div>
+
 <!-- FOOTER -->
 <footer class="footer">
   <div class="footer-logo">
@@ -3690,7 +4067,11 @@ function closeSchedule(event) {
 
 // ESC 鍵關閉
 document.addEventListener('keydown', (e) => {
-  if (e.key === 'Escape') closeSchedule();
+  if (e.key === 'Escape') {
+    closeSchedule();
+    if (typeof closeRegister === 'function') closeRegister();
+    if (typeof closeKorea === 'function') closeKorea();
+  }
 });
 
 // ========================================
@@ -4132,6 +4513,161 @@ function showSuccessScreen(data) {
 document.addEventListener('DOMContentLoaded', () => {
   renderClassOptions();
 });
+
+// ========================================
+// Korea Survey - 韓國意願調查
+// ========================================
+
+const STAR_LABELS = {
+  1: '<strong>不太有興趣</strong> — 純觀望',
+  2: '<strong>稍有興趣</strong> — 但不強烈',
+  3: '<strong>有興趣</strong> — 想多了解',
+  4: '<strong>很有興趣</strong> — 若條件合適就去',
+  5: '<strong>非常想去</strong> — 一定要報名！',
+};
+
+let koreaState = {
+  interest: null,
+  preCamp: null,
+  budget: null,
+  passport: null,
+};
+
+function openKoreaForm() {
+  document.getElementById('koreaModal').classList.add('active');
+  document.body.style.overflow = 'hidden';
+  document.getElementById('koreaFormContent').style.display = 'block';
+  document.getElementById('koreaSuccessScreen').classList.remove('show');
+  document.querySelector('#koreaModal .modal').scrollTop = 0;
+}
+
+function closeKorea(event) {
+  if (event && event.target !== event.currentTarget) return;
+  document.getElementById('koreaModal').classList.remove('active');
+  document.body.style.overflow = '';
+}
+
+// 星級評分
+function selectStar(btn, value) {
+  document.querySelectorAll('#koreaModal .star-btn').forEach(b => b.classList.remove('active'));
+  btn.classList.add('active');
+  koreaState.interest = value;
+  document.getElementById('interestInput').value = value;
+  document.getElementById('starLabel').innerHTML = STAR_LABELS[value];
+  // 清除錯誤
+  document.getElementById('interestError').style.display = 'none';
+}
+
+// Radio 按鈕選擇（前一週集訓、護照）
+function selectRadio(btn, field) {
+  // 在同一組 radio 裡切換
+  const group = btn.parentElement;
+  group.querySelectorAll('.form-radio-btn').forEach(b => b.classList.remove('active'));
+  btn.classList.add('active');
+  koreaState[field] = btn.dataset.value;
+  document.getElementById(field + 'Input').value = btn.dataset.value;
+  // 清除錯誤
+  const errEl = document.getElementById(field + 'Error');
+  if (errEl) errEl.style.display = 'none';
+}
+
+// 費用範圍
+function selectBudget(btn) {
+  document.querySelectorAll('#koreaModal .form-budget-option').forEach(b => b.classList.remove('active'));
+  btn.classList.add('active');
+  koreaState.budget = btn.dataset.value;
+  document.getElementById('budgetInput').value = btn.dataset.value;
+  document.getElementById('budgetError').style.display = 'none';
+}
+
+// 提交韓國意願調查
+async function submitKorea(event) {
+  event.preventDefault();
+  const form = event.target;
+  
+  // 1. HTML5 驗證
+  if (!form.checkValidity()) {
+    form.reportValidity();
+    return;
+  }
+  
+  // 2. 檢查自訂欄位
+  let hasError = false;
+  if (!koreaState.interest) {
+    document.getElementById('interestError').style.display = 'block';
+    hasError = true;
+  }
+  if (!koreaState.preCamp) {
+    document.getElementById('preCampError').style.display = 'block';
+    hasError = true;
+  }
+  if (!koreaState.budget) {
+    document.getElementById('budgetError').style.display = 'block';
+    hasError = true;
+  }
+  if (hasError) {
+    document.querySelector('#koreaModal .modal').scrollTop = 0;
+    return;
+  }
+  
+  // 收集資料
+  const formData = new FormData(form);
+  const data = {
+    type: 'korea',  // 標記為韓國意願調查
+    parentName: formData.get('parentName'),
+    parentPhone: formData.get('parentPhone'),
+    lineId: formData.get('lineId'),
+    childName: formData.get('childName'),
+    birthday: formData.get('birthday'),
+    grade: formData.get('grade'),
+    soccerYears: formData.get('soccerYears'),
+    preCamp: koreaState.preCamp,
+    interest: koreaState.interest,
+    budget: koreaState.budget,
+    passport: koreaState.passport || '',
+    expect: formData.get('expect') || '',
+    concern: formData.get('concern') || '',
+  };
+  
+  // 送出
+  const submitBtn = document.getElementById('koreaSubmitBtn');
+  submitBtn.disabled = true;
+  submitBtn.innerHTML = '<span class="form-loading"></span>送出中...';
+  
+  try {
+    if (APPS_SCRIPT_URL === 'YOUR_APPS_SCRIPT_URL') {
+      console.log('📋 韓國意願調查資料：', data);
+      alert('⚠️ 尚未設定 Apps Script URL！\n\n資料已印在 Console (F12)。');
+      showKoreaSuccess();
+      submitBtn.disabled = false;
+      submitBtn.innerHTML = '🇰🇷 送出意願調查';
+      return;
+    }
+    
+    await fetch(APPS_SCRIPT_URL, {
+      method: 'POST',
+      mode: 'no-cors',
+      headers: { 'Content-Type': 'text/plain;charset=utf-8' },
+      body: JSON.stringify(data),
+    });
+    
+    showKoreaSuccess();
+    
+  } catch (err) {
+    console.error(err);
+    alert('⚠️ 送出失敗：' + err.message + '\n\n請重試或 LINE 聯繫我們。');
+    submitBtn.disabled = false;
+    submitBtn.innerHTML = '🇰🇷 送出意願調查';
+  }
+}
+
+function showKoreaSuccess() {
+  document.getElementById('koreaFormContent').style.display = 'none';
+  document.getElementById('koreaSuccessScreen').classList.add('show');
+  document.querySelector('#koreaModal .modal').scrollTop = 0;
+}
+
+// ESC 關閉（現有的 ESC 邏輯會自動處理，但為了保險再加一次檢查）
 
 // Filter
 document.querySelectorAll('.filter-btn').forEach(btn => {
