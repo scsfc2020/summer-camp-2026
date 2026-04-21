@@ -2154,7 +2154,7 @@ a { color: inherit; text-decoration: none; }
   overflow: hidden;
   transition: max-height 0.3s ease;
 }
-.faq-item.open .faq-a { max-height: 500px; }
+.faq-item.open .faq-a { max-height: 1000px; }
 .faq-a-inner {
   padding: 0 22px 22px;
   font-size: 14px;
@@ -2398,7 +2398,7 @@ a { color: inherit; text-decoration: none; }
 
     <div class="hero-feature">
       <strong>💼 雙薪家庭友善</strong><br>
-      08:00-18:00 超長托育時段 · 國家 B 級教練 · 師生比 1:8 · 全日營含餐
+      08:00-18:00 超長托育時段 · 師生比 1:8 · 全日營含餐
     </div>
 
     <div class="hero-stats">
@@ -2441,7 +2441,7 @@ a { color: inherit; text-decoration: none; }
         <div class="value-num">01</div>
         <div class="value-title">國家 B 級教練領軍</div>
         <div class="value-text">
-          所有梯次皆由國家 B 級以上教練主教，師生比統一 1:8，確保每個孩子都被看見、被指導。
+          菁英梯次由國家 B 級以上教練主教，推廣營由資深助教團隊帶領，師生比統一 1:8，確保每個孩子都被看見、被指導。
         </div>
       </div>
       <div class="value-card fade-up">
@@ -2727,7 +2727,7 @@ a { color: inherit; text-decoration: none; }
         <div class="time-block-time">08:30-16:00</div>
         <div class="time-block-content">
           <div class="time-block-title">🎯 正式訓練</div>
-          <div class="time-block-desc">主課程（國家 B 級教練、師生比 1:8、含餐午休）</div>
+          <div class="time-block-desc">主課程（師生比 1:8、含餐午休）</div>
         </div>
       </div>
       <div class="time-block highlight">
@@ -3143,7 +3143,7 @@ a { color: inherit; text-decoration: none; }
     </div>
     <div class="faq-item" onclick="toggleFaq(this)">
       <div class="faq-q">師生比多少？教練資格？</div>
-      <div class="faq-a"><div class="faq-a-inner">所有梯次統一採 <strong>師生比 1:8</strong>，主教練皆為 <strong>國家 B 級以上</strong>教練資格。</div></div>
+      <div class="faq-a"><div class="faq-a-inner">所有梯次統一採 <strong>師生比 1:8</strong>。<strong>菁英梯次</strong>（1-3 年級菁英、4-6 年級菁英、全年齡大集訓）由 <strong>國家 B 級以上</strong>教練主教；<strong>推廣營、U8 板橋盃、全日託管包</strong>由俱樂部資深教練與助教團隊帶領。</div></div>
     </div>
     <div class="faq-item" onclick="toggleFaq(this)">
       <div class="faq-q">下雨怎麼辦？</div>
@@ -3152,6 +3152,28 @@ a { color: inherit; text-decoration: none; }
     <div class="faq-item" onclick="toggleFaq(this)">
       <div class="faq-q">含午餐嗎？</div>
       <div class="faq-a"><div class="faq-a-inner"><strong>所有全日班</strong>（菁英、推廣 3/5 天、板橋盃、全年齡集訓、全日託管包）皆含營養午餐。半日班（U8 上午 / U8 下午）不含餐。</div></div>
+    </div>
+    <div class="faq-item" onclick="toggleFaq(this)">
+      <div class="faq-q">為什麼推廣營和菁英班學費不同？</div>
+      <div class="faq-a"><div class="faq-a-inner">
+        兩種班別有明確的定位差異：<br><br>
+        <strong style="color:var(--orange-2);">🔥 推廣營（$3,800-$6,500）</strong><br>
+        • <strong>定位：</strong>初學體驗、建立足球興趣<br>
+        • <strong>內容：</strong>基礎球感、趣味遊戲、團體互動<br>
+        • <strong>適合對象：</strong>沒接觸過足球或剛入門的孩子<br>
+        • <strong>師資：</strong>俱樂部資深教練 + 助教群帶領<br><br>
+        <strong style="color:var(--orange-2);">⭐ 菁英班（$9,800-$10,800）</strong><br>
+        • <strong>定位：</strong>技術精修、戰術進階、個人能力提升<br>
+        • <strong>內容：</strong>控球精修、戰術演練、實戰對抗、個別回饋<br>
+        • <strong>適合對象：</strong>已有基礎、希望系統化進步的學員<br>
+        • <strong>師資：</strong>國家 B 級以上教練主教、1:8 精緻照顧<br><br>
+        <strong>💡 主要差異來源：</strong><br>
+        1️⃣ 訓練強度與專業深度不同<br>
+        2️⃣ 菁英班使用進階器材與分析工具<br>
+        3️⃣ 個別化指導比例較高<br>
+        4️⃣ 對教練專業要求更嚴格<br><br>
+        <strong style="color:var(--gold);">🎯 如何選擇：</strong>初次接觸建議從推廣營開始，熟悉後再升級到菁英班。俱樂部現有學員則可直接報名菁英班延續訓練。
+      </div></div>
     </div>
   </div>
 </section>
@@ -3697,7 +3719,7 @@ const scheduleData = {
     batch: 'BATCH 01A',
     title: '板橋推廣營 3 天',
     subtitle: '推廣營 · 陌生客體驗、輕鬆有趣、建立信任',
-    meta: ['📅 7/1 - 7/3', '📍 板橋', '⏰ 08:00-18:00', '⭐ 國家 B 級教練', '👥 師生比 1:8', '🍱 含餐'],
+    meta: ['📅 7/1 - 7/3', '📍 板橋', '⏰ 08:00-18:00', '👥 師生比 1:8', '🍱 含餐'],
     days: [
       { name: 'Day 1 - 認識足球', slots: [
         { time: '08:00-08:30', title: '🌅 晨間托育', desc: '自由活動、靜態遊戲（免費）', type: 'free' },
@@ -3739,7 +3761,7 @@ const scheduleData = {
     batch: 'BATCH 01B',
     title: '天母推廣營 3 天',
     subtitle: '推廣營 · 陌生客體驗、輕鬆有趣、建立信任',
-    meta: ['📅 7/1 - 7/3', '📍 天母', '⏰ 08:00-18:00', '⭐ 國家 B 級教練', '👥 師生比 1:8', '🍱 含餐'],
+    meta: ['📅 7/1 - 7/3', '📍 天母', '⏰ 08:00-18:00', '👥 師生比 1:8', '🍱 含餐'],
     days: null,  // 與 promo3 相同
     copyFrom: 'promo3',
   },
@@ -3835,7 +3857,7 @@ const scheduleData = {
     batch: 'BATCH 04A',
     title: '板橋推廣營 5 天',
     subtitle: '推廣營 · 建立較完整能力、循序漸進',
-    meta: ['📅 7/20 - 7/24', '📍 板橋', '⏰ 08:00-18:00', '⭐ 國家 B 級教練', '👥 師生比 1:8', '🍱 含餐'],
+    meta: ['📅 7/20 - 7/24', '📍 板橋', '⏰ 08:00-18:00', '👥 師生比 1:8', '🍱 含餐'],
     days: [
       { name: 'Day 1 - 能力評估', slots: [
         { time: '09:00-10:30', title: '⚽ 球感評估', desc: '能力分級' },
@@ -3876,14 +3898,14 @@ const scheduleData = {
     batch: 'BATCH 04B',
     title: '天母推廣營 5 天',
     subtitle: '推廣營 · 建立較完整能力、循序漸進',
-    meta: ['📅 7/20 - 7/24', '📍 天母', '⏰ 08:00-18:00', '⭐ 國家 B 級教練', '👥 師生比 1:8', '🍱 含餐'],
+    meta: ['📅 7/20 - 7/24', '📍 天母', '⏰ 08:00-18:00', '👥 師生比 1:8', '🍱 含餐'],
     copyFrom: 'promo5',
   },
   'combo': {
     batch: 'BATCH 06',
     title: '上下午 U8 雙班（全日託管）',
     subtitle: '全日託管包 · 主打雙薪家庭',
-    meta: ['📅 8/10 - 8/14', '📍 天母', '⏰ 08:00-18:00', '⭐ 國家 B 級教練', '👥 師生比 1:8', '🍱 含餐'],
+    meta: ['📅 8/10 - 8/14', '📍 天母', '⏰ 08:00-18:00', '👥 師生比 1:8', '🍱 含餐'],
     days: [
       { name: '全日課表（每日同結構）', slots: [
         { time: '08:00-08:30', title: '🌅 晨間托育', desc: '（免費）', type: 'free' },
@@ -3907,7 +3929,7 @@ const scheduleData = {
     batch: 'BATCH 07',
     title: 'U8 板橋盃全日',
     subtitle: '板橋盃賽前訓練 · 比賽模擬',
-    meta: ['📅 8/17 - 8/21', '📍 天母', '⏰ 08:00-18:00', '⭐ 國家 B 級教練', '👥 師生比 1:8', '🍱 含餐', '🏆 賽前訓'],
+    meta: ['📅 8/17 - 8/21', '📍 天母', '⏰ 08:00-18:00', '👥 師生比 1:8', '🍱 含餐', '🏆 賽前訓'],
     days: [
       { name: 'Day 1 - 基礎建立', slots: [
         { time: '09:00-10:30', title: '🎯 技術關卡測試', desc: '戶外個人測試' },
