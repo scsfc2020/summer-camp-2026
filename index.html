@@ -2366,10 +2366,49 @@ a { color: inherit; text-decoration: none; }
   <a href="#register" class="header-cta">立即報名</a>
 </header>
 
-<!-- 延長公告橫幅 -->
-<div style="background:linear-gradient(90deg, #E8610A 0%, #FFD764 50%, #E8610A 100%);padding:8px 16px;text-align:center;color:#1A1009;font-weight:900;font-size:13px;letter-spacing:0.08em;position:fixed;top:60px;left:0;right:0;z-index:99;box-shadow:0 4px 16px rgba(0,0,0,0.4);font-family:'Noto Sans TC',sans-serif;">
-  ⏰ 早鳥優惠延長至 5/30 ・ 還剩多 15 天 ・ <span style="text-decoration:underline;">立即報名</span>
+<!-- 延長公告橫幅（自動倒數版） -->
+<div id="earlybirdBanner" style="background:linear-gradient(90deg, #E8610A 0%, #FFD764 50%, #E8610A 100%);padding:8px 16px;text-align:center;color:#1A1009;font-weight:900;font-size:13px;letter-spacing:0.08em;position:fixed;top:60px;left:0;right:0;z-index:99;box-shadow:0 4px 16px rgba(0,0,0,0.4);font-family:'Noto Sans TC',sans-serif;transition:background 0.3s;">
+  <span id="earlybirdText">⏰ 早鳥優惠 5/30 截止 ・ 載入中... ・ <a href="#register" style="color:inherit;text-decoration:underline;">立即報名</a></span>
 </div>
+
+<script>
+(function() {
+  function updateCountdown() {
+    var deadline = new Date('2026-05-30T23:59:59+08:00');
+    var now = new Date();
+    var diff = deadline - now;
+    var days = Math.floor(diff / (1000 * 60 * 60 * 24));
+    var banner = document.getElementById('earlybirdBanner');
+    var text = document.getElementById('earlybirdText');
+    
+    if (!banner || !text) return;
+    
+    if (days > 7) {
+      banner.style.background = 'linear-gradient(90deg, #E8610A 0%, #FFD764 50%, #E8610A 100%)';
+      banner.style.color = '#1A1009';
+      text.innerHTML = '⏰ 早鳥優惠 5/30 截止 ・ 還剩 ' + days + ' 天 ・ <a href="#register" style="color:inherit;text-decoration:underline;">立即報名</a>';
+    } else if (days > 1) {
+      banner.style.background = 'linear-gradient(90deg, #D92D20 0%, #FFD764 50%, #D92D20 100%)';
+      banner.style.color = '#FFFFFF';
+      text.innerHTML = '🔥 早鳥倒數 ' + days + ' 天 ・ 5/30 截止 ・ <a href="#register" style="color:inherit;text-decoration:underline;">立即報名</a>';
+    } else if (days === 1) {
+      banner.style.background = 'linear-gradient(90deg, #D92D20 0%, #FF7F2A 50%, #D92D20 100%)';
+      banner.style.color = '#FFFFFF';
+      text.innerHTML = '🚨 早鳥最後 24 小時！今晚 24:00 截止 ・ <a href="#register" style="color:inherit;text-decoration:underline;">立即報名</a>';
+    } else if (days === 0) {
+      banner.style.background = 'linear-gradient(90deg, #D92D20 0%, #FFD764 50%, #D92D20 100%)';
+      banner.style.color = '#FFFFFF';
+      text.innerHTML = '🚨 早鳥今天截止！把握最後機會 ・ <a href="#register" style="color:inherit;text-decoration:underline;">立即報名</a>';
+    } else {
+      banner.style.display = 'none';
+      document.querySelector('.hero').style.paddingTop = '100px';
+    }
+  }
+  
+  updateCountdown();
+  setInterval(updateCountdown, 60 * 60 * 1000);
+})();
+</script>
 
 <!-- HERO -->
 <section class="hero" id="top">
