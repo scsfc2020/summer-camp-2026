@@ -107,7 +107,7 @@ a { color: inherit; text-decoration: none; }
 .hero {
   min-height: 100vh;
   position: relative;
-  padding: 100px 24px 80px;
+  padding: 140px 24px 80px;
   overflow: hidden;
   background: var(--black);
   display: flex; flex-direction: column; justify-content: center;
@@ -2366,6 +2366,11 @@ a { color: inherit; text-decoration: none; }
   <a href="#register" class="header-cta">立即報名</a>
 </header>
 
+<!-- 延長公告橫幅 -->
+<div style="background:linear-gradient(90deg, #E8610A 0%, #FFD764 50%, #E8610A 100%);padding:8px 16px;text-align:center;color:#1A1009;font-weight:900;font-size:13px;letter-spacing:0.08em;position:fixed;top:60px;left:0;right:0;z-index:99;box-shadow:0 4px 16px rgba(0,0,0,0.4);font-family:'Noto Sans TC',sans-serif;">
+  ⏰ 早鳥優惠延長至 5/30 ・ 還剩多 15 天 ・ <span style="text-decoration:underline;">立即報名</span>
+</div>
+
 <!-- HERO -->
 <section class="hero" id="top">
   <div class="hero-bg"></div>
@@ -2823,7 +2828,7 @@ a { color: inherit; text-decoration: none; }
         <div class="calc-step-label">STEP 03 / 早鳥與推薦</div>
         <label class="calc-checkbox active" id="earlybird-box" onclick="toggleEarlybird(event)">
           <input type="checkbox" id="earlybird" checked>
-          <div class="calc-checkbox-label">5/15 前報名（早鳥）</div>
+          <div class="calc-checkbox-label"><span style="text-decoration:line-through;opacity:0.5;margin-right:6px;">5/15</span> <span style="color:#FFD764;font-weight:900;">5/30 前報名（早鳥延長）</span></div>
           <div class="calc-checkbox-amount">-$500</div>
         </label>
         <label class="calc-checkbox" id="referral-box" onclick="toggleReferral(event)">
@@ -2996,12 +3001,13 @@ a { color: inherit; text-decoration: none; }
   </div>
 
   <div class="discount-grid">
-    <div class="discount-item">
+    <div class="discount-item" style="position:relative;border:2px solid #E8610A;background:linear-gradient(135deg, rgba(232,97,10,0.18) 0%, var(--black-3) 60%);">
+      <div style="position:absolute;top:-10px;right:12px;background:#FFD764;color:#1A1009;padding:3px 10px;font-size:11px;font-weight:900;letter-spacing:0.1em;border-radius:2px;">⏰ 已延長</div>
       <div class="discount-head">
         <div class="discount-name">早鳥優惠</div>
         <div class="discount-amount">-$500</div>
       </div>
-      <div class="discount-desc">4/25 - 5/15（21 天）全期相同，每人可折。</div>
+      <div class="discount-desc">4/25 - <span style="text-decoration:line-through;opacity:0.6;">5/15</span> <span style="color:#FFD764;font-weight:900;">→ 5/30（延長至 36 天 🎉）</span>全期相同，每人可折。</div>
     </div>
 
     <div class="discount-item">
@@ -3060,14 +3066,14 @@ a { color: inherit; text-decoration: none; }
         <div class="schedule-date">4/25</div>
         <div class="schedule-content">
           <div class="schedule-event">招生開跑 🚀</div>
-          <div class="schedule-event-desc">早鳥優惠開始（21 天）</div>
+          <div class="schedule-event-desc">早鳥優惠開始（已延長至 36 天）</div>
         </div>
       </div>
-      <div class="schedule-milestone">
-        <div class="schedule-date">5/15</div>
+      <div class="schedule-milestone" style="position:relative;background:linear-gradient(90deg, rgba(232,97,10,0.08), transparent);border-left:3px solid #E8610A;padding-left:14px;">
+        <div class="schedule-date"><span style="text-decoration:line-through;opacity:0.5;color:var(--muted);font-size:13px;">5/15</span><br><span style="color:#FFD764;">5/30</span></div>
         <div class="schedule-content">
-          <div class="schedule-event">早鳥截止</div>
-          <div class="schedule-event-desc">$500 早鳥優惠最後一天</div>
+          <div class="schedule-event">早鳥截止 <span style="background:#FFD764;color:#1A1009;font-size:10px;padding:2px 6px;border-radius:2px;font-weight:900;margin-left:6px;">已延長</span></div>
+          <div class="schedule-event-desc">$500 早鳥優惠最後一天（原 5/15 延長至 5/30）</div>
         </div>
       </div>
       <div class="schedule-milestone">
@@ -3353,7 +3359,7 @@ a { color: inherit; text-decoration: none; }
           <div class="form-checkboxes">
             <label class="form-checkbox checked" id="earlybirdCheckbox">
               <input type="checkbox" name="earlybird" checked onchange="toggleCheckbox(this, 'earlybirdCheckbox'); calculateFormPrice();">
-              <div class="form-checkbox-label">5/15 前報名（早鳥）</div>
+              <div class="form-checkbox-label"><span style="text-decoration:line-through;opacity:0.5;margin-right:6px;font-size:12px;">5/15</span> <span style="color:#FFD764;font-weight:900;">5/30 前報名（早鳥延長）</span></div>
               <div class="form-checkbox-amount">-$500</div>
             </label>
             <label class="form-checkbox" id="referralCheckbox">
@@ -3444,7 +3450,7 @@ a { color: inherit; text-decoration: none; }
         2. 通知您付款方式（匯款/轉帳）<br>
         3. 收款後正式完成報名<br><br>
         <strong>📅 關鍵時程：</strong><br>
-        • 5/15 前 — 早鳥優惠截止<br>
+        • <span style="text-decoration:line-through;opacity:0.6;">5/15</span> 5/30 前 — 早鳥優惠截止（已延長）<br>
         • 5/20 — 開班公告<br>
         • 6/30 — 最終報名截止
       </div>
@@ -3673,7 +3679,7 @@ a { color: inherit; text-decoration: none; }
       
       <div class="success-info-box">
         <strong>📋 接下來：</strong><br>
-        1. 持續收集意願調查至 <strong>5/15</strong><br>
+        1. 持續收集意願調查至 <strong>5/30</strong>（已延長）<br>
         2. 若意願足夠（建議 10 人以上），將確定開團<br>
         3. 擬定具體行程（比賽、訓練、住宿、費用）<br>
         4. 透過 LINE 聯繫有興趣的家長討論<br><br>
