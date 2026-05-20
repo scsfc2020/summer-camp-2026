@@ -2876,6 +2876,30 @@ a { color: inherit; text-decoration: none; }
           <div class="calc-checkbox-amount">-$300</div>
         </label>
       </div>
+
+      <!-- STEP 04 / 接送服務（NEW） -->
+      <div class="calc-step">
+        <div class="calc-step-label">STEP 04 / 接送服務（選配）<span style="color:#FFD764;font-size:11px;margin-left:8px;background:#1A1009;padding:2px 8px;border-radius:2px;">NEW 🚗</span></div>
+        <label class="calc-checkbox" id="shuttle-none-box" style="margin-bottom:8px;">
+          <input type="radio" name="shuttle" value="0" checked onchange="selectShuttle(0, 0)">
+          <div class="calc-checkbox-label">不需要接送</div>
+          <div class="calc-checkbox-amount" style="color:var(--muted);">$0</div>
+        </label>
+        <label class="calc-checkbox" id="shuttle-5km-box" style="margin-bottom:8px;">
+          <input type="radio" name="shuttle" value="200" onchange="selectShuttle(200, 5)">
+          <div class="calc-checkbox-label">5 km 內接送（每天來回）</div>
+          <div class="calc-checkbox-amount" style="color:#FF7F2A;">+$200/天</div>
+        </label>
+        <label class="calc-checkbox" id="shuttle-10km-box">
+          <input type="radio" name="shuttle" value="400" onchange="selectShuttle(400, 10)">
+          <div class="calc-checkbox-label">10 km 內接送（每天來回）</div>
+          <div class="calc-checkbox-amount" style="color:#FF7F2A;">+$400/天</div>
+        </label>
+        <div style="margin-top:10px;font-size:11px;color:var(--muted);line-height:1.5;">
+          🛡️ 專屬接送車隊・保險覆蓋・LINE 即時通知<br>
+          ⏰ 07:30-08:30 接｜17:00-18:00 送
+        </div>
+      </div>
     </div>
 
     <div class="calc-result">
@@ -2890,7 +2914,7 @@ a { color: inherit; text-decoration: none; }
     </div>
 
     <div class="calc-info">
-      💡 <strong>優惠疊加規則：</strong>單梯與套票皆可疊加早鳥 + 團報。推廣營的單梯或套票可額外疊加舊生推薦 $300。
+      💡 <strong>優惠疊加規則：</strong>單梯與套票皆可疊加早鳥 + 團報。推廣營的單梯或套票可額外疊加舊生推薦 $300。<br>🚗 <strong>接送服務：</strong>按天數計費，自動加總於總額（接送費用不折扣）。
     </div>
   </div>
 </section>
@@ -3410,6 +3434,37 @@ a { color: inherit; text-decoration: none; }
           <div class="form-field" style="margin-top:10px;">
             <label class="form-label">推薦人姓名 <span class="form-label-hint">（若有舊生推薦請填）</span></label>
             <input type="text" class="form-input" name="referrerName">
+          </div>
+        </div>
+        
+        <!-- 接送服務（NEW） -->
+        <div class="form-section">
+          <div class="form-section-title">🚗 接送服務（選配）<span style="color:#FFD764;font-size:11px;margin-left:8px;background:#1A1009;padding:2px 8px;border-radius:2px;">NEW</span></div>
+          <div class="form-checkboxes">
+            <label class="form-checkbox checked" id="shuttleNoneBox">
+              <input type="radio" name="shuttleOption" value="0" checked onchange="selectShuttleForm(this, 0, 0)">
+              <div class="form-checkbox-label">不需要接送</div>
+              <div class="form-checkbox-amount" style="color:var(--muted);">$0</div>
+            </label>
+            <label class="form-checkbox" id="shuttle5kmBox">
+              <input type="radio" name="shuttleOption" value="200" onchange="selectShuttleForm(this, 200, 5)">
+              <div class="form-checkbox-label">5 km 內接送（每天來回）</div>
+              <div class="form-checkbox-amount" style="color:#FF7F2A;">+$200/天</div>
+            </label>
+            <label class="form-checkbox" id="shuttle10kmBox">
+              <input type="radio" name="shuttleOption" value="400" onchange="selectShuttleForm(this, 400, 10)">
+              <div class="form-checkbox-label">10 km 內接送（每天來回）</div>
+              <div class="form-checkbox-amount" style="color:#FF7F2A;">+$400/天</div>
+            </label>
+          </div>
+          <div class="form-field" id="shuttleAddressField" style="margin-top:12px;display:none;">
+            <label class="form-label">接送地址 <span class="form-label-required">*</span></label>
+            <input type="text" class="form-input" name="shuttleAddress" placeholder="例：新北市板橋區文化路一段 268 號">
+            <div style="margin-top:6px;font-size:11px;color:var(--muted);line-height:1.5;">
+              🛡️ 專屬接送車隊・保險覆蓋・LINE 即時通知<br>
+              ⏰ 07:30-08:30 接｜17:00-18:00 送<br>
+              📋 至少 3 位孩子才開行，若不足會主動通知您
+            </div>
           </div>
         </div>
         
@@ -4388,8 +4443,45 @@ function calculateFormPrice() {
     breakdown.push(`<div class="price-line"><span>舊生推薦</span><span>-$300</span></div>`);
   }
   
+  // 🚗 接送服務（按梯次天數計算）
+  const shuttleRadio = document.querySelector('input[name="shuttleOption"]:checked');
+  if (shuttleRadio && parseInt(shuttleRadio.value) > 0) {
+    const shuttlePerDay = parseInt(shuttleRadio.value);
+    const km = shuttlePerDay === 200 ? 5 : 10;
+    // 計算總天數（所有選中的梯次累加）
+    let totalDays = 0;
+    document.querySelectorAll('.class-checkbox input:checked').forEach(i => {
+      const text = i.closest('.class-checkbox').textContent;
+      if (text.includes('3 天')) totalDays += 3;
+      else totalDays += 5; // 預設 5 天
+    });
+    if (totalDays > 0) {
+      const shuttleTotal = shuttlePerDay * totalDays;
+      total += shuttleTotal;
+      breakdown.push(`<div class="price-line"><span>🚗 ${km} km 接送（${totalDays} 天）</span><span style="color:#FF7F2A;">+$${shuttleTotal.toLocaleString()}</span></div>`);
+    }
+  }
+  
   document.getElementById('priceBreakdown').innerHTML = breakdown.join('');
   document.getElementById('formFinalPrice').textContent = '$' + total.toLocaleString();
+}
+
+// 接送選項切換（控制地址欄位顯示）
+function selectShuttleForm(input, amount, km) {
+  document.querySelectorAll('input[name="shuttleOption"]').forEach(r => {
+    const box = r.closest('.form-checkbox');
+    if (box) box.classList.toggle('checked', r.checked);
+  });
+  const addressField = document.getElementById('shuttleAddressField');
+  if (amount > 0) {
+    addressField.style.display = 'block';
+    addressField.querySelector('input').required = true;
+  } else {
+    addressField.style.display = 'none';
+    addressField.querySelector('input').required = false;
+    addressField.querySelector('input').value = '';
+  }
+  calculateFormPrice();
 }
 
 // 開啟報名 Modal
@@ -4524,6 +4616,9 @@ async function submitRegister(event) {
     earlybird: document.querySelector('input[name="earlybird"]').checked ? '是' : '否',
     referral: document.querySelector('input[name="referral"]').checked ? '是' : '否',
     referrerName: formData.get('referrerName') || '',
+    // 🚗 接送服務（v3 新增）
+    shuttleOption: parseInt(document.querySelector('input[name="shuttleOption"]:checked')?.value || 0),
+    shuttleAddress: formData.get('shuttleAddress') || '',
     special: formData.get('special'),
     notes: formData.get('notes') || '',
   };
@@ -4762,7 +4857,9 @@ let calcState = {
   groupSize: 1,
   groupDiscount: 0,
   earlybird: true,
-  referral: false
+  referral: false,
+  shuttle: 0,     // 接送單日費用
+  shuttleKm: 0    // 接送公里數（顯示用）
 };
 
 function selectGroup(btn, size, discount) {
@@ -4793,6 +4890,25 @@ function toggleReferral(e) {
   updateCalc();
 }
 
+function selectShuttle(amount, km) {
+  calcState.shuttle = amount;
+  calcState.shuttleKm = km;
+  document.querySelectorAll('input[name="shuttle"]').forEach(r => {
+    const box = r.closest('.calc-checkbox');
+    if (box) box.classList.toggle('active', r.checked);
+  });
+  updateCalc();
+}
+
+function getCampDays() {
+  // 根據選擇的梯次估算天數（用於接送總費用計算）
+  const sel = document.getElementById('classSelect');
+  const text = sel.options[sel.selectedIndex].text;
+  if (text.includes('3 天')) return 3;
+  if (text.includes('5 天') || text.includes('半日') || text.includes('全日託管') || text.includes('板橋盃') || text.includes('集訓') || text.includes('菁英')) return 5;
+  return 5; // 預設 5 天
+}
+
 function updateCalc() {
   const sel = document.getElementById('classSelect');
   calcState.basePrice = parseInt(sel.value);
@@ -4802,6 +4918,12 @@ function updateCalc() {
   if (calcState.earlybird) { total -= 500; breakdown.push(['早鳥', '-$500']); }
   if (calcState.groupDiscount > 0) { total -= calcState.groupDiscount; breakdown.push([calcState.groupSize + ' 人團報', '-$' + calcState.groupDiscount]); }
   if (calcState.referral) { total -= 300; breakdown.push(['舊生推薦', '-$300']); }
+  if (calcState.shuttle > 0) {
+    const days = getCampDays();
+    const shuttleTotal = calcState.shuttle * days;
+    total += shuttleTotal;
+    breakdown.push(['🚗 ' + calcState.shuttleKm + ' km 接送 (' + days + ' 天)', '+$' + shuttleTotal.toLocaleString()]);
+  }
   const saved = calcState.basePrice - total;
   document.getElementById('finalPrice').textContent = '$' + total.toLocaleString();
   document.getElementById('calcBreakdown').innerHTML = breakdown.map(([l, v]) =>
