@@ -3140,7 +3140,7 @@ a { color: inherit; text-decoration: none; }
         </div>
       </div>
       <div class="schedule-milestone">
-        <div class="schedule-date">5/20</div>
+        <div class="schedule-date">6/15</div>
         <div class="schedule-content">
           <div class="schedule-event">開班公告</div>
           <div class="schedule-event-desc">公佈確定開班的梯次名單</div>
@@ -3190,7 +3190,7 @@ a { color: inherit; text-decoration: none; }
     </div>
     <div class="faq-item" onclick="toggleFaq(this)">
       <div class="faq-q">最低開班人數是多少？</div>
-      <div class="faq-a"><div class="faq-a-inner">每梯最低 5 人開班。俱樂部梯次未達 5 人將取消並全額退費；推廣營可能併地/併梯辦理。開班結果於 5/20 公告。</div></div>
+      <div class="faq-a"><div class="faq-a-inner">每梯最低 5 人開班。俱樂部梯次未達 5 人將取消並全額退費；推廣營可能併地/併梯辦理。開班結果於 6/15 公告。</div></div>
     </div>
     <div class="faq-item" onclick="toggleFaq(this)">
       <div class="faq-q">可以混合優惠嗎？</div>
@@ -3545,7 +3545,7 @@ a { color: inherit; text-decoration: none; }
         3. 收款後正式完成報名<br><br>
         <strong>📅 關鍵時程：</strong><br>
         • <span style="text-decoration:line-through;opacity:0.6;">5/15</span> 5/30 前 — 早鳥優惠截止（已延長）<br>
-        • 5/20 — 開班公告<br>
+        • 6/15 — 開班公告<br>
         • 6/30 — 最終報名截止
       </div>
       
@@ -4443,17 +4443,27 @@ function calculateFormPrice() {
     breakdown.push(`<div class="price-line"><span>舊生推薦</span><span>-$300</span></div>`);
   }
   
-  // 🚗 接送服務（按梯次天數計算）
+  // 🚗 接送服務（按梯次天數計算，含套票）
   const shuttleRadio = document.querySelector('input[name="shuttleOption"]:checked');
   if (shuttleRadio && parseInt(shuttleRadio.value) > 0) {
     const shuttlePerDay = parseInt(shuttleRadio.value);
     const km = shuttlePerDay === 200 ? 5 : 10;
-    // 計算總天數（所有選中的梯次累加）
+    // 計算總天數（所有選中的梯次累加，套票算 8 或 10 天）
     let totalDays = 0;
     document.querySelectorAll('.class-checkbox input:checked').forEach(i => {
       const text = i.closest('.class-checkbox').textContent;
-      if (text.includes('3 天')) totalDays += 3;
-      else totalDays += 5; // 預設 5 天
+      const value = i.value;
+      
+      // 套票方案優先判斷
+      if (value === '18400' || value === '19300' || value === '13700') {
+        totalDays += 10; // 兩個 5 天梯次
+      } else if (value === '9700' || value === '9700b') {
+        totalDays += 8; // 一個 3 天 + 一個 5 天
+      } else if (text.includes('3 天')) {
+        totalDays += 3;
+      } else {
+        totalDays += 5; // 預設 5 天
+      }
     });
     if (totalDays > 0) {
       const shuttleTotal = shuttlePerDay * totalDays;
@@ -4901,8 +4911,23 @@ function selectShuttle(amount, km) {
 }
 
 function getCampDays() {
-  // 根據選擇的梯次估算天數（用於接送總費用計算）
+  // 根據選擇的梯次/套票計算接送總天數
   const sel = document.getElementById('classSelect');
+  const value = sel.value;
+  
+  // 🎁 套票方案（兩個梯次合併）
+  // 1-3 年級全套：1-3 年級菁英 5 天 + 全年齡大集訓 5 天 = 10 天
+  if (value === '18400') return 10;
+  // 4-6 年級全套：4-6 年級菁英 5 天 + 全年齡大集訓 5 天 = 10 天
+  if (value === '19300') return 10;
+  // 板橋盃衝刺：U8 全日託管 5 天 + U8 板橋盃 5 天 = 10 天
+  if (value === '13700') return 10;
+  // 板橋推廣連報：推廣 3 天 + 推廣 5 天 = 8 天
+  if (value === '9700') return 8;
+  // 天母推廣連報：推廣 3 天 + 推廣 5 天 = 8 天
+  if (value === '9700b') return 8;
+  
+  // 📦 單梯次
   const text = sel.options[sel.selectedIndex].text;
   if (text.includes('3 天')) return 3;
   if (text.includes('5 天') || text.includes('半日') || text.includes('全日託管') || text.includes('板橋盃') || text.includes('集訓') || text.includes('菁英')) return 5;
@@ -4922,7 +4947,11 @@ function updateCalc() {
     const days = getCampDays();
     const shuttleTotal = calcState.shuttle * days;
     total += shuttleTotal;
-    breakdown.push(['🚗 ' + calcState.shuttleKm + ' km 接送 (' + days + ' 天)', '+$' + shuttleTotal.toLocaleString()]);
+    // 套票會顯示「(套票 X 天)」標明來源
+    const sel = document.getElementById('classSelect');
+    const isPackage = ['18400', '19300', '13700', '9700', '9700b'].includes(sel.value);
+    const dayLabel = isPackage ? '套票 ' + days + ' 天' : days + ' 天';
+    breakdown.push(['🚗 ' + calcState.shuttleKm + ' km 接送 (' + dayLabel + ')', '+$' + shuttleTotal.toLocaleString()]);
   }
   const saved = calcState.basePrice - total;
   document.getElementById('finalPrice').textContent = '$' + total.toLocaleString();
